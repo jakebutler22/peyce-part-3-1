@@ -1,0 +1,11 @@
+{
+  "bytes": 4147653,
+  "sha256": "3980d31d17b0c55567fd44fb1bc956c97362184817ae4c8d1c8a9d00a6c1b169",
+  "javascriptSyntax": "pass",
+  "embeddedFonts": 3,
+  "externalRuntimeAssetReferences": 0,
+  "fontLicenseIncluded": true,
+  "directFileExecution": "unverified: browser URL policy rejects file protocol",
+  "correctionCycles": 1,
+  "observedCorrection": "String.replace replacement tokens expanded literal dollar sequences in compiled JavaScript. Callback replacement preserves compiled source; re-export syntax passed. Asset-reference check distinguishes provenance documentation paths from runtime paths."
+}

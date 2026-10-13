@@ -1,0 +1,54 @@
+[
+  {
+    "asset": "bow",
+    "source_name": "exec-53a67695-e007-4bfd-ab10-d231922ada19.png",
+    "source_dimensions": [
+      1536,
+      1024
+    ],
+    "alpha_threshold_used_to_find_crop": 5,
+    "crop_box": [
+      29,
+      42,
+      1525,
+      1021
+    ],
+    "output_dimensions": [
+      1024,
+      670
+    ],
+    "output_bytes": 828279,
+    "sha256": "7073a6a29a6a7e00b6a1431608d6a73f12dfdba07f2a9aeb85664e5ccd3909cf",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 314992
+  },
+  {
+    "asset": "balloon",
+    "source_name": "exec-503a2930-19ce-4c4f-8878-18d87fc65722.png",
+    "source_dimensions": [
+      1024,
+      1536
+    ],
+    "alpha_threshold_used_to_find_crop": 5,
+    "crop_box": [
+      17,
+      81,
+      1006,
+      1440
+    ],
+    "output_dimensions": [
+      745,
+      1024
+    ],
+    "output_bytes": 545265,
+    "sha256": "c381dfd828adae71ae195755c67bef805cd9f02b66b1f5d7e970957ca8e95cb5",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_zero_pixels": 257498
+  }
+]

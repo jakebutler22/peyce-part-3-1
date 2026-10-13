@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-13",
+  "timezone": "America/New_York",
+  "environment": "Codex in-app browser; Chrome visibility attempt",
+  "uiResults": [
+    {
+      "test": "body-tension",
+      "passed": true
+    },
+    {
+      "test": "Back-changing-breathing-preference-removes-suggestion",
+      "passed": true
+    },
+    {
+      "test": "present-focus",
+      "passed": true
+    },
+    {
+      "test": "both-declined",
+      "passed": true
+    },
+    {
+      "test": "tie",
+      "passed": true
+    },
+    {
+      "test": "double-face-activation",
+      "passed": true
+    },
+    {
+      "test": "missing-body-answer-equal-choice",
+      "passed": true
+    },
+    {
+      "test": "all-skipped-equal-choice",
+      "passed": true
+    },
+    {
+      "test": "Skip-all-clears-abandoned-suggestion",
+      "passed": true
+    },
+    {
+      "test": "keyboard-intentional-activation",
+      "passed": true
+    },
+    {
+      "test": "focused-question-enter-does-not-answer",
+      "passed": true
+    },
+    {
+      "test": "grounding-double-activation",
+      "passed": true
+    },
+    {
+      "test": "grounding-Back",
+      "passed": true
+    },
+    {
+      "test": "grounding-sense-skips-and-neutral-ending",
+      "passed": true
+    },
+    {
+      "test": "fictional-history-support",
+      "passed": true
+    },
+    {
+      "test": "scripted-failure-with-unblocked-choice-and-support",
+      "passed": true
+    },
+    {
+      "test": "browser-pause-freezes-inflation",
+      "passed": true
+    },
+    {
+      "test": "breathing-stop-neutral-ending",
+      "passed": true
+    },
+    {
+      "test": "support-pauses-exercise-and-return-requires-Resume",
+      "passed": true
+    },
+    {
+      "test": "support-dialog-keyboard-focus-trap",
+      "passed": true
+    },
+    {
+      "test": "minimal-motion-fixed-balloon-timing-continues",
+      "passed": true
+    },
+    {
+      "test": "six-cycle-run-reaches-neutral-completion",
+      "passed": true
+    },
+    {
+      "test": "mobile-scrolled-support-stays-visible",
+      "passed": true
+    },
+    {
+      "test": "real-tab-backgrounding",
+      "status": "inconclusive",
+      "observation": "IAB and Chrome tab creation kept the original document visibilityState visible. Hidden-time pause is source-reviewed and pure-clock tested, but an actual hidden-tab transition was not observed."
+    },
+    {
+      "test": "pending-face-transition-cannot-override-exit",
+      "passed": true
+    },
+    {
+      "test": "support-holds-pending-question-then-advances-once",
+      "passed": true
+    }
+  ],
+  "geometry": {
+    "displayLoaded": true,
+    "fontsLoaded": "loaded",
+    "scrollWidth": 360,
+    "scrollY": 165.5,
+    "support": {
+      "bottom": 64,
+      "height": 48,
+      "left": 229.1015625,
+      "right": 338.40625,
+      "top": 16,
+      "width": 109.3046875,
+      "x": 229.1015625,
+      "y": 16
+    },
+    "uiLoaded": true,
+    "visibleButtons": [
+      {
+        "height": 52,
+        "text": "P\ne\ny\nc\ne\n•",
+        "width": 86.640625
+      },
+      {
+        "height": 48,
+        "text": "↗ Crisis support",
+        "width": 109.3046875
+      },
+      {
+        "height": 48,
+        "text": "← Back",
+        "width": 58.453125
+      },
+      {
+        "height": 206.7890625,
+        "text": "◌\nBreathing\nA soft balloon rhythm.\nFour seconds in, six seconds out.\n60 seconds of pacing\n→",
+        "width": 316.796875
+      },
+      {
+        "height": 206.7890625,
+        "text": "✳\nGrounding\nNotice your surroundings,\none sense at a time.\nAt your pace · about 90 seconds\n→",
+        "width": 316.796875
+      },
+      {
+        "height": 48,
+        "text": "Finish for now",
+        "width": 108.8203125
+      }
+    ],
+    "width": 360
+  },
+  "balloonTransforms": {
+    "low": "transform: scale(0.63138, 0.728385);",
+    "mid": "transform: scale(0.801542, 0.853768);",
+    "full": "transform: scale(0.998851, 0.999153);"
+  },
+  "fullRunObservation": {
+    "activeAtMs": 53549,
+    "completedByMs": 72449
+  }
+}

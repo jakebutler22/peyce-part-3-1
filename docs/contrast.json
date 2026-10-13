@@ -1,0 +1,44 @@
+[
+  {
+    "element": "body text",
+    "foreground": "#30242B",
+    "background": "#FFFFFF",
+    "ratio": 14.86
+  },
+  {
+    "element": "secondary text",
+    "foreground": "#6F5D66",
+    "background": "#FFFFFF",
+    "ratio": 6.12
+  },
+  {
+    "element": "rose actions / white text",
+    "foreground": "#A83E68",
+    "background": "#FFFFFF",
+    "ratio": 5.91
+  },
+  {
+    "element": "focus outline",
+    "foreground": "#7C3151",
+    "background": "#FFFFFF",
+    "ratio": 8.7
+  },
+  {
+    "element": "green face lines",
+    "foreground": "#427651",
+    "background": "#EAF0EC",
+    "ratio": 4.61
+  },
+  {
+    "element": "orange face lines",
+    "foreground": "#A96723",
+    "background": "#F5EEE6",
+    "ratio": 3.92
+  },
+  {
+    "element": "red face lines",
+    "foreground": "#AC4E58",
+    "background": "#F6EBED",
+    "ratio": 4.52
+  }
+]

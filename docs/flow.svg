@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1020" role="img" aria-labelledby="title desc">
+  <title id="title">Peyce Part 3.1 design flow</title>
+  <desc id="desc">Hand-authored readable diagram corresponding to flow.mmd. Entry leads through five optional questions or direct choice to ready and breathing or grounding. Preference rules can offer equal choices. Stop, support, skip, correction and alternatives remain available. Support is accessible from every state.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#A83E68"/></marker>
+    <style>.box{fill:#FFF8FB;stroke:#D8AFBF;stroke-width:2}.main{fill:#FFFFFF;stroke:#A83E68;stroke-width:2}.line{fill:none;stroke:#A83E68;stroke-width:2;marker-end:url(#arrow)}.t{font-family:Arial,sans-serif;fill:#30242B;font-size:18px}.h{font-weight:700;font-size:21px}.s{font-size:16px}.label{font-family:Arial,sans-serif;fill:#75304B;font-size:15px}</style>
+  </defs>
+  <rect width="1440" height="1020" fill="#FFFFFF"/>
+  <text x="60" y="48" class="t h" font-size="30">Peyce · Part 3.1 design flow</text>
+  <text x="60" y="78" class="t s">Hand-authored SVG from flow.mmd · fictional in-memory prototype · no live backend or model</text>
+  <rect x="60" y="112" width="340" height="96" rx="10" class="main"/>
+  <text x="80" y="144" class="t h">Entry</text><text x="80" y="172" class="t">Find an exercise / Choose directly</text><text x="80" y="196" class="t s">Coursework notice · no monitoring</text>
+  <rect x="470" y="112" width="350" height="96" rx="10" class="box"/>
+  <text x="490" y="144" class="t h">Optional check-in notice</text><text x="490" y="172" class="t">Faces advance after selection</text><text x="490" y="196" class="t s">Five questions · skip or correct</text>
+  <rect x="900" y="112" width="470" height="132" rx="10" class="box"/>
+  <text x="920" y="144" class="t h">Five fixed questions</text><text x="920" y="174" class="t">One question / three labeled faces</text><text x="920" y="200" class="t s">Back restores · edit invalidates old result</text><text x="920" y="226" class="t s">Skip one = unknown · Skip all clears routing</text>
+  <path d="M400 156H470" class="line"/><path d="M820 156H900" class="line"/>
+  <text x="410" y="142" class="label">Find</text><text x="831" y="142" class="label">Start</text>
+  <rect x="900" y="310" width="470" height="126" rx="10" class="box"/>
+  <text x="920" y="344" class="t h">Rule policy peyce-routing-1.0</text><text x="920" y="373" class="t">Refusal and comfort first; cue comparison</text><text x="920" y="400" class="t s">Only compare complete cues / both comfortable</text><text x="920" y="424" class="t s">Tie or unknown never becomes certainty</text>
+  <path d="M1135 244V310" class="line"/><text x="1152" y="282" class="label">Optional sequence complete</text>
+  <rect x="60" y="310" width="350" height="126" rx="10" class="main"/>
+  <text x="80" y="344" class="t h">Equal choices / neither forced</text><text x="80" y="373" class="t">Choose deliberately or finish</text><text x="80" y="400" class="t s">Direct choice overrides suggestion</text><text x="80" y="424" class="t s">No automatic route from refusal/unknown</text>
+  <path d="M230 208V310" class="line"/><text x="244" y="291" class="label">Choose directly</text>
+  <path d="M645 208V262H235V310" class="line"/><text x="460" y="252" class="label">Skip all / abandoned check-in</text>
+  <path d="M900 373H410" class="line"/><text x="485" y="358" class="label">Tie / incomplete / no comfort / declined</text>
+  <rect x="470" y="510" width="390" height="126" rx="10" class="main"/>
+  <text x="490" y="544" class="t h">Exercise ready</text><text x="490" y="573" class="t">Short reason + comfortable instructions</text><text x="490" y="600" class="t s">Start is deliberate · alternative · exit</text><text x="490" y="624" class="t s">Optional balloon color before practice</text>
+  <path d="M235 436V478H550V510" class="line"/><text x="262" y="468" class="label">Current choice</text>
+  <path d="M1135 436V478H775V510" class="line"/><text x="928" y="468" class="label">Approved suggestion</text>
+  <rect x="900" y="510" width="470" height="126" rx="10" class="box"/>
+  <text x="920" y="544" class="t h">Bounded explanation fallback</text><text x="920" y="573" class="t">One future request; canned reason now</text><text x="920" y="600" class="t s">Failure or delay cannot block access</text><text x="920" y="624" class="t s">Model cannot alter skills, timing or support</text>
+  <path d="M900 572H860" class="line"/>
+  <rect x="60" y="716" width="410" height="126" rx="10" class="box"/>
+  <text x="80" y="750" class="t h">Breathing experiment</text><text x="80" y="780" class="t">4 s in + 6 s out × 6 · no hold</text><text x="80" y="807" class="t s">One clock · pause/resume · stop · switch</text><text x="80" y="832" class="t s">Balloon is a metaphor, no monitoring</text>
+  <rect x="530" y="716" width="410" height="126" rx="10" class="box"/>
+  <text x="550" y="750" class="t h">Grounding</text><text x="550" y="780" class="t">5 seen · 4 felt · 3 heard</text><text x="550" y="807" class="t">2 smelled · 1 tasted · notice privately</text><text x="550" y="832" class="t s">Next / Back / skip sense / stop / switch</text>
+  <path d="M600 636V674H265V716" class="line"/><path d="M735 636V716" class="line"/>
+  <text x="398" y="664" class="label">Start breathing</text><text x="751" y="682" class="label">Start grounding</text>
+  <rect x="1000" y="716" width="370" height="126" rx="10" class="main"/>
+  <text x="1020" y="750" class="t h">Completion / stopped</text><text x="1020" y="780" class="t">Neutral ending · Finish / try other</text><text x="1020" y="807" class="t s">Future checkout must not block exit</text><text x="1020" y="832" class="t s">History is fictional sample data</text>
+  <path d="M940 779H1000" class="line"/>
+  <path d="M265 842V868H1185V842" class="line"/><text x="592" y="861" class="label">Complete or stop · switches return to ready</text>
+  <rect x="60" y="911" width="1310" height="75" rx="10" fill="#F4D4E1" stroke="#A83E68" stroke-width="2"/>
+  <text x="80" y="941" class="t h">Support remains available from EVERY screen, including history, failure and overlays</text>
+  <text x="80" y="972" class="t">No person monitoring · verified region-labeled resources · close / return to stop or exit · independent of model</text>
+</svg>

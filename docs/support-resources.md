@@ -1,0 +1,7 @@
+# Verified prototype support resources
+
+Verified 2026-10-13 (America/New_York). The hotline lookup tool supplied United States and territories resources before inclusion. Official [988 Lifeline](https://988lifeline.org/) was opened and confirmed phone/text/chat access. [National 911 Program: Calling 911](https://www.911.gov/calling-911/) was opened and confirms calling 911 for emergencies requiring police, fire or ambulance (page last updated2023-01-24). These are separately verified resources, not app capabilities.
+
+The UI labels United States and territories for 988 and United States for emergency911. It does not guess international numbers, infer region from answers, assess suicide risk with faces, use a model/classifier to show resources, or claim worldwide coverage. The hotline tool's exact phone/SMS/chat destinations and their link-source query strings are retained in the prototype. Resource links are not activated during testing.
+
+The persistent header opens a native modal on every screen, including history and scripted failure. The dialog explains that no person is monitoring and the prototype is not a support service. Breathing pauses on support access; closing requires a deliberate Resume. A pending check-in advance is held while support is open, then continues once on return. Support access has no time penalty or dependency on a response/model. Future public use requires region/content review and operations; this source package is not a launched care service.

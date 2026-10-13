@@ -1,0 +1,46 @@
+flowchart TD
+  entry["Entry · coursework prototype\nFind an exercise / Choose an exercise"]
+  notice["Optional check-in notice\nFace selection advances · correction available"]
+  questions["Five fixed questions · one per screen\nSame vector faces + question-specific text"]
+  rule["Versioned deterministic rule\nPreferences before cue comparison\nNo score or diagnosis"]
+  choices["Equal choices / neither forced\nChoose deliberately or finish"]
+  ready["Exercise ready\nShort reason + instructions\nStart / alternative / exit"]
+  breathing["Breathing experiment\n4 s in · 6 s out · 6 cycles\nPause / stop / switch"]
+  grounding["Grounding\n5 seen → 4 felt → 3 heard → 2 smelled → 1 tasted\nPrivate noticing · Next / Back / skip sense"]
+  endstate["Neutral completion / stopped\nFinish / try other · future optional checkout"]
+  history["Past sessions\nClearly fictional in-memory examples"]
+  support["Support overlay · accessible from EVERY state\nNo person monitoring · verified region-labeled resources\nClose / return to stop or exit"]
+  fallback["Explanation unavailable\nCanned approved reason; access remains immediate"]
+  entry -->|Find| notice
+  entry -->|Choose directly| choices
+  notice -->|Start| questions
+  notice -->|Skip all| choices
+  questions -->|Answer or skip one| questions
+  questions -->|Back restores; edit invalidates result| questions
+  questions -->|Skip all clears abandoned result| choices
+  questions -->|Complete optional sequence| rule
+  rule -->|Transparent suggestion| ready
+  rule -->|Tie / missing / no comfort / refusals| choices
+  choices -->|Deliberate choice overrides suggestion| ready
+  ready -->|Start breathing| breathing
+  ready -->|Start grounding| grounding
+  ready -->|Alternative| choices
+  breathing -->|Complete or stop| endstate
+  grounding -->|Complete or stop| endstate
+  breathing -->|Switch| ready
+  grounding -->|Switch| ready
+  endstate -->|Finish| entry
+  endstate -->|Try other| ready
+  entry --> history
+  history --> entry
+  rule -.-> fallback
+  fallback --> ready
+  entry -.-> support
+  questions -.-> support
+  choices -.-> support
+  ready -.-> support
+  breathing -.-> support
+  grounding -.-> support
+  endstate -.-> support
+  history -.-> support
+  fallback -.-> support

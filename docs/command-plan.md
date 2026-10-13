@@ -1,0 +1,9 @@
+# CHECK: environment and authorized commands
+
+Date: 2026-10-13 (America/New_York). macOS; zsh; Node 24.12.0; npm 11.6.2; Python 3.14 available. Bundled Python/Node libraries available through Codex runtime. Browser UI and screenshot tools are present; actual inspection must follow. Built-in image generation present.
+
+The two vF spellings resolved to inode 40825551 on a case-insensitive volume. A case-only rename preserves the empty existing .git while making the directory name exactly `mental health vF`. Repository initially had no commits on main and no remotes. Previous Mental Health repository is separate, clean, and fingerprinted outside the deliverable before writes.
+
+Authorized planned commands: npm install (Vue, Vite, Playwright test tooling only), npm run build, node --test, local Vite server on 127.0.0.1, browser screenshots and interaction checks, scoped image copy/compression, git add/commit, authenticated GitHub new public repository creation and git push. No deployment commands. Read-only official web-source verification. Tests use fictional answers only. Generated assets have no external input reference. No prior-project code or asset reuse planned.
+
+Observed publication environment: GitHub connector and HTTPS Git credential independently identified `jakebutler22`. Scoped official GitHub REST GET /user and GET /repos/jakebutler22/peyce-part-3-1 confirmed identity/name absence; POST /user/repos created a public empty repository (no deployment). The Git credential was read only into process memory, never printed or saved. Bundled Python used the system CA file `/etc/ssl/cert.pem`; no TLS bypass. `scripts/export-prototype.mjs` embeds the verified Vite output into a standalone HTML, with syntax/static checks.
