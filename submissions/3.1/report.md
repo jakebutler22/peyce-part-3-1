@@ -6,9 +6,9 @@ Completed 2026-10-13 (America/New_York). Peyce is pronounced “pace”. This su
 
 Public repository: [https://github.com/jakebutler22/peyce-part-3-1](https://github.com/jakebutler22/peyce-part-3-1). Authenticated account `jakebutler22` was independently verified by the GitHub connector and Git HTTPS credential. Repository availability and safe publication contents were checked before creation. The design/source commit was pushed successfully to main, and its remote SHA matched locally.
 
-**Submitted design/source commit:** [`2505e09c0f01e24fb53efce30be738c9d84bf90b`](https://github.com/jakebutler22/peyce-part-3-1/commit/2505e09c0f01e24fb53efce30be738c9d84bf90b). The present report/handoff are a subsequent packaging commit; that commit is identified by repository history and the final delivery message. This avoids embedding a report's own not-yet-existing hash or rewriting history. All design artifacts below were verified present at the submitted source commit.
+**Submitted design/source commit:** [`2505e09c0f01e24fb53efce30be738c9d84bf90b`](https://github.com/jakebutler22/peyce-part-3-1/commit/2505e09c0f01e24fb53efce30be738c9d84bf90b). The report/handoff packaging commit is [`e500c8730271ec4af8347c86ee1a38f066a5a7a6`](https://github.com/jakebutler22/peyce-part-3-1/commit/e500c8730271ec4af8347c86ee1a38f066a5a7a6). A subsequent audit commit records verified public/main state and formats this report; its hash is identified by repository history and the final delivery message. This avoids embedding a report's own not-yet-existing hash or rewriting history. All design artifacts below were verified present at the submitted source commit.
 
-Canonical independent project: `/Users/jakebutler/Documents/ChatGPT/mental health vF`. The case-insensitive volume originally resolved both vF spellings to one inode; a case-only rename preserved its empty independent Git directory. The previous Mental Health repository remains clean, at HEAD `c7d6551b9dda9c69437942d3ae4c42a7b9d07092`, with all190 tracked/unignored file hashes unchanged. No old code, artwork, database, credentials or Git history was copied.
+Canonical independent project: `/Users/jakebutler/Documents/ChatGPT/mental health vF`. The case-insensitive volume originally resolved both vF spellings to one inode; a case-only rename preserved its empty independent Git directory. The previous Mental Health repository remains clean, at HEAD `c7d6551b9dda9c69437942d3ae4c42a7b9d07092`, with all 190 tracked/unignored file hashes unchanged. No old code, artwork, database, credentials or Git history was copied.
 
 ## Submitted artifacts
 
@@ -25,6 +25,8 @@ Canonical independent project: `/Users/jakebutler/Documents/ChatGPT/mental healt
 | [Assets/provenance](https://github.com/jakebutler22/peyce-part-3-1/blob/2505e09c0f01e24fb53efce30be738c9d84bf90b/docs/assets/provenance.md) · [font licenses](https://github.com/jakebutler22/peyce-part-3-1/blob/2505e09c0f01e24fb53efce30be738c9d84bf90b/docs/assets/font-licenses.md) | Exact generation prompts, original alpha assets, official licensed font files and honest rights/material limits |
 | [Future backend](https://github.com/jakebutler22/peyce-part-3-1/blob/2505e09c0f01e24fb53efce30be738c9d84bf90b/backend/README.md) · [AI disclosure](https://github.com/jakebutler22/peyce-part-3-1/blob/2505e09c0f01e24fb53efce30be738c9d84bf90b/AI-USE.md) · [working rules](https://github.com/jakebutler22/peyce-part-3-1/blob/2505e09c0f01e24fb53efce30be738c9d84bf90b/AGENTS.md) | Future FastAPI/SQLite boundaries only, actual tool roles and scope/review policy |
 
+Publication state: [audit record](../../docs/publication-verification.json) confirms a public repository, main matching the verified report commit, and GitHub Pages disabled. No deployment was performed.
+
 ## Design outcome
 
 White and ballet-pink composition with custom optical wordmark treatment, credible satin bow and distinct latex balloon. Laptop1440×900 and1280×800 and independently reflowed mobile390×844 and360×800 were inspected. Entry is immediate: Find an exercise or Choose an exercise. Five optional original questions each have matching SVG geometry, question-specific labels and equal large controls. No account, typing, demographic disclosure, response deadline or audio is required.
@@ -37,11 +39,11 @@ The future model has one small validated explanation request at the recommendati
 
 ## Actual verification and refinements
 
--36 Node tests passed;1,024 valid answer combinations satisfy refusal/unknown invariants. Build passed. Offline export syntax/assets/license checks and byte-for-byte repeat generation passed.
--25 browser checks passed, covering requested routing cases, Back correction, skips/direct entry, keyboard activation/focus, double activation, grounding transitions, stop/alternatives, neutral ending, fictional history/failure, modal focus and persistent support.
--Actual low/mid/near-full balloon captures retained. Pause froze the visual state; minimal motion kept fixed size while progress continued. A full six-cycle run reached neutral completion; the observed snapshots bracket its transition rather than assert an exact stopwatch measurement.
--Observed revisions included canceling stale exit transitions, guarding grounding activation, generous emergency targets, correcting alt/registry metadata, reducing806px laptop overflow to800px, restoring mobile Stop/progress after focus scrolling, refining magenta/coral recolors to red, cycling dialog focus, and replacing remote font imports with licensed local files. Offline export syntax failure was corrected before publication.
--Text/action contrast was calculated: plum14.86:1, muted6.12:1, rose/white5.91:1. Mobile answers measured343.2×82px at390px; control targets measured at least48px high. These checks are not blanket WCAG conformance.
+- 36 Node tests passed;1,024 valid answer combinations satisfy refusal/unknown invariants. Build passed. Offline export syntax/assets/license checks and byte-for-byte repeat generation passed.
+- 25 browser checks passed, covering requested routing cases, Back correction, skips/direct entry, keyboard activation/focus, double activation, grounding transitions, stop/alternatives, neutral ending, fictional history/failure, modal focus and persistent support.
+- Actual low/mid/near-full balloon captures retained. Pause froze the visual state; minimal motion kept fixed size while progress continued. A full six-cycle run reached neutral completion; the observed snapshots bracket its transition rather than assert an exact stopwatch measurement.
+- Observed revisions included canceling stale exit transitions, guarding grounding activation, generous emergency targets, correcting alt/registry metadata, reducing806px laptop overflow to800px, restoring mobile Stop/progress after focus scrolling, refining magenta/coral recolors to red, cycling dialog focus, and replacing remote font imports with licensed local files. Offline export syntax failure was corrected before publication.
+- Text/action contrast was calculated: plum14.86:1, muted6.12:1, rose/white5.91:1. Mobile answers measured343.2×82px at390px; control targets measured at least48px high. These checks are not blanket WCAG conformance.
 
 ## Outstanding questions and verification limits
 

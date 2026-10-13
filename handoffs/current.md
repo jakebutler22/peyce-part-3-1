@@ -1,6 +1,6 @@
 # Current handoff · Part 3.1 STOP
 
-Root: `/Users/jakebutler/Documents/ChatGPT/mental health vF`. Branch: `main`. Public source: [https://github.com/jakebutler22/peyce-part-3-1](https://github.com/jakebutler22/peyce-part-3-1). Verified immutable design/source commit: `2505e09c0f01e24fb53efce30be738c9d84bf90b`; source push succeeded and remote main matched. This handoff/report form the subsequent packaging commit; use `git log -1` for its own hash rather than embedding a self-reference.
+Root: `/Users/jakebutler/Documents/ChatGPT/mental health vF`. Branch: `main`. Public source: [https://github.com/jakebutler22/peyce-part-3-1](https://github.com/jakebutler22/peyce-part-3-1). Verified immutable design/source commit: `2505e09c0f01e24fb53efce30be738c9d84bf90b`; source push succeeded and remote main matched. Report packaging commit: `e500c8730271ec4af8347c86ee1a38f066a5a7a6`, successfully pushed and remote main matched. The subsequent publication audit commit contains this revision; use `git log -1` for its own hash rather than embedding a self-reference.
 
 Completed: research ledger, supplied assignment provenance, design pipeline/RD matrix/rules/examples, future model/data/MVC/backend contracts, original bow/balloon and licensed local fonts, registry/component extension, clickable Vue prototype and self-contained HTML export, flow, AI disclosure, screenshots and actual revision log. No backend/model/database or deployed service. No Parts3.2/3.3 work.
 
