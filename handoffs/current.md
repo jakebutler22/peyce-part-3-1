@@ -9,3 +9,7 @@ Actual checks:36 tests pass including1,024 answer combinations; build passes;25 
 Limits: student personal review/instructor button-turn interpretation unresolved; true hidden-tab, direct-file, real devices, assistive tech and real-user timing remain unverified. Source access/material/rights limits in report. No personal check-ins stored or published. Preview server is only loopback QA and will be stopped at teardown; use README commands to run again. Exported HTML is the portable artifact.
 
 Next task: **await explicit later authorization. STOP at Part3.1.** A later implementation must honor refusal/direct choice, unknown answers, fixed approved timing, persistent support, narrow model validation/fallback and privacy boundaries. This handoff does not authorize Parts3.2/3.3 or deployment.
+
+## Part 3.1 upload preparation
+
+The user supplied the full assignment overview and clarified that only the Part 3.1 submission is needed. The instructor-facing upload file is `submissions/3.1/report.md`. It references reviewed design commit `32bb48e5fd8acb2d967b965251e4491a388a83d9`, gives an explicit requirement/evidence map and uses 16 immutable public artifact links. Anonymous repository/tree access and each referenced file were verified. The frontend/backend/export implementation is unchanged; no new live-model, database, deployment, evaluation or recording work was added. The private Canvas screenshot/attachment was not published and no Canvas submission was made. This upload report is packaged in the containing commit after that design commit. STOP at Part 3.1.

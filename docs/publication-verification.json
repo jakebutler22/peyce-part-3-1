@@ -8,5 +8,14 @@
   "verifiedReportPackagingCommit": "e500c8730271ec4af8347c86ee1a38f066a5a7a6",
   "remoteMainMatchedBeforeThisAuditCommit": true,
   "sourceArtifactReferencesChecked": 19,
-  "deploymentPerformed": false
+  "deploymentPerformed": false,
+  "part31UploadPreparation": {
+    "date": "2026-10-13",
+    "submittedDesignCommit": "32bb48e5fd8acb2d967b965251e4491a388a83d9",
+    "anonymousPublicAccess": "pass",
+    "immutableArtifactLinksVerified": 16,
+    "reportContainsRelativeLinks": false,
+    "canvasSubmissionPerformed": false,
+    "implementationChanged": false
+  }
 }
