@@ -1,5 +1,11 @@
-# Current handoff · Part 3.1 source stage
+# Current handoff · Part 3.1 STOP
 
-Canonical root: `/Users/jakebutler/Documents/ChatGPT/mental health vF`. Branch main, initially without commits; verified design/source commit will be recorded in the report packaging revision. New public repository created under verified account jakebutler22, but source push is not yet claimed at this stage.
+Root: `/Users/jakebutler/Documents/ChatGPT/mental health vF`. Branch: `main`. Public source: [https://github.com/jakebutler22/peyce-part-3-1](https://github.com/jakebutler22/peyce-part-3-1). Verified immutable design/source commit: `2505e09c0f01e24fb53efce30be738c9d84bf90b`; source push succeeded and remote main matched. This handoff/report form the subsequent packaging commit; use `git log -1` for its own hash rather than embedding a self-reference.
 
-Local design/research/prototype and observed verification complete. Final packaging/link/publication verification pending. Previous project file fingerprints and HEAD unchanged, clean Git. No backend/service deployed. STOP at Part 3.1; further parts await separate authorization. Student personal review and course acceptance of button-led conversation are unresolved.
+Completed: research ledger, supplied assignment provenance, design pipeline/RD matrix/rules/examples, future model/data/MVC/backend contracts, original bow/balloon and licensed local fonts, registry/component extension, clickable Vue prototype and self-contained HTML export, flow, AI disclosure, screenshots and actual revision log. No backend/model/database or deployed service. No Parts3.2/3.3 work.
+
+Actual checks:36 tests pass including1,024 answer combinations; build passes;25 browser checks pass and1 genuine-backgrounding check inconclusive. Requested desktop/mobile sizes and low/mid/full balloon were actually inspected. Offline export syntax/assets/license/reproducibility pass; direct-file execution blocked by browser URL policy. All190 tracked/unignored original project hashes and HEAD unchanged, clean Git. Git diff checks pass with narrow upstream OFL whitespace preservation; original font/license bytes remain intact.
+
+Limits: student personal review/instructor button-turn interpretation unresolved; true hidden-tab, direct-file, real devices, assistive tech and real-user timing remain unverified. Source access/material/rights limits in report. No personal check-ins stored or published. Preview server is only loopback QA and will be stopped at teardown; use README commands to run again. Exported HTML is the portable artifact.
+
+Next task: **await explicit later authorization. STOP at Part3.1.** A later implementation must honor refusal/direct choice, unknown answers, fixed approved timing, persistent support, narrow model validation/fallback and privacy boundaries. This handoff does not authorize Parts3.2/3.3 or deployment.
