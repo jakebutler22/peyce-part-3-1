@@ -1,0 +1,1153 @@
+{
+  "checked_at_utc": "2026-10-20T19:38:06.090424+00:00",
+  "configuration_loaded": true,
+  "genuine_live_contribution_succeeded": false,
+  "outbound_attempts": 2,
+  "authorized_max_attempts": 10,
+  "approved_spend_usd": 0,
+  "mode_after_demonstration": "mock",
+  "blocker": "OpenRouter returned HTTP 401/code401 using the exact authorized credential; working OPENROUTER_API_KEY in backend/.env is required. No paid fallback or additional attempts while unchanged.",
+  "sessions": [
+    {
+      "id": "dd93906e-6810-4dc1-b285-5872813998f3",
+      "created_at": "2026-10-20T19:35:41.618+00:00",
+      "updated_at": "2026-10-20T19:35:48.145+00:00",
+      "ended_at": null,
+      "revision": 8,
+      "status": "ready",
+      "exercise": "breathing",
+      "color": "pink",
+      "color_explicit": false,
+      "schema_version": 1,
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "content_version": "peyce-skills-1.0",
+      "context": "fictional-local-coursework",
+      "answered": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "answers": [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "direct_choice": null,
+      "events": [
+        {
+          "active_ms": 0.0,
+          "at_ms": 6534.899999976158,
+          "cause": "user",
+          "id": "048301e6-437c-4cdd-8fe7-3d00990e6c41",
+          "kind": "instruction_visible"
+        }
+      ],
+      "operation_id": "ba1ce08b-3345-4a95-9cf2-dabc8f9f6f88",
+      "timing": null,
+      "result": {
+        "code": "body-cue",
+        "exercise": "breathing",
+        "reason": "You said softening your shoulders and jaw is “hard right now”, and breathing sounds comfortable. A gentle rhythm is one option."
+      },
+      "turns": [
+        {
+          "id": 242,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 0,
+          "role": "assistant",
+          "question_id": "body",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to let your shoulders and jaw soften right now?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 243,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 1,
+          "role": "user",
+          "question_id": "body",
+          "answer_id": 2,
+          "skipped": 0,
+          "text": "Hard right now",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 244,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 2,
+          "role": "assistant",
+          "question_id": "thought",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to set a repeating thought aside for a moment?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 245,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 3,
+          "role": "user",
+          "question_id": "thought",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Easy",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 246,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 4,
+          "role": "assistant",
+          "question_id": "present",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How connected do you feel to what's around you?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 247,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 5,
+          "role": "user",
+          "question_id": "present",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Present",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 248,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 6,
+          "role": "assistant",
+          "question_id": "breathing",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does following a gentle breathing rhythm sound right now?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 249,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 7,
+          "role": "user",
+          "question_id": "breathing",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 250,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 8,
+          "role": "assistant",
+          "question_id": "grounding",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does noticing a few things around you sound right now?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        },
+        {
+          "id": 251,
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "sequence": 9,
+          "role": "user",
+          "question_id": "grounding",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "superseded": false
+        }
+      ],
+      "lifecycle": [
+        {
+          "event_id": "048301e6-437c-4cdd-8fe7-3d00990e6c41",
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "kind": "instruction_visible",
+          "at_ms": 6534.899999976158,
+          "active_ms": 0.0,
+          "cause": "user",
+          "created_at": "2026-10-20T19:35:48.145+00:00",
+          "id": "048301e6-437c-4cdd-8fe7-3d00990e6c41"
+        }
+      ],
+      "explanations": [
+        {
+          "request_id": "1e92f8f2-6235-4ce4-b6fe-4d525878f3b3",
+          "session_id": "dd93906e-6810-4dc1-b285-5872813998f3",
+          "revision": 8,
+          "mode": "openrouter",
+          "model_id": "nvidia/nemotron-3.5-lightning:free",
+          "prompt_version": "peyce-acknowledgment-1.0",
+          "question_version": "peyce-original-1.0",
+          "policy_version": "peyce-routing-1.0",
+          "reason_code": "body-cue",
+          "outcome": "fallback",
+          "validation": "fallback-provider-http-401-code-401",
+          "fragments_json": null,
+          "text": "You said softening your shoulders and jaw is “hard right now”, and breathing sounds comfortable. A gentle rhythm is one option.",
+          "stale": 0,
+          "created_at": "2026-10-20T19:35:48.158+00:00",
+          "updated_at": "2026-10-20T19:35:48.360+00:00",
+          "fragments": null,
+          "references": [],
+          "superseded": false
+        }
+      ],
+      "model_contexts": [
+        {
+          "request_id": "1e92f8f2-6235-4ce4-b6fe-4d525878f3b3",
+          "revision": 8,
+          "question_version": "peyce-original-1.0",
+          "policy_version": "peyce-routing-1.0",
+          "content_version": "peyce-skills-1.0",
+          "prompt_version": "peyce-acknowledgment-1.0",
+          "status": "ready",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "exercise": "breathing",
+          "approved_rule_result": {
+            "code": "body-cue",
+            "exercise": "breathing",
+            "reason": "You said softening your shoulders and jaw is “hard right now”, and breathing sounds comfortable. A gentle rhythm is one option."
+          },
+          "structured_turns": [
+            {
+              "sequence": 0,
+              "role": "assistant",
+              "question_id": "body",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How easy is it to let your shoulders and jaw soften right now?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 1,
+              "role": "user",
+              "question_id": "body",
+              "answer_id": 2,
+              "skipped": 0,
+              "text": "Hard right now",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 2,
+              "role": "assistant",
+              "question_id": "thought",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How easy is it to set a repeating thought aside for a moment?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 3,
+              "role": "user",
+              "question_id": "thought",
+              "answer_id": 0,
+              "skipped": 0,
+              "text": "Easy",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 4,
+              "role": "assistant",
+              "question_id": "present",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How connected do you feel to what's around you?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 5,
+              "role": "user",
+              "question_id": "present",
+              "answer_id": 0,
+              "skipped": 0,
+              "text": "Present",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 6,
+              "role": "assistant",
+              "question_id": "breathing",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How does following a gentle breathing rhythm sound right now?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 7,
+              "role": "user",
+              "question_id": "breathing",
+              "answer_id": 0,
+              "skipped": 0,
+              "text": "Comfortable",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 8,
+              "role": "assistant",
+              "question_id": "grounding",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How does noticing a few things around you sound right now?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 9,
+              "role": "user",
+              "question_id": "grounding",
+              "answer_id": 0,
+              "skipped": 0,
+              "text": "Comfortable",
+              "question_version": "peyce-original-1.0"
+            }
+          ]
+        }
+      ],
+      "curation": {
+        "source_endpoint": "GET /api/sessions/dd93906e-6810-4dc1-b285-5872813998f3",
+        "sql_counts_query": "SELECT revision,source,role,COUNT(*) AS count FROM turns WHERE session_id=? GROUP BY revision,source,role ORDER BY revision,source,role",
+        "sql_model_context_query": "SELECT snapshot_json,result_json FROM revisions WHERE session_id=? AND revision=?",
+        "database_opened_read_only": true,
+        "full_turn_row_count": 40,
+        "exported_turn_row_count": 10,
+        "omitted_superseded_structured_turn_rows": 30,
+        "turn_counts_by_revision_source_role": [
+          {
+            "revision": 3,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 1
+          },
+          {
+            "revision": 3,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 1
+          },
+          {
+            "revision": 4,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 2
+          },
+          {
+            "revision": 4,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 2
+          },
+          {
+            "revision": 5,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 3
+          },
+          {
+            "revision": 5,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 3
+          },
+          {
+            "revision": 6,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 4
+          },
+          {
+            "revision": 6,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 4
+          },
+          {
+            "revision": 7,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 7,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 8,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 8,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          }
+        ],
+        "note": "Curated evidence, not an unmodified full detail dump. Current structured question/answer turns appear once in turns; validated acknowledgments remain even when from an earlier ready revision. Repeated superseded structured turns are omitted and counted by revision/source/role. model_contexts separately preserves the actual committed ready snapshot and exact received turns for each explanation request. All unique lifecycle events, current metadata, versions, result, timing and safe model receipts remain."
+      }
+    },
+    {
+      "id": "a28b570a-8712-4beb-b533-9a22105be945",
+      "created_at": "2026-10-20T19:34:39.732+00:00",
+      "updated_at": "2026-10-20T19:35:17.058+00:00",
+      "ended_at": "2026-10-20T19:35:17.058+00:00",
+      "revision": 16,
+      "status": "stopped",
+      "exercise": "grounding",
+      "color": "pink",
+      "color_explicit": false,
+      "schema_version": 1,
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "content_version": "peyce-skills-1.0",
+      "context": "fictional-local-coursework",
+      "answered": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "answers": [
+        0,
+        2,
+        1,
+        0,
+        0
+      ],
+      "direct_choice": null,
+      "events": [
+        {
+          "active_ms": 0.0,
+          "at_ms": 6479.199999988079,
+          "cause": "user",
+          "id": "e7362598-bb29-49da-8fea-907da73d6af2",
+          "kind": "instruction_visible"
+        },
+        {
+          "active_ms": 0.10000002384185791,
+          "at_ms": 28766.69999998808,
+          "cause": "user",
+          "id": "5c989bfd-defb-4f76-b465-2dea87b8a19f",
+          "kind": "start"
+        },
+        {
+          "active_ms": 382.4000000357628,
+          "at_ms": 29149.0,
+          "cause": "support",
+          "id": "1c243d31-85f2-487c-a3d7-0a10e1070a1c",
+          "kind": "support_open"
+        },
+        {
+          "active_ms": 382.5,
+          "at_ms": 29149.099999964237,
+          "cause": "support",
+          "id": "ec04dade-6358-4ab1-b414-31b3faeb2378",
+          "kind": "pause"
+        },
+        {
+          "active_ms": 382.5,
+          "at_ms": 33209.0,
+          "cause": "support",
+          "id": "118f73b0-0b65-4a68-80ee-ef97760a07fa",
+          "kind": "support_close"
+        },
+        {
+          "active_ms": 382.5,
+          "at_ms": 36315.69999998808,
+          "cause": "user",
+          "id": "43bd226e-10e5-4b9f-bd58-b99f2617abaa",
+          "kind": "resume"
+        },
+        {
+          "active_ms": 666.5,
+          "at_ms": 36599.69999998808,
+          "cause": "user",
+          "id": "c9a5bd16-8d2d-489f-93b9-02ad592d399d",
+          "kind": "sense_next"
+        },
+        {
+          "active_ms": 999.6999999880791,
+          "at_ms": 36933.0,
+          "cause": "user",
+          "id": "2baa1eef-d52c-45bc-991d-d6ce2c211182",
+          "kind": "stop"
+        },
+        {
+          "active_ms": 999.6999999880791,
+          "at_ms": 37349.299999952316,
+          "cause": "user",
+          "id": "42a6dfc9-5e95-4fc7-9ac0-ae1776615fdc",
+          "kind": "finish"
+        }
+      ],
+      "operation_id": "2e064692-f7a3-4737-b3cd-3043df0188db",
+      "timing": {
+        "counted_ms": 26810.19999998808,
+        "entry_ms": 6479.199999988079,
+        "excluded_intervals": [
+          {
+            "cause": "support",
+            "end_ms": 33208.89999997616,
+            "start_ms": 29149.0
+          }
+        ],
+        "excluded_ms": 4059.899999976158,
+        "finish_ms": 37349.299999952316,
+        "instruction_ms": 6479.199999988079,
+        "raw_ms": 30870.099999964237
+      },
+      "result": {
+        "code": "present-cue",
+        "exercise": "grounding",
+        "reason": "You described a repeating thought as “it keeps pulling me in”, and noticing your surroundings sounds comfortable."
+      },
+      "turns": [
+        {
+          "id": 202,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 0,
+          "role": "assistant",
+          "question_id": "body",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to let your shoulders and jaw soften right now?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 203,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 1,
+          "role": "user",
+          "question_id": "body",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Easy",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 204,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 2,
+          "role": "assistant",
+          "question_id": "thought",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to set a repeating thought aside for a moment?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 205,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 3,
+          "role": "user",
+          "question_id": "thought",
+          "answer_id": 2,
+          "skipped": 0,
+          "text": "It keeps pulling me in",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 206,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 4,
+          "role": "assistant",
+          "question_id": "present",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How connected do you feel to what's around you?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 207,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 5,
+          "role": "user",
+          "question_id": "present",
+          "answer_id": 1,
+          "skipped": 0,
+          "text": "A little distracted",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 208,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 6,
+          "role": "assistant",
+          "question_id": "breathing",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does following a gentle breathing rhythm sound right now?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 209,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 7,
+          "role": "user",
+          "question_id": "breathing",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 210,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 8,
+          "role": "assistant",
+          "question_id": "grounding",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does noticing a few things around you sound right now?",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        },
+        {
+          "id": 211,
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "sequence": 9,
+          "role": "user",
+          "question_id": "grounding",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "question_version": "peyce-original-1.0",
+          "source": "structured-turn",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "superseded": false
+        }
+      ],
+      "lifecycle": [
+        {
+          "event_id": "e7362598-bb29-49da-8fea-907da73d6af2",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 8,
+          "kind": "instruction_visible",
+          "at_ms": 6479.199999988079,
+          "active_ms": 0.0,
+          "cause": "user",
+          "created_at": "2026-10-20T19:34:46.185+00:00",
+          "id": "e7362598-bb29-49da-8fea-907da73d6af2"
+        },
+        {
+          "event_id": "5c989bfd-defb-4f76-b465-2dea87b8a19f",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 9,
+          "kind": "start",
+          "at_ms": 28766.69999998808,
+          "active_ms": 0.10000002384185791,
+          "cause": "user",
+          "created_at": "2026-10-20T19:35:08.485+00:00",
+          "id": "5c989bfd-defb-4f76-b465-2dea87b8a19f"
+        },
+        {
+          "event_id": "1c243d31-85f2-487c-a3d7-0a10e1070a1c",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 10,
+          "kind": "support_open",
+          "at_ms": 29149.0,
+          "active_ms": 382.4000000357628,
+          "cause": "support",
+          "created_at": "2026-10-20T19:35:08.859+00:00",
+          "id": "1c243d31-85f2-487c-a3d7-0a10e1070a1c"
+        },
+        {
+          "event_id": "ec04dade-6358-4ab1-b414-31b3faeb2378",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 10,
+          "kind": "pause",
+          "at_ms": 29149.099999964237,
+          "active_ms": 382.5,
+          "cause": "support",
+          "created_at": "2026-10-20T19:35:08.859+00:00",
+          "id": "ec04dade-6358-4ab1-b414-31b3faeb2378"
+        },
+        {
+          "event_id": "118f73b0-0b65-4a68-80ee-ef97760a07fa",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 12,
+          "kind": "support_close",
+          "at_ms": 33209.0,
+          "active_ms": 382.5,
+          "cause": "support",
+          "created_at": "2026-10-20T19:35:12.916+00:00",
+          "id": "118f73b0-0b65-4a68-80ee-ef97760a07fa"
+        },
+        {
+          "event_id": "43bd226e-10e5-4b9f-bd58-b99f2617abaa",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 13,
+          "kind": "resume",
+          "at_ms": 36315.69999998808,
+          "active_ms": 382.5,
+          "cause": "user",
+          "created_at": "2026-10-20T19:35:16.023+00:00",
+          "id": "43bd226e-10e5-4b9f-bd58-b99f2617abaa"
+        },
+        {
+          "event_id": "c9a5bd16-8d2d-489f-93b9-02ad592d399d",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 14,
+          "kind": "sense_next",
+          "at_ms": 36599.69999998808,
+          "active_ms": 666.5,
+          "cause": "user",
+          "created_at": "2026-10-20T19:35:16.309+00:00",
+          "id": "c9a5bd16-8d2d-489f-93b9-02ad592d399d"
+        },
+        {
+          "event_id": "2baa1eef-d52c-45bc-991d-d6ce2c211182",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 15,
+          "kind": "stop",
+          "at_ms": 36933.0,
+          "active_ms": 999.6999999880791,
+          "cause": "user",
+          "created_at": "2026-10-20T19:35:16.641+00:00",
+          "id": "2baa1eef-d52c-45bc-991d-d6ce2c211182"
+        },
+        {
+          "event_id": "42a6dfc9-5e95-4fc7-9ac0-ae1776615fdc",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 16,
+          "kind": "finish",
+          "at_ms": 37349.299999952316,
+          "active_ms": 999.6999999880791,
+          "cause": "user",
+          "created_at": "2026-10-20T19:35:17.058+00:00",
+          "id": "42a6dfc9-5e95-4fc7-9ac0-ae1776615fdc"
+        }
+      ],
+      "explanations": [
+        {
+          "request_id": "549c51dd-4106-48c4-9343-71e75956b186",
+          "session_id": "a28b570a-8712-4beb-b533-9a22105be945",
+          "revision": 8,
+          "mode": "openrouter",
+          "model_id": "nvidia/nemotron-3.5-lightning:free",
+          "prompt_version": "peyce-acknowledgment-1.0",
+          "question_version": "peyce-original-1.0",
+          "policy_version": "peyce-routing-1.0",
+          "reason_code": "present-cue",
+          "outcome": "fallback",
+          "validation": "fallback-provider",
+          "fragments_json": null,
+          "text": "You described a repeating thought as “it keeps pulling me in”, and noticing your surroundings sounds comfortable.",
+          "stale": 0,
+          "created_at": "2026-10-20T19:34:46.192+00:00",
+          "updated_at": "2026-10-20T19:34:46.446+00:00",
+          "fragments": null,
+          "references": [],
+          "superseded": true
+        }
+      ],
+      "model_contexts": [
+        {
+          "request_id": "549c51dd-4106-48c4-9343-71e75956b186",
+          "revision": 8,
+          "question_version": "peyce-original-1.0",
+          "policy_version": "peyce-routing-1.0",
+          "content_version": "peyce-skills-1.0",
+          "prompt_version": "peyce-acknowledgment-1.0",
+          "status": "ready",
+          "answers": [
+            0,
+            2,
+            1,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "exercise": "grounding",
+          "approved_rule_result": {
+            "code": "present-cue",
+            "exercise": "grounding",
+            "reason": "You described a repeating thought as “it keeps pulling me in”, and noticing your surroundings sounds comfortable."
+          },
+          "structured_turns": [
+            {
+              "sequence": 0,
+              "role": "assistant",
+              "question_id": "body",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How easy is it to let your shoulders and jaw soften right now?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 1,
+              "role": "user",
+              "question_id": "body",
+              "answer_id": 0,
+              "skipped": 0,
+              "text": "Easy",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 2,
+              "role": "assistant",
+              "question_id": "thought",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How easy is it to set a repeating thought aside for a moment?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 3,
+              "role": "user",
+              "question_id": "thought",
+              "answer_id": 2,
+              "skipped": 0,
+              "text": "It keeps pulling me in",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 4,
+              "role": "assistant",
+              "question_id": "present",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How connected do you feel to what's around you?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 5,
+              "role": "user",
+              "question_id": "present",
+              "answer_id": 1,
+              "skipped": 0,
+              "text": "A little distracted",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 6,
+              "role": "assistant",
+              "question_id": "breathing",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How does following a gentle breathing rhythm sound right now?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 7,
+              "role": "user",
+              "question_id": "breathing",
+              "answer_id": 0,
+              "skipped": 0,
+              "text": "Comfortable",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 8,
+              "role": "assistant",
+              "question_id": "grounding",
+              "answer_id": null,
+              "skipped": 0,
+              "text": "How does noticing a few things around you sound right now?",
+              "question_version": "peyce-original-1.0"
+            },
+            {
+              "sequence": 9,
+              "role": "user",
+              "question_id": "grounding",
+              "answer_id": 0,
+              "skipped": 0,
+              "text": "Comfortable",
+              "question_version": "peyce-original-1.0"
+            }
+          ]
+        }
+      ],
+      "curation": {
+        "source_endpoint": "GET /api/sessions/a28b570a-8712-4beb-b533-9a22105be945",
+        "sql_counts_query": "SELECT revision,source,role,COUNT(*) AS count FROM turns WHERE session_id=? GROUP BY revision,source,role ORDER BY revision,source,role",
+        "sql_model_context_query": "SELECT snapshot_json,result_json FROM revisions WHERE session_id=? AND revision=?",
+        "database_opened_read_only": true,
+        "full_turn_row_count": 120,
+        "exported_turn_row_count": 10,
+        "omitted_superseded_structured_turn_rows": 110,
+        "turn_counts_by_revision_source_role": [
+          {
+            "revision": 3,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 1
+          },
+          {
+            "revision": 3,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 1
+          },
+          {
+            "revision": 4,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 2
+          },
+          {
+            "revision": 4,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 2
+          },
+          {
+            "revision": 5,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 3
+          },
+          {
+            "revision": 5,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 3
+          },
+          {
+            "revision": 6,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 4
+          },
+          {
+            "revision": 6,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 4
+          },
+          {
+            "revision": 7,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 7,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 8,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 8,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 9,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 9,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 10,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 10,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 11,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 11,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 12,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 12,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 13,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 13,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 14,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 14,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 15,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 15,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          },
+          {
+            "revision": 16,
+            "source": "structured-turn",
+            "role": "assistant",
+            "count": 5
+          },
+          {
+            "revision": 16,
+            "source": "structured-turn",
+            "role": "user",
+            "count": 5
+          }
+        ],
+        "note": "Curated evidence, not an unmodified full detail dump. Current structured question/answer turns appear once in turns; validated acknowledgments remain even when from an earlier ready revision. Repeated superseded structured turns are omitted and counted by revision/source/role. model_contexts separately preserves the actual committed ready snapshot and exact received turns for each explanation request. All unique lifecycle events, current metadata, versions, result, timing and safe model receipts remain."
+      }
+    }
+  ],
+  "curation_note": "Sessions are curated from read-only API/SQL inspection; each session records exact omitted-row counts and query/selection rules. No repeated superseded conversation dump, provider raw payload or credential is included."
+}

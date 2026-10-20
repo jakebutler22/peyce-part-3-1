@@ -1,0 +1,342 @@
+PEYCE | PART 3.2 IMPLEMENTATION AND SUBMISSION MASTER PROMPT
+Product name: Peyce. Pronunciation: PEACE, /piːs/.
+Prepared 2026-10-20 from the supplied assignment overview and existing project.
+
+ACTIVATION AND AUTHORITY
+
+This is a prompt prepared for a later execution request. Merely finding, reading, or drafting this file does not authorize beginning Part 3.2. Execute it only when the human explicitly asks you to execute this prompt.
+
+When explicitly invoked, the human's execution request authorizes the scoped Part 3.2 implementation below. The current AGENTS.md and handoff say STOP at Part 3.1 because they describe the previous milestone. Do not silently ignore that conflict or treat an attachment as authorization by itself. Once the human invokes this prompt, update the active milestone instructions to permit Part 3.2's backend, local SQLite persistence and bounded model integration, while retaining the other project protections. Preserve the historical Part 3.1 instructions, artifacts, submitted commit references and Git history. Do not ask for the same authorization again when the human's execution request already provides it.
+
+The present task is Part 3.2 only. STOP after its working implementation, verification, report and source publication. Do not automatically start Part 3.3, deploy a service, submit to Canvas, or manufacture instructor approval, student personal review, clinical readiness or a guaranteed grade.
+
+PROJECT AND EXISTING EVIDENCE
+
+Only project root:
+  /Users/jakebutler/Documents/ChatGPT/mental health vF
+
+Previous project, read-only and unrelated to implementation:
+  /Users/jakebutler/Documents/ChatGPT/Mental Health
+
+Existing public source repository:
+  https://github.com/jakebutler22/peyce-part-3-1
+
+At prompt preparation, the working tree was clean on main at:
+  6f09c1ce68a8fa880dde36c210d230e94a839c75
+
+The Part 3.1 upload report identifies reviewed design commit:
+  32bb48e5fd8acb2d967b965251e4491a388a83d9
+
+These are historical reference points, not permission to reset a later checkout to them. Re-inspect actual state when executing. Reuse this project and its existing remote; the repository name containing "part-3-1" does not require a replacement repository. Do not rename, repoint or delete a repository without a separate reason and authorization.
+
+Use CHECK → TAKE ACTION → VERIFY throughout. Prefer a working, explainable integration over a larger unfinished feature list. Report observations and evidence, not intentions.
+
+1. DEFINE THE PART 3.2 FINISH LINE
+
+The supplied assignment's Part 3.2 paragraphs require a version in which someone can complete at least one chosen skill through the running interface, with:
+
+1) Vue frontend → FastAPI backend → SQLite persistence on localhost.
+2) An actual conversational model contribution using relevant context.
+3) Persistent conversation and session records and a useful saved-history view.
+4) Measured exercise duration, from first exercise instruction to final planned step, no more than 90 seconds at the stated intended pace.
+5) A clearly identified crisis-information route throughout the experience, independent of model/classifier decisions.
+6) Demonstrated behavior when a request fails and when the user leaves an exercise.
+7) Browser and database inspection supporting the claims.
+8) Coherent scope, honest unfinished items, useful documentation, disclosed AI use, curated evidence, and one Part 3.2 report.md with repository URL, submitted commit and accessible milestone-relevant evidence links.
+
+A mock response, a database schema without persisted rows, a green frontend build, or an SDK import alone cannot establish these integrated requirements.
+
+Part 3.3 separately requires the final refinement/evaluation, at least fifteen fictional scenarios and three cross-case behavior checks, live-model variation work, final demo/process screencast and the final clean-checkout evaluation. Do not make that entire later-stage package a Part 3.2 dependency. Run the targeted integration/regression checks needed for this implementation, but do not label them as a completed Part 3.3 evaluation. Recordings are not established as mandatory for Part 3.2 by the supplied overview; make one only if new milestone-specific instructions require it or the human requests it.
+
+2. CHECK BEFORE EDITING
+
+Inspect the absolute root, applicable instructions, current files, dirty/staged/untracked changes, branch, remotes and recent commits. Preserve unrelated work; never delete/reset it to obtain a clean-looking start. Verify the previous project remains separate and read-only. Do not copy its .git directory, databases, credentials or private content.
+
+Read these existing artifacts rather than redesigning from memory:
+  AGENTS.md
+  README.md
+  AI-USE.md
+  handoffs/current.md
+  submissions/3.1/report.md
+  docs/assignment-source.md
+  docs/design-pipeline.md
+  docs/research.md
+  docs/verification.md
+  docs/browser-observations.json
+  docs/evidence-log.md
+  docs/assets/provenance.md
+  docs/assets/font-licenses.md
+  backend/README.md
+  frontend/src/data.js
+  frontend/src/matching.js
+  frontend/src/clock.js
+  frontend/src/assets.js
+  frontend/src/usePrototype.js
+  frontend/src/App.vue and reusable components
+  frontend/tests/
+
+The assignment overview was supplied as text during Part 3.1 submission preparation. Its milestone boundary and the still-summary-based R/D table are documented in docs/assignment-source.md. Do not claim to have opened Canvas or an attachment you cannot access. If new rubric/instructor feedback is actually supplied, compare it with this prompt and explain material differences; never invent a Part 3.2 rubric, deadline or approval.
+
+Inspect actual Python/Node/package-manager versions, existing dependencies, local ports, model configuration, browser capabilities, screenshot support and SQLite inspection tools. Use existing capable tools before installing scoped dependencies. Check current official provider/SDK/framework documentation when implementation details need verification. Do not assume an old model name, SDK call, price or tool capability is still current.
+
+Record planned commands, runtime/configuration and their purpose before installation or execution under standing authorization. Use a scoped branch such as codex/peyce-part-3-2 when appropriate; inspect existing branches first. Do not force-push, rewrite submitted history or merge unrelated work.
+
+3. CORRECT THE PRONUNCIATION WITHOUT REWRITING HISTORY
+
+Peyce is pronounced "peace", not "pace". Correct explicit pronunciation statements in the current UI, current README, active design/status notes, current prompt metadata and the Part 3.2 report. The spelling remains Peyce.
+
+Preserve archived Part 3.1 submission files, original prompts, screenshots and immutable commits as historical evidence. Record that the pronunciation was corrected for Part 3.2 rather than silently editing already-submitted evidence. Do not globally replace the ordinary word "pace": wording such as "at your pace" can still mean the user's chosen speed. Keep that tagline unless there is a specific design reason to change it. Verify the current product explicitly says pronounced "peace" and does not present "pace" as its pronunciation.
+
+4. RETAIN THE APPROVED DESIGN AND ITS CONTROL CONTRACT
+
+Build on the existing predominantly white/ballet-pink composition, original satin bow, distinct pink latex balloon, locally licensed fonts, original SVG faces and responsive layouts. Do not replace them with a generic dashboard, component-library reskin, chat feed, medical symbols, streaks, emotional analytics or celebratory effects.
+
+Preserve the five original question texts and their exact question-specific answer labels in data.js and the question contract. Do not replace them with STAI items, protected instrument content, diagnostic screening, a total score, or an adapted instrument with inherited validation. No answer color, click speed, cursor movement, hesitation or historical session detects anxiety or crisis.
+
+One question per screen. Keep the advance notice, brief selection indication, intentional keyboard activation, predictable focus, Back, Skip this question, Skip all, direct entry and Stop. A skipped answer remains null/unknown. Skip all clears the abandoned answer-based recommendation. Back/editing invalidates a stale offered result. Do not make the model, persistence, an account or typing a gate to exercise/support access.
+
+Keep the current versioned routing policy authoritative unless a concrete observed issue requires a documented, tested version change:
+  - Direct current choice overrides a suggestion.
+  - "I'd rather not" excludes that activity from automatic recommendation.
+  - Both declined: finish or voluntary exploration, no forced default.
+  - An explicit Comfortable response can favor that activity independently of unknown information about the other activity; never cite a skip as permission.
+  - Only when both activities are comfortable and all three cues are answered, compare Q1 with max(Q2,Q3).
+  - A strict body-cue advantage can suggest breathing; a strict present-focus advantage can suggest grounding.
+  - A tie, all-zero comparison or missing required cues yields equal choices when that comparison is relevant.
+  - No expressed comfort means no automatic suggestion based on body cues alone.
+
+The rule is a private design heuristic, not a psychological test or treatment recommendation. Never display the internal ordinal values or a total-red/total-anxiety score.
+
+Keep decorative registry entries and DecorativeObject separate from BalloonPacer. New decoration must remain registry-driven. A pacing object consumes normalized inflation/progress; it cannot change the clock, instructions or skill rules. Preserve the documented distinction between generated full-inflation art and approximate deformation/recoloring. Do not claim physically simulated latex or independent photographed low/mid/full states. Do not regenerate assets or add heavy 3D dependencies without an observed need.
+
+5. CHOOSE A COHERENT RUNNING SCOPE
+
+Use breathing as the primary end-to-end, timed, model-connected, persisted demonstration because its six-cycle timing is deterministic. Preserve existing grounding navigation and intact 5/4/3/2/1 steps; connect its lifecycle/history too where feasible. The assignment requires at least one fully integrated chosen skill, not all four skills. Do not add STOP or cognitive reframe merely to enlarge scope.
+
+If a secondary flow remains a demo or is not fully persisted, label that limitation clearly and keep it out of full-integration claims. Do not silently drop an existing working flow or present a partly connected flow as complete.
+
+No production accounts, payments, deployment infrastructure, training, social-media datasets, clinical profiles, microphones, cameras or speech implementation. The intended application is a single-user localhost coursework prototype using fictional scenarios. Written guidance is the usable default.
+
+6. IMPLEMENT A SMALL, CLEAR FULL STACK
+
+Maintain MVC-style separation:
+  View: Vue screens/components and accessibility presentation.
+  Controller: deliberate navigation, answer revisions, lifecycle, cancellation, timing and API coordination.
+  Domain model/services: question/content versions, pure matching, approved copy and state transitions.
+  Repository: SQLite reads/writes and transactions.
+  Model adapter: bounded provider/mock request, validation and provenance; no routing authority.
+
+Adapt the proposed backend structure, keeping routes thin and domain/persistence/provider logic separately testable. Use a compatible minimal Python environment and pinned/documented dependencies. Do not introduce a large architecture, unnecessary ORM/framework or distributed job system just for this milestone.
+
+Bind frontend/backend to loopback. Inspect available ports and document actual URLs. Do not kill an unrelated server, reuse the previous project's database, expose the app to the LAN, tunnel it publicly or deploy it. Use a narrow CORS policy or an intentional local dev proxy. Do not claim authentication, multiuser isolation, encryption or production security that has not been implemented.
+
+Use server-side configuration. Example responsibilities, not mandatory environment-variable names:
+  model mode, provider/model identifier, server-only credential;
+  model timeout and live-call budget;
+  ignored SQLite runtime path;
+  configured frontend/API origin and ports.
+
+Provide a secret-free .env.example. Never send an API key to Vue, print it, embed it in a URL/command argument, commit it or request that the user paste it into chat. Verify a configured provider with a minimal appropriate check; do not enumerate unrelated secrets or accounts.
+
+7. IMPLEMENT REAL CONVERSATION AND SESSION PERSISTENCE
+
+SQLite must store actual records produced by the running Vue → API flow, not only a seed file or hardcoded sample array. Replace or distinctly separate the Part 3.1 fictionalSessions display from real SQLite-backed history. An empty database should have an honest empty-history state. Optional demo records must be explicitly labeled and cannot count as persistence evidence.
+
+At minimum, design and implement these logical records, using a small normalized schema or a justified equivalent:
+  - Session: identifier, schema/content/question/policy versions, start/update/end timestamps, current answer/selection revision, actual status and fictional-test/save context.
+  - Conversation turns: assistant question or approved acknowledgment, user answer or explicit skip, exact question/answer identity and applicable version, ordering/revision and timestamp. Distinguish a skip from an absent/unreceived write.
+  - Offered result and deliberate choice: rule version, reason code, referenced answer revision, offered exercise, explicit current selection or neither, and supersession/invalidation where needed.
+  - Exercise lifecycle: ready, active, paused, resumed, completed, stopped or explicitly documented interrupted/incomplete state, with timestamps and active elapsed time.
+  - Explanation attempt: provider/model identifier, prompt/content/rule versions, session/revision/request identifiers, outcome/validation/fallback state, and safe validated displayed content.
+  - Explicit visual preference, where saved, and optional checkout if implemented. Do not add a checkout merely to satisfy a field.
+
+Explain why each field exists and what the history view shows. Keep raw user turns separate from generated explanation provenance. Do not persist a hidden score or model-inferred clinical state.
+
+Important migration hazard: the current prototype initializes sessionStatus as "completed" and assigns it at exercise start as a display shortcut. Do not copy that into persistent state. A session is active when it starts, completed only after the defined completion transition, and stopped/interrupted when appropriate. Refresh, disconnection, tab close or process restart must never fabricate completion.
+
+Use parameterized queries, bounded/validated inputs, foreign keys as appropriate, transactions and a documented schema-version/migration policy. Never reset a database containing existing work without explicit need/authorization. Routine tests use isolated disposable databases, not the normal demonstration database.
+
+Handle out-of-order writes, repeated requests and retries. Use monotonic revision checks and operation/request identifiers or an equivalent explicit mechanism. Duplicate lifecycle writes must not create multiple completions. An older answer write arriving late must not replace a newer answer. Do not show "saved" before acknowledgment. If saving fails, retain exercise/Stop/support access and show an honest unsaved state; do not silently invent history.
+
+Do not rely entirely on unload handlers for leave evidence. Record meaningful lifecycle transitions during use and document what a hard close/crash cannot establish. Distinguish a confirmed Stop from an inferred interruption. Test a reload/restart of the backend against persisted records.
+
+Make one concise save/fictional-use decision before persisted use and explain it without turning the check-in into a consent funnel. Define local retention and a proportionate way to clear/delete fictional saved history. No real personal-health entries are needed. Keep runtime databases, journals/WAL files, secrets, environments and dependencies ignored by Git.
+
+8. CONNECT A REAL, BOUNDED CONVERSATIONAL MODEL
+
+The assignment's model contribution must be real and observable in this milestone. A mock mode is essential for routine tests but cannot establish the live requirement. A string authored by the coding agent, a fake live badge, a provider import or an unrelated one-off tool call is not runtime model integration.
+
+Preserve the button-led experience. Treat the versioned assistant questions, user answer/skip turns and bounded model acknowledgment as structured conversation. Send the actual relevant turns, current approved skill/context, deterministic result/reason code and explicit constraints. Do not send unnecessary older sessions or use historical preference without permission.
+
+The model may provide a concise, context-grounded acknowledgment/explanation. It must contribute something a reviewer can trace to the person's actual fictional selections; do not call it only to echo a static greeting. It cannot select an exercise, overwrite the rule result, invent a skill/instruction, change duration, assess risk, diagnose, score anxiety, override refusal or decide whether support appears.
+
+Use strict structured output and an enforceable application-controlled construction boundary before live display. A suitable design is a small approved phrase/fragment grammar: the model chooses acknowledgment/wording IDs, ordering and eligible current-turn references; the application validates them and assembles the visible explanation using approved copy and exact selected answer labels. Bound the allowed fields, assembled length, identifiers and references. Allowed reference IDs must belong to the current committed snapshot and be relevant to the approved reason; a skipped turn is never supporting evidence. Reject a mismatched reason code, unsupported reference, unknown fragment, extra field or added instruction and retain fallback. An equivalently enforceable bounded construction is acceptable; arbitrary model prose checked only by schema, regex, keywords or model self-assessment is not.
+
+The model's context-dependent selection must observably affect the acknowledgment, not merely return a constant token before the application displays the same fixed text. Show which actual validated model selections produced the displayed response and persist that provenance. Explain this constrained conversational contribution and its limits, including the instructor-interpretation question, rather than describing it as unrestricted counseling or claiming semantic safety from a schema alone. If this tight scope reveals little value over deterministic copy, document that tradeoff honestly without removing the assignment's real-model contribution requirement.
+
+Only validated output may be displayed. Invalid, delayed, empty or failed output retains an approved canned explanation. Render model text as text, not executable HTML/Markdown. Record the actual model ID, mode, prompt/content/rule versions, validated response and provenance; record rejected output safely for diagnosis only if bounded, ignored/redacted and justified. Never publish unredacted provider payloads, credentials or private third-party content.
+
+The original design leaves instructor acceptance of button-led conversation unresolved. If feedback is supplied, follow it. Otherwise implement and describe the structured conversational interpretation honestly, with real turns, relevant context, visible live contribution and persistence; do not claim instructor approval or restore open-ended therapeutic chat merely to look like a chatbot. Record the remaining course-interpretation question without delaying all independent implementation.
+
+9. MAKE THE MODEL ASYNCHRONOUS AND REJECT STALE RESULTS
+
+The old backend plan says both "return immediately" and "make one model request." Resolve this in actual architecture. Do not await a slow provider on the only path to ready/Start.
+
+One valid arrangement is:
+  A) Commit/validate the current answer snapshot and compute the deterministic result.
+  B) Return the approved result and immediate canned explanation.
+  C) Perform a separate bounded explanation request asynchronously.
+  D) Replace only the explanation if the result still belongs to the current, unchanged ready state.
+
+An equivalent explicitly nonblocking design is acceptable. A production queue is unnecessary. Use a timeout; do not add an automatic retry funnel. Keep Start, direct choice, alternatives, Stop and support usable independently of the provider.
+
+Associate a response with session ID, answer revision, selection/navigation generation, request ID and the content/rule versions needed to prove relevance. Re-check before rendering and persistence. Back/edit, skip all, a new session, a direct alternative, Stop or leaving invalidates the applicable display context. Abort where possible; ignore stale results where cancellation cannot prevent completion.
+
+A late response must not reopen a ready screen, restore an abandoned recommendation, change the chosen skill, interrupt an active breathing cue, move focus, trigger a timer or relabel a session completed. Do not discard legitimate audit provenance merely because display is stale; record its obsolete status without presenting it as current. Reserve a stable modest text area so short/long/fallback wording does not shift controls or become another result funnel.
+
+10. CONTROL LIVE ACCESS AND COST; DO NOT FAKE IT
+
+Start and test in deterministic mock mode. Use a small controlled selection of genuine live calls only for Part 3.2's real contribution evidence. Plan one to three relevant calls and cap the implementation run at five outbound attempts, including failed attempts/retries, unless the human explicitly authorizes another limit. A provided lower limit takes precedence. Keep a real call counter and fail closed to mock mode at the cap. Do not run live calls in ordinary unit tests or on every render/reload.
+
+Use an already authorized provider/local model and configured budget. Do not assume that a credential alone authorizes unspecified paid use, purchase credits, subscribe to a service or download large model weights. Where paid use lacks an approved cost limit, request that narrow missing information while completing independent mock/backend/database work. Keep the assignment's peer-testing default as mocked responses and never exceed its fifty-call host/session ceiling; a lower Part 3.2 cap still applies.
+
+If no usable credential/provider/budget is available, prepare the adapter, mocks, integration and exact setup instructions, then state plainly that the live-model criterion is not yet met. Do not mark the entire Part 3.2 submission complete by substituting mock evidence. Ask only for the missing external configuration/authorization, never the secret itself in chat, and continue all work that does not depend on it. An agent cannot invent a live response, receipt, model identifier or successful request.
+
+11. PRESERVE THE SKILLS AND MEASURE THE WHOLE EXERCISE
+
+Breathing:
+  Four seconds inhale, six seconds exhale, six cycles: 60 seconds active pacing, no hold.
+  Comfortable/unforced written instructions; no maximum lung filling or physiological measurement claim.
+  A single monotonic clock drives phase, labels, inflation, pause/resume and cycle boundaries.
+  Stop/normal breathing and switching remain available.
+  Reduced motion retains timing with a fixed-size object and appropriate text/progress.
+  Define actual backgrounding and return behavior, preferably pause with deliberate Resume and no replay of missed cycles.
+
+Grounding, if presented:
+  Five things seen, four felt, three heard, two smelled, one tasted, in order.
+  Notice privately, one Next action per sense; Back, Skip sense, Stop and support.
+  No required typing, fifteen separate confirmations, eating/drinking or unsafe stimulus seeking.
+
+The measured boundary begins when the first exercise instruction is actually displayed, including the ready/introduction copy. It ends at the final planned step, including completion/Finish if that is part of the planned sequence. Define the endpoint before measuring. Do not stop timing at the last balloon phase while omitting required closing steps.
+
+Measure with actual browser/controller instrumentation, not only a duration constant, unit-test arithmetic or a design budget. Record raw monotonic span, each allowed excluded interval and the resulting counted sequence duration. Persist/export enough safe evidence to explain the calculation. Handle overlapping pause/support intervals as a union, not double subtraction.
+
+Count ordinary reading/start decisions, transitions, selection delays, optional choices made after instruction display, and any application/network delays imposed during the sequence. Do not rename instruction time "setup" to hide it. Report entry/check-in/setup before exercise instructions separately. Exclude only the user-chosen pauses and support-access time the assignment allows; identify automatically triggered background pauses separately rather than silently treating all downtime as exempt. Use an uninterrupted primary timing demonstration.
+
+Existing design assumptions were 10 seconds instructions/start + 60 pacing + 8 completion/finish = 78 seconds for breathing, and 6 instructions + 75 private noticing + 4 transitions + 5 completion = 90 seconds for grounding. Grounding has no slack at that budget. Re-measure the integrated implementation and revise the intended budget/copy/ordinary delays when evidence requires it, without altering the skill steps or forcing a user to finish.
+
+Use a documented fictional intended-pace script with explicit reading/decision waits. Report the actual observed result and its limits: scripted timing is not measured natural human usability or clinical effectiveness. Do not claim <=90 seconds if the measured sequence exceeds it or key intervals were excluded improperly. Never force exit at a deadline.
+
+12. MAKE SUPPORT INDEPENDENT OF EVERY REMOTE FAILURE
+
+The essential support control, no-monitoring notice and region-labeled resource information must be locally available in the frontend, not fetched only after a model/API/database request. Re-check official resource destinations at execution time using the available required hotline lookup before supplying helpline details and authoritative sources for verification. Do not invent emergency numbers, local services or worldwide coverage.
+
+The current no-free-text/no-crisis-classifier decision remains explicit. Faces do not assess suicide risk; the app cannot establish absence of crisis from their answers. An explicit support action always works and does not depend on a model response, face color or refusal count.
+
+Verify support from entry, check-in, ready, both exercises, stopped/completed, history, overlays, loading and error states. Test provider timeout/rejection, malformed output, API unavailability and SQLite write/read failure. The control must stay visible/reachable during mobile scrolling and keyboard navigation. Support opening must pause active pacing appropriately, trap/return focus predictably, and leave Stop/exit possible when returning. Do not activate a real call/text/chat while testing.
+
+No production crisis intervention, monitoring, classifier, clinical care or live deployment. Use fictional scenarios only; never recruit or test a person in actual distress. A public source repository is coursework publication, not a hosted support service.
+
+13. ANALYZE REQUIREMENTS AS TRADEOFFS, NOT A FEATURE LIST
+
+For the important implementation decisions, retain a compact finding → decision → alternative/cost → actual check → limitation record. Connect to the supplied R/D findings:
+  R1: short complete sequence and honest measurement, not just a 60-second timer.
+  R2/D4: persistent application-controlled support through failures.
+  R3/R4: reliable exit, current choice/refusal and stale-response protection.
+  D1/D2: simpler one-task screens without a reliable distress detector.
+  D3: structured turns/private noticing reduce disclosure but still impose effort.
+  D5: useful saved history and explicit preferences add storage/consent burden.
+  D6: quiet decoration, stable controls, restrained wording and neutral ending.
+
+The supplied study involved 15 patients, 13 clinicians, 15 prototype evaluations and 150 participant-task combinations. Its mention counts are not clinical effect sizes and it is distinct from the 2020 JMIR study. Preserve the external-source ledger's access, licensing and inference limits. None validates this matching policy. Do not reproduce protected STAI items, import conversation datasets or install mental-health research models merely because references exist.
+
+Explain any change from Part 3.1 using concrete implementation or verification evidence. Preserve useful design choices rather than mechanically treating every old line as immutable current behavior. Do not use a polished appearance as proof of correct persistence, safe model integration or clinical benefit.
+
+14. VERIFY THE RUNNING SYSTEM WITH DIRECT EVIDENCE
+
+Use routine mocks and isolated test databases for repeatable checks. Retain existing meaningful routing/clock tests and add targeted tests for new domain/API/persistence/provider boundaries; avoid cosmetic tests that only mirror implementation. Check frontend/backend policy parity and version handling if both implement matching. Keep real model checks separately labeled and budgeted.
+
+At minimum, obtain evidence for these distinct claims:
+
+A. Integrated success: create a fresh fictional session in the actual Vue interface, answer/skip the intended questions, receive an explainable result, deliberately start a skill, finish it, and inspect its saved history.
+
+B. Real model contribution: show one actual authorized runtime provider result in the interface, relevant turn context and persisted validated provenance. Record the actual provider/model and attempt count. Mock evidence must not be relabeled live.
+
+C. Persistence: inspect SQLite schema and relevant rows using SQL, showing actual session/turn/result/model/lifecycle relationships. Reload the frontend and restart the backend; previously confirmed records must still be returned from SQLite. An in-memory array or browser localStorage is not SQLite persistence.
+
+D. User control: verify direct entry, body/present-focus suggestions, preference override, neither, skipped/missing answers, Back corrections and alternatives. Verify exit during pending advancement/request cannot be overridden by a callback. Verify rapid/held activation does not traverse subsequent questions/senses.
+
+E. Failure independence: inject and observe a provider timeout/error, invalid/empty output and a late response; Start/Stop/support still work and stale output cannot change the active state. Fault injection must be identified as such, not described as a surprising real outage.
+
+F. Persistence failure: observe at least one controlled API/SQLite save failure and the honest unsaved behavior. Verify no fabricated completion/history. A later retry must not duplicate or reorder the committed logical action.
+
+G. Leaving/interruption: explicitly stop a partly completed exercise and inspect status. Verify refresh/restart cannot manufacture completion; document abrupt-close limitations without pretending an unload event is guaranteed.
+
+H. Measured duration: capture the actual complete primary sequence under the documented intended-pace assumptions, with entry/check-in separated and exclusions itemized. Keep the numerical result and the event evidence together.
+
+I. Integrated presentation: inspect actual 1440×900 and 1280×800 laptop and 390×844 and 360×800 mobile views. Inspect real short/long/fallback model explanations, loading/error/unsaved states, history, support focus, answer targets, overflow, contrast, reduced motion and low/mid/full balloon states. Do not reuse Part 3.1 screenshots as proof of new backend/model integration. State simulated dimensions versus actual hardware honestly.
+
+J. Backgrounding and reproducibility limits: try to observe real visibility/return behavior using supported tools. If the browser tools cannot trigger document.hidden, retain that explicit limit; synthetic clock tests do not establish actual background behavior. Respect browser policy and do not bypass a blocked file/protocol action. Localhost testing is the normal running-stack path; direct-file execution of the old HTML export is not a new Part 3.2 requirement.
+
+Inspect results before changing code. AutoLoop may make the smallest in-scope correction for an observed failure and retry up to five correction cycles per check. Record the actual failure, evidence, correction and retest; never manufacture a failure for the log. A plain SmokeTest observes without edits unless explicitly designated an AutoLoop smoke test. If a check remains failed after its bounded corrections, report it and its impact rather than hiding it or resetting history.
+
+Use actual supported browser/screenshot/database tools. A build passing is not visual proof. Do not install an unrelated automation stack or imply that a browser capability exists when it does not. If tool/authentication limitations prevent a required observation, say exactly which claim remains unverified and continue useful independent work.
+
+15. KEEP THE PACKAGE SMALL, HONEST AND REVIEWABLE
+
+Reuse existing documentation where appropriate. Suggested new/updated artifacts:
+
+  README.md: correct "peace" pronunciation, exact current localhost setup/run/test commands, actual versions/configuration, mock/live selection, persistence location, reset/clear policy, known limits and artifact index.
+  AGENTS.md: active Part 3.2 scope and protected boundaries, only after explicit invocation.
+  backend/: actual small FastAPI implementation, schema/migration/repository/model adapter and targeted tests.
+  docs/part-3.2-implementation.md: concise architecture, API/data/state contracts, actual changes/tradeoffs from Part 3.1 and unresolved items.
+  docs/part-3.2-verification.md: expected versus observed integrated checks, actual commands/environment, mock/live distinction, timing calculation, SQL inspection and browser limits.
+  docs/evidence/3.2/: curated redacted screenshots, measured timing events/results and fictional SQL exports sufficient to substantiate claims. Keep raw debug material ignored.
+  docs/evidence-log.md: selected prompt/change/check/decision entries and actual revised approach, preserving historical entries.
+  AI-USE.md: actual tools/models/versions and roles, including what was mocked, generated, manually inspected and still unknown. Never invent model identifiers or student review.
+  handoffs/current.md: true branch/commits, completed/unfinished items, run state, real checks and an explicit Part 3.2 STOP.
+  submissions/3.2/report.md: the single instructor-facing upload file.
+
+Do not overwrite submissions/3.1 or rewrite its frozen evidence to make the new pronunciation/history look retrospective. Do not duplicate a mountain of documents or add a blanket final-evaluation report. Add only material that helps a reviewer assess Part 3.2.
+
+Runtime databases and credentials must remain ignored even when the entries are fictional. Publish schema/fixtures and redacted textual query output instead. Remove private browser/account details, personal check-ins, secret values, sensitive provider logs, research-participant material and third-party conversation content from public evidence.
+
+16. SOURCE, REPORT AND SUBMISSION CONTRACT
+
+Before publishing, inspect the actual diff and safe contents, verify the authenticated account/current remote, and ensure all changes belong to this project. Do not create a replacement repository or repoint the previous project's remote. Standing authorization covers scoped dependencies, project edits, verification, commits and public source changes within this project; it does not remove external authentication, paid-use or platform barriers.
+
+Commit verified implementation/evidence first. Obtain its actual immutable SHA. Then write the Part 3.2 report referencing that SHA and commit the report packaging afterward. Do not solve self-referential commit references by rewriting history or inventing a hash. If using a feature branch, merge only the reviewed in-scope work and verify main after the merge. Verify successful push and local/remote main agreement before claiming source publication succeeded.
+
+The final report should be concise enough to review and sufficiently analytical to substantiate:
+  - Repository URL and actual submitted source commit.
+  - Part 3.2 requirement → implementation → evidence map.
+  - What can actually be completed through the running interface.
+  - The real model's contribution/context, limits, actual model ID and mock/live evidence distinction.
+  - Actual persisted conversation/session/history behavior and SQL evidence.
+  - Measured complete exercise duration and stated response/exclusion assumptions.
+  - Independent support and request-failure/leave behavior.
+  - Important R/D reasoning, implementation tradeoffs and changes from Part 3.1.
+  - Actual verification results, a real revision and unresolved limitations.
+  - Accessible links to AI disclosure, design, screenshots and other milestone-relevant evidence.
+
+Use absolute public URLs pinned to the submitted commit; a downloaded report must not depend on files alongside it or a private localhost URL. Verify the linked paths at that commit and, where feasible, anonymous public accessibility. A source/prototype download is not a deployed support service. Do not add a recording link unless a real recording exists.
+
+Do not claim a guaranteed 100%, student personal review, instructor approval of structured turns, unobserved live model use, confirmed saves without evidence, actual-device accessibility from viewport simulation, clinical effectiveness, or Part 3.3 completion. If a required live-model, persistence, timing or safety observation is blocked, name the exact unmet criterion and what is needed to complete it.
+
+17. FINAL ACCEPTANCE GATES AND STOP
+
+Do not call Part 3.2 complete until the following are actually supported:
+  [ ] Peyce's current pronunciation is explicitly "peace"; historical Part 3.1 evidence is preserved.
+  [ ] At least one complete chosen skill runs through the real local Vue/FastAPI application.
+  [ ] Relevant structured conversation, session/lifecycle and model-provenance data are genuinely persisted and reviewed through SQLite-backed history.
+  [ ] A genuine authorized model contribution is visible and traceable; mocks/fallbacks are separately labeled.
+  [ ] Provider failure, invalid output, stale responses and leaving cannot override choice, Stop, timing, saved state or support.
+  [ ] Complete intended-pace duration is actually measured at <=90 seconds with honest assumptions and exclusions; entry/check-in is separate.
+  [ ] Support is locally available throughout, independent of provider/API/database failures.
+  [ ] Actual browser and SQL inspection evidence substantiates the claims; new laptop/mobile/error states have been inspected and refined.
+  [ ] Privacy-safe source/evidence, useful run instructions, AI disclosure and one report.md are ready, with real commits and accessible links.
+  [ ] Previous project and Part 3.1 submission/history remain intact; no support service is deployed and Part 3.3 has not begun.
+
+Finish with a short, self-contained account of actual run instructions, observed checks, submitted source/report commits, repository URL and the single submissions/3.2/report.md upload file. Separate any exact blockers from completed work. Leave Canvas submission and student personal review to the human. Stop the owned temporary verification services when appropriate and explain how to restart them; do not stop unrelated processes.
+
+STOP AFTER PART 3.2. Await separate authorization before Part 3.3 or any other expansion.

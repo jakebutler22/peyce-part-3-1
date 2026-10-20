@@ -1,0 +1,85 @@
+{
+  "observed_at_utc": "2026-10-20T19:41:32.189861+00:00",
+  "surface": "Codex in-app browser, browser 3 / tab 5, localhost Vue/FastAPI",
+  "primary_viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "checks": [
+    {
+      "id": "root-01",
+      "expectation": "Complete chosen skill through actual saved Vue flow",
+      "observed": "Saved five fictional answers [2,0,0,0,0], received body-cue, deliberately started breathing, saw six cycles complete, clicked Finish, opened SQL-backed history and detail.",
+      "result": "pass",
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "evidence": [
+        "primary-session.json",
+        "primary-timing.json"
+      ]
+    },
+    {
+      "id": "root-02",
+      "expectation": "Count first instructions through closing Finish",
+      "observed": "Raw and counted duration 88.1449 s, no excluded intervals; entry 10.3218 s separate; completion to Finish 16.8338 s retained, including browser-tool overhead.",
+      "result": "pass",
+      "limitation": "Scripted waits; no natural human or clinical timing claim."
+    },
+    {
+      "id": "root-03",
+      "expectation": "A genuine live model contribution",
+      "observed": "Configured exact zero-price model; attempt 1 fallback-provider, attempt 2 HTTP 401/code 401. No validated live wording. Returned mock after attempt 2.",
+      "result": "unmet",
+      "evidence": [
+        "live-attempts.json",
+        "laptop-ready-provider-fallback.jpg"
+      ]
+    },
+    {
+      "id": "root-04",
+      "expectation": "Provider failure cannot block exercise/support",
+      "observed": "Started grounding from actual provider-fallback ready view; support opened during sense 1 and paused practice; Escape returned focus, Resume deliberately restored; Next reached sense 2; Stop\u2192Finish retained stopped.",
+      "result": "pass"
+    },
+    {
+      "id": "root-05",
+      "expectation": "Support traps and returns keyboard focus",
+      "observed": "From Close button Shift+Tab wrapped to Return button, Tab wrapped to Close; Escape returned to Crisis support and left practice paused. No external resource activated.",
+      "result": "pass"
+    },
+    {
+      "id": "root-06",
+      "expectation": "Leaving during pending face advancement prevents stale navigation",
+      "observed": "Clicked “Hard right now” then Peyce home before the 360 ms callback; after 1 s home remained.",
+      "result": "pass"
+    },
+    {
+      "id": "root-07",
+      "expectation": "Rapid face activation advances once; Back restores actual selection",
+      "observed": "Double-clicking “Hard right now” advanced only to question 2. Back showed question 1 with “Hard right now” selected; changed it to “Easy”.",
+      "result": "pass",
+      "limitation": "Physical held-keyrepeat not simulated by this observation."
+    },
+    {
+      "id": "root-08",
+      "expectation": "Unknown/refusal/directchoice semantics remain usercontrolled",
+      "observed": "After the Back correction, skipped thought/present and declined both preferences; the choice view offered primary Finish and explicit voluntary exploration. Deliberate Breathing override became Your choice; the alternative became Grounding.",
+      "result": "pass",
+      "evidence": [
+        "neither-choice.jpg"
+      ]
+    },
+    {
+      "id": "root-09",
+      "expectation": "Skipall discards abandoned result",
+      "observed": "Skip all from a new introduction opened Room to choose, with No check-in needed and no fabricated suggestion.",
+      "result": "pass"
+    },
+    {
+      "id": "root-10",
+      "expectation": "Useful history with honest timing/provenance",
+      "observed": "Initial detail repeated all revision turns; inspected and refined it to show current turns once with collapsed historical revisions. Subsequent viewport review records the actual revised state.",
+      "result": "corrected",
+      "correction_cycles": 1
+    }
+  ]
+}

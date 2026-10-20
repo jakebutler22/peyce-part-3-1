@@ -6,7 +6,11 @@ dist/
 .venv/
 __pycache__/
 *.db
+*.db-journal
+*.db-wal
+*.db-shm
 *.sqlite*
+.pytest_cache/
 .DS_Store
 .runtime/
 .verification/

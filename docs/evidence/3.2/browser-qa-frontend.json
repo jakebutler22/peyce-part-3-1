@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-20",
+  "product": "Peyce, pronounced peace (/piːs/)",
+  "surface": "Dedicated Chrome extension-controlled tab 1190310369; viewport overrides are simulated CSS dimensions, not physical devices.",
+  "url": "http://127.0.0.1:5181/?verify=1",
+  "backend": "FastAPI on127.0.0.1:8012, deterministic mock mode with controlled test faults enabled; no live calls in this QA.",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 360,
+      "height": 800
+    }
+  ],
+  "observations": [
+    {
+      "check": "home-1440x900",
+      "observed": "Explicit peace pronunciation; unchecked save control; both entry actions and local support visible in viewport."
+    },
+    {
+      "check": "home-1280x800-and-390x844",
+      "observed": "Laptop main controls fit; mobile reflows to single column with full-width entry actions and sticky support. No horizontal overflow. Screenshot taken again after responsive paint."
+    },
+    {
+      "check": "mobile-ready-checkin-support",
+      "observed": "360px questions have 316.8×82px answer buttons. Ready Start at y644 after context-grounded mock acknowledgment. Crisis support remains in sticky header after scrolling and opens local modal with no API gate."
+    },
+    {
+      "check": "minimal-motion-and-background-attempt",
+      "observed": "Balloon transform stayed matrix(0.85,0,0,0.85,0,0) across inhale/exhale while progress advanced. Opening another real Chrome tab did not change document.hidden (false), so genuine background pause remains unverified."
+    },
+    {
+      "check": "refined-history-mobile",
+      "observed": "SQLite-backed stopped record has10 current Q/A turns once, accurate raw31.6s/excluded9.4s/counted22.1s, with12 earlier snapshots collapsed by default. Expanded earlier revision3 exposes original Q/A; no horizontal overflow."
+    },
+    {
+      "check": "clear-confirmation",
+      "observed": "Clear history reveals explicit two-step confirmation; Keep history returns without deleting records. No irreversible deletion performed."
+    },
+    {
+      "check": "rendered-color-contrast",
+      "observed": "Computed foreground/background contrast on white: muted text6.12:1, rose labels5.91:1, primary white-on-rose5.91:1, dark text14.86:1. This is a targeted color check, not a complete accessibility audit."
+    },
+    {
+      "check": "initial-database-failure-and-retry",
+      "observed": "Fault enabled before initial revision1: entry, ready,Start,support,Stop usable; footer never claimed saved. Clearing fault and Retry saving acknowledged saved after stopped snapshot, exercising queued revision1 bootstrap recovery."
+    },
+    {
+      "check": "database-read-failure",
+      "observed": "Controlled database read failure displayed honest history-unavailable message; local support opened. Clearing fault and Try again restored real saved rows."
+    },
+    {
+      "check": "invalid-output-browser",
+      "observed": "Injected invalid output retained approved direct-choice explanation with Local fallback label. Start,support,Stop andFinish stayed usable; invalid prose never displayed."
+    },
+    {
+      "check": "provider-timeout-browser",
+      "observed": "Actual controlled timeout showed Optional wording loading with enabled Start, then Local fallback without blocking choice. Chrome screenshot intermittently omitted sticky header despite visible DOM/working action; scrolling forced repaint and final fallback screenshot shows header."
+    },
+    {
+      "check": "provider-error-browser",
+      "observed": "Injected provider error retained Local fallback, Start enabled, and local support opened successfully."
+    },
+    {
+      "check": "late-response-browser",
+      "observed": "Waited for Optional wording loading, then immediately activated Start within the same supported CUA batch. After late delay, screen remained breathing with live phase/progress; no explanation area, focus move, skill change or navigation occurred."
+    },
+    {
+      "check": "actual-balloon-states",
+      "observed": "Inspected low/mid/near-full forms using actual Start,Pause,Resume controls; targeted 2.0s and1.7s waits sampled the running clock, not a synthetic clock/state injection.",
+      "samples": [
+        {
+          "state": "low",
+          "progress": "0.475833%",
+          "transform": "scale(0.624757, 0.723505)"
+        },
+        {
+          "state": "mid",
+          "progress": "4.29817%",
+          "transform": "scale(0.893441, 0.921483)"
+        },
+        {
+          "state": "near-full",
+          "progress": "7.6205%",
+          "transform": "scale(0.991533, 0.993761)"
+        }
+      ]
+    },
+    {
+      "check": "short-long-ready-layout",
+      "observed": "Actual direct-choice short wording and151-character thought/grounding acknowledgment inspected.390px long explanation uses reserved112px area with Start at y479;1280×800 grounding/breathing ready controls fit without horizontal overflow."
+    },
+    {
+      "check": "autoloop-grounding-decoration-cycle1",
+      "failure": "At1280×800 decorative54321wrapped4+1 andcaptionbeside1.",
+      "correction": "CSSfivecolumngridkeepsallfiveinline,captionspansfullrow.",
+      "observed": "Actual1280retestshowsallfiveatthesametopwithcaptionbelow;buildpasses."
+    }
+  ],
+  "artifacts": [
+    "new-1280-breathing-ready-short.jpg",
+    "new-1280-grounding-ready-refined.jpg",
+    "new-1280-grounding-ready.jpg",
+    "new-1280-home.jpg",
+    "new-1440-balloon-full.jpg",
+    "new-1440-balloon-low.jpg",
+    "new-1440-balloon-mid.jpg",
+    "new-1440-history-read-failure.jpg",
+    "new-1440-home.jpg",
+    "new-1440-invalid-fallback.jpg",
+    "new-1440-late-response-practice.jpg",
+    "new-1440-session-detail.jpg",
+    "new-1440-timeout-fallback.jpg",
+    "new-1440-timeout-loading.jpg",
+    "new-1440-unsaved-ready.jpg",
+    "new-360-checkin.jpg",
+    "new-360-earlier-revision.jpg",
+    "new-360-history.jpg",
+    "new-360-home.jpg",
+    "new-360-minimal-motion.jpg",
+    "new-360-ready-mock.jpg",
+    "new-360-session-detail.jpg",
+    "new-360-support.jpg",
+    "new-390-home.jpg",
+    "new-390-ready-long-mock.jpg"
+  ],
+  "limits": [
+    "Opening a second real Chrome tab left document.hidden=false; real background pause not established.",
+    "No physical mobile device, screen-reader run, or clinical/natural-user evaluation.",
+    "API outage with backend stopped was reserved for root agent; controlled database/model failures are injection, not accidental outages.",
+    "Primary uninterrupted timing belongs to root evidence; this QA stopped/paused fictional exercises and does not replace that timing result.",
+    "Chrome screenshots occasionally needed an additional paint/scroll after viewport or navigation; evidence was recaptured or reviewed from saved full-page images."
+  ]
+}

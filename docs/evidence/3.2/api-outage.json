@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-10-20T19:44:03.245016+00:00",
+  "method": "Deliberately stopped only the owned FastAPI process PID98621. Vue history showed actual unavailable state; local support opened, then unsaved direct breathing Start/Stop/Finish worked. Restarted normal mock FastAPI without test controls and checked durable records.",
+  "actual_outage": true,
+  "history_error_text": "Past sessions could not be loaded. Support and new exercises are still available.",
+  "support_opened_without_api": true,
+  "unsaved_direct_start_stop_finish_without_api": true,
+  "restored_status": {
+    "mode": "mock",
+    "model_id": "peyce-mock-1.0",
+    "live_configured": false,
+    "test_controls": false,
+    "question_version": "peyce-original-1.0",
+    "policy_version": "peyce-routing-1.0",
+    "live_attempts": 2,
+    "live_max_attempts": 10
+  },
+  "primary_after_restart": {
+    "id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+    "status": "finished",
+    "revision": 11,
+    "timing": {
+      "counted_ms": 88144.89999997616,
+      "entry_ms": 10321.800000011921,
+      "excluded_intervals": [],
+      "excluded_ms": 0.0,
+      "finish_ms": 98466.69999998808,
+      "instruction_ms": 10321.800000011921,
+      "raw_ms": 88144.89999997616
+    }
+  },
+  "screenshots": [
+    "api-unavailable-history.jpg",
+    "api-unavailable-support.jpg"
+  ],
+  "limitations": "Controlled localhost process outage, not an unplanned provider outage; no external support links were activated."
+}

@@ -1,0 +1,62 @@
+{
+  "method": "Read-only SQLite SELECT after the browser deliberately selected local developer faults. These are injected mock outcomes, not genuine provider outages. The late result is retained obsolete and never displayed over practice.",
+  "query": "SELECT e.request_id,e.session_id,e.revision,e.mode,e.model_id,e.reason_code,e.outcome,e.validation,e.stale,e.created_at,e.updated_at,s.status AS latest_saved_session_status FROM explanations e JOIN sessions s ON s.id=e.session_id WHERE e.mode='mock' AND e.outcome IN ('fallback','obsolete') ORDER BY e.created_at",
+  "rows": [
+    {
+      "request_id": "c101032b-215a-48a7-8fd4-c7b4e0f58644",
+      "session_id": "22be018e-b976-46e4-94c3-a75bdff64ac6",
+      "revision": 2,
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "reason_code": "direct-choice",
+      "outcome": "fallback",
+      "validation": "fallback-invalid",
+      "stale": 0,
+      "created_at": "2026-10-20T19:39:57.456+00:00",
+      "updated_at": "2026-10-20T19:39:57.458+00:00",
+      "latest_saved_session_status": "stopped"
+    },
+    {
+      "request_id": "4ba7a4e4-d317-4069-b33f-63fd7e61cee0",
+      "session_id": "e900873c-c0be-428e-8200-46b3b6f9f66b",
+      "revision": 2,
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "reason_code": "direct-choice",
+      "outcome": "fallback",
+      "validation": "fallback-timeout",
+      "stale": 0,
+      "created_at": "2026-10-20T19:40:17.534+00:00",
+      "updated_at": "2026-10-20T19:40:25.538+00:00",
+      "latest_saved_session_status": "stopped"
+    },
+    {
+      "request_id": "9b5d69a5-aa66-4aac-b4dd-d1145ab85a09",
+      "session_id": "83dd19cf-bd65-4d4a-a159-006dc3e5317f",
+      "revision": 2,
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "reason_code": "direct-choice",
+      "outcome": "fallback",
+      "validation": "fallback-provider",
+      "stale": 0,
+      "created_at": "2026-10-20T19:40:37.902+00:00",
+      "updated_at": "2026-10-20T19:40:37.904+00:00",
+      "latest_saved_session_status": "stopped"
+    },
+    {
+      "request_id": "df27f4af-a83e-4790-ae52-6d30567e70df",
+      "session_id": "f9c8b847-bb1f-43e9-95b8-b929c381b13e",
+      "revision": 2,
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "reason_code": "direct-choice",
+      "outcome": "obsolete",
+      "validation": "validated",
+      "stale": 1,
+      "created_at": "2026-10-20T19:40:46.990+00:00",
+      "updated_at": "2026-10-20T19:40:47.493+00:00",
+      "latest_saved_session_status": "stopped"
+    }
+  ]
+}

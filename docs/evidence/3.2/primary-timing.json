@@ -1,0 +1,63 @@
+{
+  "counted_ms": 88144.89999997616,
+  "entry_ms": 10321.800000011921,
+  "excluded_intervals": [],
+  "excluded_ms": 0.0,
+  "finish_ms": 98466.69999998808,
+  "instruction_ms": 10321.800000011921,
+  "raw_ms": 88144.89999997616,
+  "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+  "script": "Fictional body-cue answers [2,0,0,0,0]; wait 10 seconds after capturing ready; six real pacing cycles; completion observed then wait 8 seconds and click Finish. Browser-tool observation overhead is retained.",
+  "measured_result": "88.1449 seconds counted, no exclusions; 10.3218 seconds entry/check-in separate.",
+  "limitation": "Scripted intended-pace demonstration, not natural-user or clinical evidence. Completion/tool observation overhead produced a 16.8338-second completion-to-Finish span; it remains counted.",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "events": [
+    {
+      "event_id": "d62ec7bf-2f5d-45a7-b012-494600d65321",
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "revision": 8,
+      "kind": "instruction_visible",
+      "at_ms": 10321.900000035763,
+      "active_ms": 0.0,
+      "cause": "user",
+      "created_at": "2026-10-20T19:31:22.331+00:00",
+      "id": "d62ec7bf-2f5d-45a7-b012-494600d65321"
+    },
+    {
+      "event_id": "329a0bee-a5fe-4863-bfe5-7ffe5e8f54f3",
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "revision": 9,
+      "kind": "start",
+      "at_ms": 21617.600000023842,
+      "active_ms": 0.19999998807907104,
+      "cause": "user",
+      "created_at": "2026-10-20T19:31:33.626+00:00",
+      "id": "329a0bee-a5fe-4863-bfe5-7ffe5e8f54f3"
+    },
+    {
+      "event_id": "79f37a28-e17e-4ba8-b569-79a8d079ef63",
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "revision": 10,
+      "kind": "complete",
+      "at_ms": 81632.90000003576,
+      "active_ms": 60000.0,
+      "cause": "clock",
+      "created_at": "2026-10-20T19:32:33.669+00:00",
+      "id": "79f37a28-e17e-4ba8-b569-79a8d079ef63"
+    },
+    {
+      "event_id": "de2f3212-16ab-46d5-9095-a80fd4b29656",
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "revision": 11,
+      "kind": "finish",
+      "at_ms": 98466.69999998808,
+      "active_ms": 60000.0,
+      "cause": "user",
+      "created_at": "2026-10-20T19:32:50.480+00:00",
+      "id": "de2f3212-16ab-46d5-9095-a80fd4b29656"
+    }
+  ]
+}

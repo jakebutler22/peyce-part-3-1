@@ -1,33 +1,72 @@
-# Future backend design only
+# Peyce local Part 3.2 API
 
-Part 3.1 implements no backend. This folder documents an eventual Python/FastAPI and SQLite boundary; it contains no runnable API, database, account system, model call, or deployment configuration. The Vue prototype keeps fictional answers and sessions in memory. Reloading may reset them.
+Peyce is pronounced **peace** (/piːs/). This is a single-user localhost coursework system with fictional data. FastAPI persists opted-in structured conversations and exercise snapshots in SQLite; a separate optional request obtains a bounded model acknowledgment. It has no accounts, clinical readiness, public deployment, production security or support-service function. Archived Part 3.1 artifacts remain separate.
 
-## Proposed structure, not implemented paths
+## CHECK: environment and commands
 
-```text
-backend/
-  app/
-    main.py                     # future FastAPI composition root
-    schemas/session.py          # validated session and structured-turn contracts
-    schemas/explanation.py      # bounded explanation input/output
-    controllers/session.py      # consent, lifecycle, explicit choices
-    services/matching.py        # versioned deterministic rule service
-    services/explanations.py    # one bounded call, validation, canned fallback
-    repositories/sessions.py    # minimal SQLite persistence boundary
-    content/skills.json         # reviewed immutable exercise copy and versions
-  tests/                        # future API/privacy/contract tests
+The implementation used Python **3.14.7** and an isolated `backend/.venv`. The planned installation was `python3 -m venv backend/.venv` followed by that interpreter's `pip install fastapi uvicorn httpx pytest`, then `pip install python-dotenv` for explicit server-only `.env` loading. Installed and verified: FastAPI **0.156.1**, Uvicorn **0.54.0**, Pydantic **2.14.1**, httpx **0.28.1**, pytest **9.1.1**, python-dotenv **1.2.4**. `requirements.txt` pins the complete resolved environment. The native `sqlite3` module supplies parameterized SQL and transactions; there is no ORM, SDK or model-weight download.
+
+Run these commands from the project root:
+
+```sh
+python3 -m venv backend/.venv
+backend/.venv/bin/python -m pip install -r backend/requirements.txt
+# First setup only, if backend/.env does not already exist:
+cp backend/.env.example backend/.env
+backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8012
 ```
 
-These comments describe responsibilities, not files that exist. The future server must implement the same approved matching policy as the client and retain the policy version used for each offered result. A model must not select a skill, change timing or instructions, infer a clinical profile, or control support access.
+Start Vue separately using `npm --prefix frontend run dev` at `http://127.0.0.1:5181`. Vite intentionally proxies `/api` to `http://127.0.0.1:8012`; the backend does not grant broad CORS access. Do not bind either server to the LAN. Stop the owned server with Ctrl+C. No server is started by imports or tests except an isolated test lifespan.
 
-## Proposed contracts
+`backend/.env` is loaded explicitly with existing process variables taking precedence. Mock mode is the default and makes no external request. The default SQLite location is the absolute project-local `backend/.runtime/peyce.sqlite3`; the example's relative path assumes the root commands above. Runtime databases/journals, `.env`, dependencies and temporary evidence are ignored by Git. Never overwrite an existing `.env` during setup.
 
-- `POST /sessions`: create a session only after an explicit future persistence/consent decision; return session ID, content version, and rule version.
-- `PUT /sessions/{id}/turns/{index}`: record the exact question version and answer ID or explicit skip, with a sequence/revision. Replacing a turn invalidates the previous offered recommendation.
-- `POST /sessions/{id}/recommendation`: compute the approved rule result first; make at most one small explanation request with a timeout and schema validation. Return the rule result immediately with a scripted fallback whenever model output is unavailable. Client exercise access never waits for a model.
-- `PATCH /sessions/{id}/lifecycle`: record an explicit exercise selection and paused/completed/stopped state. Never convert lack of an event into a clinical conclusion.
-- `GET /sessions`: return only the user’s opted-in history; access, deletion, retention, authentication, encryption, and security policy remain release prerequisites.
+## TAKE ACTION: small integration boundary
 
-Route names are proposals, not callable endpoints. Accounts and security details are deliberately unresolved, not implicitly safe. See [the session/model schema and limits](../docs/design-pipeline.md#future-session-and-conversation-contract).
+- `app/main.py`: thin HTTP composition and safe 409/404/503 errors.
+- `app/schemas.py`: strict answers, statuses, lifecycle and complete-duration arithmetic.
+- `app/domain.py`: exact `peyce-original-1.0` questions and `peyce-routing-1.0` matching parity with Vue; approved phrase grammar.
+- `app/repository.py`: transactions, revision/operation/request identifiers, real history and schema version 1.
+- `app/explanations.py`: bounded asynchronous mock/OpenRouter adapter; it never selects a skill or changes exercise timing/support.
+- `app/config.py`: server-only configuration. No credential is sent to the client or included in status/provenance.
 
-SQLite is the intended eventual store; there is no real database in this submission. No microphone, camera, social-media dataset, diagnostic score, or hidden clinical profile is planned. Future runtime databases, secrets, environments, and dependencies must remain ignored by Git.
+The API and JSON shape are documented in [`../docs/part-3.2-api-contract.md`](../docs/part-3.2-api-contract.md). Saving and explanation are separate endpoints, so provider latency cannot delay the save acknowledgment or Start. The server releases database transactions before waiting for the provider, and checks the same ready revision again afterward. A replayed request never invokes a provider twice. A pending replay can return the approved fallback; a stale replay returns obsolete. The client must also reject obsolete responses when its local navigation generation changes.
+
+`sessions` stores current lifecycle/versions/fictional context/explicit visual choice and the snapshot. `revisions` preserves committed answer/choice/result history. `operations` makes mutation retries idempotent. `turns` stores the exact assistant question and user label/skip only for received turns, with revisions; absent turns remain absent. Validated model acknowledgments are separately sourced assistant turns. `lifecycle` retains unique event IDs without duplicate completion. `explanations` records safe mode/model/prompt/question/policy versions, references, validated phrase selections, displayed text and outcome/validation category; raw provider payloads are not stored. Failure diagnostics retain only an HTTP status, optional integer upstream code, or allowlisted network-error class; provider prose, headers, URLs and exception strings are excluded. Older revision turns and explanations are marked superseded in detail responses. `live_budget` persists the outbound-attempt counter independently of history deletion.
+
+Schema migration uses SQLite `PRAGMA user_version`. Version 0 creates version 1 tables; version 1 is retained; an unknown version fails without resetting data. Transactions and foreign keys preserve relationships. Later versions require an explicit migration. API delete clears only this database's saved sessions and cascading conversation/history rows; it deliberately leaves the outbound-attempt guard intact. Retention is local until the human clears the fictional history. It is not encrypted, authenticated or a multiuser health record.
+
+A restart marks active/paused sessions interrupted and pending explanations obsolete. It never infers completion. Best-effort `/interrupt` accepts only the matching revision and cannot replace completed/stopped/finished states. A hard crash or unload may leave the last confirmed state until restart; it does not establish an exact exit time. Interrupted inference and an explicit Stop have different meanings.
+
+Whole-sequence timing covers the first visible instruction through the final Finish. The server checks raw span and counted/excluded arithmetic, takes the union of allowed explicit user/support intervals, and counts background pauses. Lifecycle records anchor instruction/final offsets. Browser timing is still client evidence, not a secure physiological measurement. Breathing completion requires the recorded six-cycle active duration; finishing early must use Stop rather than claim completion.
+
+## Bounded authorized live option
+
+The human revised the original five-call prompt limit on 2026-10-20: **OpenRouter only, `nvidia/nemotron-3.5-lightning:free` only, $0.00, at most ten outbound attempts including failures, no paid fallback.** Root verification checks current model availability and zero prompt/completion pricing before enabling it. The adapter fails closed for a different model, nonzero pricing/budget, absent approval or credential, unverified pricing, exhausted persistent cap, or provider rejection. A credential alone does not enable paid use.
+
+Configure only `backend/.env` using the commented values in `.env.example`; never paste a credential into chat or frontend code. With the authorized exact free-model configuration present, launch a separate deliberate live run using:
+
+```sh
+PEYCE_MODEL_MODE=openrouter backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8012
+```
+
+`GET /api/status` reports mode, configured model, configuration completeness and persisted attempt count without a key. A genuine live call happens only on an explicit explanation endpoint request after a ready snapshot. There are no automatic retries, model lists or paid fallbacks. Requests use OpenRouter `/api/v1/chat/completions`, exact JSON keys/enums/schema/example in the system prompt, `require_parameters:true`, `allow_fallbacks:false`, maximum provider prompt/completion price zero, at most 5,000 UTF-8 context bytes and 1,000 output tokens. The free request still consumes an attempt if rejected or timed out. Timeout is eight seconds by default (maximum configurable fifteen). Only the exact approved model identity is accepted. No other provider adapter is enabled in this run.
+
+The current exact-model catalog does not advertise `response_format`; sending that parameter with `require_parameters:true` would knowingly reject the request. The adapter omits it and makes no claim of provider-enforced schema output. The application enforces the full approved grammar locally before any display; invalid JSON, prose or extra fields retain fixed fallback. This preserves the construction boundary even if the provider ignores the requested format.
+
+The model receives current structured question/answer-or-skip turns and the approved deterministic result. It chooses an opening/closing phrase ID and eligible current-turn reference IDs. The server rejects extra fields, wrong reason/fragment IDs, irrelevant/skipped references and overlong output before assembling <=240 characters from fixed copy and exact answer labels. Only that constructed text may display. Different selections/references affect the acknowledgment. This is constrained conversation, not counseling; course acceptance of button-led conversation remains unconfirmed. Mock and fallback are always labeled separately from genuine provider evidence.
+
+Official implementation references checked: [OpenRouter API request format](https://openrouter.ai/docs/api_reference/overview) and [structured output and endpoint support](https://openrouter.ai/docs/guides/features/structured-outputs). Provider support can change; a request error retains fixed fallback rather than dropping constraints.
+
+## VERIFY
+
+From the project root:
+
+```sh
+PYTHONPATH=backend backend/.venv/bin/python -m pytest backend/tests -q
+```
+
+Tests use disposable databases and mock mode; even adapter-shape tests replace the HTTP client and never contact a provider. They compare every one of 3,072 answer/direct-choice combinations against the actual Vue policy, exercise bounded grammar and persistent free-call limits, and cover HTTP/SQLite persistence, restart interruption, stale/duplicate requests, invalid output, provider timeout/error, database failures, completion and timing arithmetic. Running tests does not count as real live-model evidence. Starlette currently emits an httpx TestClient deprecation warning; tests pass, but migration to its future httpx2 path is deferred because httpx remains the actual adapter dependency.
+
+Fault injection is off by default. Only when `PEYCE_TEST_CONTROLS=1`, `X-Peyce-Test-Fault` accepts `timeout`, `invalid`, `provider`, `late` for explanation or `database` for history requests. Late is a deliberate test-only delay before bounded mock work; it is not evidence of a real outage. Routine verification must run these with mock mode. When controls are disabled, supplied fault headers return 400. The production-default local interface has no fault UI.
+
+The root [`../docs/part-3.2-verification.md`](../docs/part-3.2-verification.md) records the actual running-browser, SQL, model and duration observations and their remaining limits. Passing API/unit tests alone does not establish visual quality, natural usability, genuine backgrounding or the assignment's live-model criterion.

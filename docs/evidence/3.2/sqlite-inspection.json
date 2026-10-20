@@ -1,0 +1,79 @@
+{
+  "query": "SELECT name, sql FROM sqlite_master WHERE type='table'; SELECT id,status,revision,exercise,question_version,policy_version FROM sessions; SELECT session_id,kind,at_ms,active_ms FROM lifecycle; PRAGMA foreign_key_check;",
+  "schema": [
+    {
+      "name": "sessions",
+      "sql": "CREATE TABLE sessions (\n                  id TEXT PRIMARY KEY, created_at TEXT NOT NULL, updated_at TEXT NOT NULL,\n                  ended_at TEXT, revision INTEGER NOT NULL, status TEXT NOT NULL,\n                  exercise TEXT, color TEXT NOT NULL, color_explicit INTEGER NOT NULL,\n                  schema_version INTEGER NOT NULL DEFAULT 1, question_version TEXT NOT NULL,\n                  policy_version TEXT NOT NULL, content_version TEXT NOT NULL,\n                  context TEXT NOT NULL DEFAULT 'fictional-local-coursework',\n                  snapshot_json TEXT NOT NULL, result_json TEXT NOT NULL)"
+    },
+    {
+      "name": "revisions",
+      "sql": "CREATE TABLE revisions (\n                  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,\n                  revision INTEGER NOT NULL, snapshot_json TEXT NOT NULL,\n                  result_json TEXT NOT NULL, created_at TEXT NOT NULL,\n                  PRIMARY KEY(session_id,revision))"
+    },
+    {
+      "name": "operations",
+      "sql": "CREATE TABLE operations (\n                  operation_id TEXT PRIMARY KEY,\n                  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,\n                  revision INTEGER NOT NULL, kind TEXT NOT NULL, payload_json TEXT NOT NULL,\n                  response_json TEXT NOT NULL)"
+    },
+    {
+      "name": "turns",
+      "sql": "CREATE TABLE turns (\n                  id INTEGER PRIMARY KEY, session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,\n                  revision INTEGER NOT NULL, sequence INTEGER NOT NULL, role TEXT NOT NULL,\n                  question_id TEXT, answer_id INTEGER, skipped INTEGER NOT NULL DEFAULT 0,\n                  text TEXT NOT NULL, question_version TEXT NOT NULL, source TEXT NOT NULL,\n                  created_at TEXT NOT NULL)"
+    },
+    {
+      "name": "lifecycle",
+      "sql": "CREATE TABLE lifecycle (\n                  event_id TEXT PRIMARY KEY, session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,\n                  revision INTEGER NOT NULL, kind TEXT NOT NULL, at_ms REAL NOT NULL,\n                  active_ms REAL NOT NULL, cause TEXT NOT NULL, created_at TEXT NOT NULL)"
+    },
+    {
+      "name": "explanations",
+      "sql": "CREATE TABLE explanations (\n                  request_id TEXT PRIMARY KEY, session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,\n                  revision INTEGER NOT NULL, mode TEXT NOT NULL, model_id TEXT NOT NULL,\n                  prompt_version TEXT NOT NULL, question_version TEXT NOT NULL, policy_version TEXT NOT NULL,\n                  reason_code TEXT NOT NULL, outcome TEXT NOT NULL, validation TEXT NOT NULL,\n                  fragments_json TEXT, references_json TEXT NOT NULL DEFAULT '[]',\n                  text TEXT NOT NULL, stale INTEGER NOT NULL DEFAULT 0,\n                  created_at TEXT NOT NULL, updated_at TEXT NOT NULL, response_json TEXT)"
+    },
+    {
+      "name": "live_budget",
+      "sql": "CREATE TABLE live_budget (\n                  id INTEGER PRIMARY KEY CHECK(id=1), attempts INTEGER NOT NULL,\n                  reserved_usd REAL NOT NULL)"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "6d025e49-c504-4ee1-84d9-0ef0a372f75d",
+      "status": "checkin",
+      "revision": 6,
+      "exercise": null,
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0"
+    },
+    {
+      "id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "status": "finished",
+      "revision": 11,
+      "exercise": "breathing",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0"
+    }
+  ],
+  "foreign_key_check": [],
+  "primary_detail_export": "primary-session.json",
+  "lifecycle": [
+    {
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "kind": "instruction_visible",
+      "at_ms": 10321.900000035763,
+      "active_ms": 0.0
+    },
+    {
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "kind": "start",
+      "at_ms": 21617.600000023842,
+      "active_ms": 0.19999998807907104
+    },
+    {
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "kind": "complete",
+      "at_ms": 81632.90000003576,
+      "active_ms": 60000.0
+    },
+    {
+      "session_id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+      "kind": "finish",
+      "at_ms": 98466.69999998808,
+      "active_ms": 60000.0
+    }
+  ]
+}

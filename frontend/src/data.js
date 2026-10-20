@@ -13,7 +13,3 @@ export const senses = [
   { quantity: 2, sense: 'smell', title: 'Notice two things you can smell.', guidance: 'Notice only what is already safely around you. If nothing comes to mind, you can skip this sense.' },
   { quantity: 1, sense: 'taste', title: 'Notice one thing you can taste.', guidance: 'You might notice a taste already in your mouth. You do not need to eat or drink anything. Skipping is fine.' },
 ];
-export const fictionalSessions = [
-  { date: '12 October · 4:20 pm', exercise: 'Breathing', status: 'Completed', detail: 'Pink balloon · six cycles' },
-  { date: '10 October · 9:05 am', exercise: 'Grounding', status: 'Stopped', detail: 'Ended after noticing sounds' },
-];

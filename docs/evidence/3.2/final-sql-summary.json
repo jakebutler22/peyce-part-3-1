@@ -1,0 +1,76 @@
+{
+  "query": "SELECT status,COUNT(*) AS n FROM sessions GROUP BY status; SELECT outcome,validation,mode,COUNT(*) AS n FROM explanations GROUP BY outcome,validation,mode; SELECT * FROM live_budget; PRAGMA foreign_key_check;",
+  "status_counts": [
+    {
+      "status": "checkin",
+      "n": 1
+    },
+    {
+      "status": "finished",
+      "n": 1
+    },
+    {
+      "status": "interrupted",
+      "n": 1
+    },
+    {
+      "status": "ready",
+      "n": 1
+    },
+    {
+      "status": "stopped",
+      "n": 10
+    }
+  ],
+  "explanation_outcomes": [
+    {
+      "outcome": "fallback",
+      "validation": "fallback-invalid",
+      "mode": "mock",
+      "n": 1
+    },
+    {
+      "outcome": "fallback",
+      "validation": "fallback-provider",
+      "mode": "mock",
+      "n": 1
+    },
+    {
+      "outcome": "fallback",
+      "validation": "fallback-provider",
+      "mode": "openrouter",
+      "n": 1
+    },
+    {
+      "outcome": "fallback",
+      "validation": "fallback-provider-http-401-code-401",
+      "mode": "openrouter",
+      "n": 1
+    },
+    {
+      "outcome": "fallback",
+      "validation": "fallback-timeout",
+      "mode": "mock",
+      "n": 1
+    },
+    {
+      "outcome": "obsolete",
+      "validation": "validated",
+      "mode": "mock",
+      "n": 1
+    },
+    {
+      "outcome": "validated",
+      "validation": "validated",
+      "mode": "mock",
+      "n": 7
+    }
+  ],
+  "live_budget": {
+    "id": 1,
+    "attempts": 2,
+    "reserved_usd": 0.0
+  },
+  "foreign_key_check": [],
+  "schema_reference": "sqlite-inspection.json"
+}

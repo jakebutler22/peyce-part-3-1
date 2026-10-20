@@ -1,0 +1,44 @@
+{
+  "checked_at_utc": "2026-10-20T19:47:33.713031+00:00",
+  "backend": {
+    "command": "PYTHONPATH=backend backend/.venv/bin/python -m pytest backend/tests -q",
+    "passed": 47,
+    "failed": 0,
+    "warning": "One Starlette httpx TestClient deprecation warning; no application test failed."
+  },
+  "frontend": {
+    "command": "npm --prefix frontend run verify",
+    "tests_passed": 40,
+    "failed": 0,
+    "production_build": "passed"
+  },
+  "live_attempts_after_routine_tests": 2,
+  "owned_loopback_ports_closed": {
+    "5181": true,
+    "8012": true
+  },
+  "checked_source_sha256": {
+    "backend/app/__init__.py": "75560330dd27e1bda84e5008a79085130c9ba26a0dfb28fcf264011fb0cb6ccb",
+    "backend/app/config.py": "aef9f41f2afb4962680b57b5864a989f6eed218c7834916ddade59568eb3f02f",
+    "backend/app/domain.py": "588cf5b14a70c38aca6ed0191567d5d8d62eca63cf4323405528a38dcc04217a",
+    "backend/app/explanations.py": "a13aaabf98c599a036b9e8b7dfd71755a2f55fab95e616b36b807b7e4515430b",
+    "backend/app/main.py": "33398036ff88c31441b557e7eb7d365992626667ef9abadc3ff8b38d65f9fb07",
+    "backend/app/repository.py": "6a6a260841edc59d3ca777c120258c98620f130881ba5be300936a8654bb8007",
+    "backend/app/schemas.py": "7b60bbb8e12b89cfc671838d47b60785e227146d2952431159d10765ec6dbfca",
+    "backend/requirements.txt": "8fcf9dfb3977e92ddebcc3ee45dccc0c7b90fb7fc33cbc170abfd13d373639dd",
+    "frontend/package-lock.json": "4b7820458f487ddff3ef9323c66a73f0794d78e0f53b33e025781050bdebcebc",
+    "frontend/src/App.vue": "6168dac67ee0940b023581fa213eb0b8389f9d9d45a7df430ffb8609b7d593c6",
+    "frontend/src/api.js": "9c4531e1f5fa4687ff3fd44b0d1f1ae2b8052cfa7b6dac752e461dcd6769fbee",
+    "frontend/src/assets.js": "df4eab9912b4de729cf2580824de18fedef7f6dcf6c1f7265064571c558a4252",
+    "frontend/src/clock.js": "0519ffc0615a27a98d964cd4d6e3cb2b19ce7b1f7516a27822ee887d5628a16f",
+    "frontend/src/components/BalloonPacer.vue": "43355db248c847b53b3c84282c3776247ce291114c8ae4f1d8e731310d5ec19b",
+    "frontend/src/components/DecorativeObject.vue": "2e96427a06935523f1986a80d7dc546dd54465728db57d68af26334f279b9a11",
+    "frontend/src/components/FaceOption.vue": "e6a677fe510569ba8c1c8a1a0c53f286bf36e8c982e622374a7d62545a236d9e",
+    "frontend/src/data.js": "aef64d5048cce32d39928ba7a809b9fa2925461b5e1257bdebcbdc6ca563a2e6",
+    "frontend/src/main.js": "4f28b634f509f112d7c3fa22fd11a5611bd9b47ebc0553b770a468d09952bfd6",
+    "frontend/src/matching.js": "653b9935e9284e4b085647e9f5a538e5cca7530f50bd1599e369cae05a1e6154",
+    "frontend/src/sequence.js": "24343010d134e34d99c377f5838553ab7505530a9e05de6acd7f57096831193d",
+    "frontend/src/style.css": "dfd8f0caf4356e14c0a1e2a22235068e7e814befbe2c640f363a08006a7bd179",
+    "frontend/src/usePrototype.js": "33399fe7488e2c74bfc209ebe4a51d39517af8d8ed9ff1c1c254e2781f6dab3e"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "method": "Actual Vue Start with save enabled, SQL/API active confirmation, actual in-app browser reload, then Vue Past sessions showed Interrupted. Backend had already been stopped/restarted three times after primary Finish; primary read below confirms durable unchanged timing.",
+  "session_id": "92b3d239-397e-4976-a314-14cfe4e28a44",
+  "before": {
+    "status": "active",
+    "revision": 3,
+    "events": [
+      {
+        "event_id": "f3d4d288-3492-4b32-85a1-cccae5939073",
+        "session_id": "92b3d239-397e-4976-a314-14cfe4e28a44",
+        "revision": 2,
+        "kind": "instruction_visible",
+        "at_ms": 431.69999998807907,
+        "active_ms": 0.0,
+        "cause": "user",
+        "created_at": "2026-10-20T19:42:27.686+00:00",
+        "id": "f3d4d288-3492-4b32-85a1-cccae5939073"
+      },
+      {
+        "event_id": "c5a0d221-59b6-4c25-9762-ff9bf1946b61",
+        "session_id": "92b3d239-397e-4976-a314-14cfe4e28a44",
+        "revision": 3,
+        "kind": "start",
+        "at_ms": 749.5,
+        "active_ms": 0.0,
+        "cause": "user",
+        "created_at": "2026-10-20T19:42:28.006+00:00",
+        "id": "c5a0d221-59b6-4c25-9762-ff9bf1946b61"
+      }
+    ]
+  },
+  "after_reload": {
+    "status": "interrupted",
+    "revision": 4,
+    "events": [
+      {
+        "event_id": "f3d4d288-3492-4b32-85a1-cccae5939073",
+        "session_id": "92b3d239-397e-4976-a314-14cfe4e28a44",
+        "revision": 2,
+        "kind": "instruction_visible",
+        "at_ms": 431.69999998807907,
+        "active_ms": 0.0,
+        "cause": "user",
+        "created_at": "2026-10-20T19:42:27.686+00:00",
+        "id": "f3d4d288-3492-4b32-85a1-cccae5939073"
+      },
+      {
+        "event_id": "c5a0d221-59b6-4c25-9762-ff9bf1946b61",
+        "session_id": "92b3d239-397e-4976-a314-14cfe4e28a44",
+        "revision": 3,
+        "kind": "start",
+        "at_ms": 749.5,
+        "active_ms": 0.0,
+        "cause": "user",
+        "created_at": "2026-10-20T19:42:28.006+00:00",
+        "id": "c5a0d221-59b6-4c25-9762-ff9bf1946b61"
+      },
+      {
+        "event_id": "87175d6f-b5c2-4831-b1bd-c2dcb9705574",
+        "session_id": "92b3d239-397e-4976-a314-14cfe4e28a44",
+        "revision": 4,
+        "kind": "background_pause",
+        "at_ms": 7327.800000011921,
+        "active_ms": 6578.300000011921,
+        "cause": "background",
+        "created_at": "2026-10-20T19:42:34.582+00:00",
+        "id": "87175d6f-b5c2-4831-b1bd-c2dcb9705574"
+      }
+    ],
+    "timing": null
+  },
+  "primary_after_real_process_restarts": {
+    "id": "ab0e40de-ad4d-4beb-a31f-93fa26a0d0a0",
+    "status": "finished",
+    "revision": 11,
+    "timing": {
+      "counted_ms": 88144.89999997616,
+      "entry_ms": 10321.800000011921,
+      "excluded_intervals": [],
+      "excluded_ms": 0.0,
+      "finish_ms": 98466.69999998808,
+      "instruction_ms": 10321.800000011921,
+      "raw_ms": 88144.89999997616
+    }
+  },
+  "limitations": "This observed reload succeeded through best-effort pagehide/recovery; it does not guarantee abrupt-close delivery. No completed event was inferred.",
+  "sql_query": "SELECT id,status,revision,exercise FROM sessions WHERE id=?; SELECT kind,at_ms,active_ms FROM lifecycle WHERE session_id=? ORDER BY at_ms;",
+  "sql_after_reload": {
+    "session": {
+      "id": "92b3d239-397e-4976-a314-14cfe4e28a44",
+      "status": "interrupted",
+      "revision": 4,
+      "exercise": "breathing"
+    },
+    "lifecycle": [
+      {
+        "kind": "instruction_visible",
+        "at_ms": 431.69999998807907,
+        "active_ms": 0.0
+      },
+      {
+        "kind": "start",
+        "at_ms": 749.5,
+        "active_ms": 0.0
+      },
+      {
+        "kind": "background_pause",
+        "at_ms": 7327.800000011921,
+        "active_ms": 6578.300000011921
+      }
+    ]
+  }
+}
