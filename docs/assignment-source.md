@@ -1,5 +1,7 @@
 # Assignment source and provenance
 
+> Historical Part 3.1 record (October 13, 2026). Pronunciation, in-memory behavior and future-work language below describe that archived milestone. Current **Peyce is pronounced peace (/piːs/)**; see the [Part 3.2 implementation](part-3.2-implementation.md) and [verification](part-3.2-verification.md) for the running application and current limits. Archived submission files remain unchanged.
+
 Peyce (“pace”) Part 3.1 is a research/design submission with a clickable design prototype. The controlling user request stops at Part 3.1, protects the previous project, permits scoped dependencies and source publication, and prohibits deployment of a support service.
 
 The full supplied master prompt is archived in [prompts/01-peyce-3.1.md](../prompts/01-peyce-3.1.md). The new repository’s [AGENTS.md](../AGENTS.md) records the supplied working rules. The prompt says the instructor overview originally arrived as five screenshots in a planning conversation; those original research screenshots were not available during the first design pass. On 2026-10-13, the user additionally supplied the full assignment overview as pasted text and a screenshot of the Part 3.1 submission page. Both were read for submission preparation. The pasted overview refers to an R/D table but does not include the table itself; its mention counts below still come from the earlier supplied summary. Canvas was not accessed. Private course/account screenshots and the original course attachment are not publication artifacts.

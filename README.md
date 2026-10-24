@@ -37,7 +37,7 @@ npm --prefix frontend test
 npm --prefix frontend run build
 ```
 
-The independent recorded run passed **47 backend tests**, **40 frontend tests**, and the build. Actual browser checks covered four simulated viewports, SQLite history, injected provider/database faults, real reload/restart and a stopped-backend outage; local support and unsaved practice remained available. The primary breathing sequence measured **88.1449 seconds** from first instructions through closing Finish, with **zero exclusions**; entry/check-in was a separate **10.3218 seconds**. This scripted result includes tool/decision overhead and is not natural-human timing or clinical evidence. See the [event/timing export](docs/evidence/3.2/primary-timing.json) and [full verification](docs/part-3.2-verification.md).
+The October 24 review passed **65 backend tests**, **46 frontend tests**, and the build. Actual browser checks covered four simulated viewports, SQLite history, injected provider/database faults, real reload/restart and a stopped-backend outage; local support and unsaved practice remained available. A fresh breathing sequence measured **83.1024 seconds** from first instructions through closing Finish, with **zero exclusions**; entry/check-in was a separate **21.9297 seconds**. The earlier October 20 sequence remains recorded at 88.1449 seconds. These scripted results include tool/decision overhead and are not natural-human timing or clinical evidence. See the [latest timing export](docs/evidence/3.2/review-2026-10-24/breathing-timing.json), [review summary](docs/evidence/3.2/review-2026-10-24/audit.md) and [full verification](docs/part-3.2-verification.md).
 
 ## Configuration, history and failure behavior
 
@@ -59,6 +59,7 @@ Test faults are disabled by default. For a deliberate local mock check, set `PEY
 | [Part 3.2 verification](docs/part-3.2-verification.md) | Actual commands, expected/observed checks, timing, SQL, browser/live distinction and pending gates |
 | [API contract](docs/part-3.2-api-contract.md) / [backend setup](backend/README.md) | Callable routes, strict snapshots, mock/live configuration and persistence policy |
 | [Part 3.2 evidence](docs/evidence/3.2/) | New integrated screenshots, safe fictional SQL/session/timing and provider evidence |
+| [October 24 review](docs/evidence/3.2/review-2026-10-24/audit.md) | Fresh full-stack timing, pause/support overlap, save recovery, navigation fixes and exact remaining model blocker |
 | [AI use](AI-USE.md) / [evidence log](docs/evidence-log.md) / [handoff](handoffs/current.md) | Actual assistance, revised approaches and active stop boundary |
 
 The instructor-facing single `submissions/3.2/report.md` is packaged after the verified source/evidence commit, so it can cite a real immutable source SHA. Source publication and a generated report do not establish a guaranteed grade, student personal review or Canvas submission.

@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-24",
+  "publishable_files_scanned": 169,
+  "actual_local_credential_exposed": false,
+  "forbidden_runtime_or_secret_files": [],
+  "env_ignored": true,
+  "fictional_evidence_only": true,
+  "private_course_screenshot_included": false,
+  "raw_runtime_database_included": false
+}

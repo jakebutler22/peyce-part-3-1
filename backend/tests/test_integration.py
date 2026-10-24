@@ -100,7 +100,7 @@ def test_revisions_and_operation_replay_cannot_replace_newer_answers(client):
     session_id = uid()
     first = snapshot()
     assert save(client, session_id, first).status_code == 200
-    newer = snapshot(3, answers=[0, 2, 2, 0, 0], exercise="grounding")
+    newer = snapshot(3, answers=[0, 2, 2, 0, 0], exercise="grounding", events=first["events"])
     assert save(client, session_id, newer).status_code == 200
     assert save(client, session_id, snapshot(2)).status_code == 409
     assert save(client, session_id, snapshot(3)).status_code == 409
@@ -394,11 +394,13 @@ def test_cannot_bypass_complete_validation_by_sending_finished_directly(client):
 
 def test_timing_counts_overlapping_allowed_intervals_once_and_rejects_double_subtraction(client):
     events = [event("instruction_visible", 10000), event("start", 12000),
+              event("pause", 20000, 8000), event("support_open", 22000, 8000, "support"),
+              event("support_close", 24000, 8000, "support"), event("resume", 26000, 8000),
               event("complete", 78000, 60000, "clock"), event("finish", 82000, 60000)]
     timing = {"raw_ms": 72000, "counted_ms": 66000, "excluded_ms": 6000,
               "excluded_intervals": [
-                  {"start_ms": 20000, "end_ms": 24000, "cause": "user"},
-                  {"start_ms": 22000, "end_ms": 26000, "cause": "support"}],
+                  {"start_ms": 20000, "end_ms": 26000, "cause": "user"},
+                  {"start_ms": 22000, "end_ms": 24000, "cause": "support"}],
               "instruction_ms": 10000, "finish_ms": 82000, "entry_ms": 10000}
     valid = snapshot(status="finished", events=events, timing=timing)
     response = save(client, uid(), valid)
@@ -460,3 +462,122 @@ def test_unknown_schema_version_is_refused_without_resetting_existing_rows(clien
     with client.app.state.repository.connection() as db:
         assert db.execute("PRAGMA user_version").fetchone()[0] == 99
         assert db.execute("SELECT status FROM sessions WHERE id=?", (session_id,)).fetchone()[0] == "ready"
+
+
+@pytest.mark.parametrize("kinds", [
+    [("instruction_visible", 10000), ("finish", 10001)],
+    [("instruction_visible", 10000), ("complete", 10001), ("finish", 10002)],
+    [("instruction_visible", 10000), ("complete", 10001), ("start", 10002), ("finish", 10003)],
+    [("instruction_visible", 10000), ("start", 10001), ("finish", 10002), ("complete", 10003)],
+])
+def test_finished_grounding_cannot_bypass_start_completion_or_final_action_order(client, kinds):
+    session_id = uid()
+    value = snapshot(exercise="grounding", direct_choice="grounding", status="finished",
+                     events=[event(kind, at) for kind, at in kinds])
+    assert save(client, session_id, value).status_code == 422
+    assert client.get(f"/api/sessions/{session_id}").status_code == 404
+
+
+def test_grounding_completed_then_finished_preserves_real_lifecycle(client):
+    session_id = uid()
+    events = [event("instruction_visible", 10000), event("start", 12000),
+              event("sense_next", 15000), event("sense_skip", 17000),
+              event("sense_next", 19000), event("sense_next", 21000),
+              event("sense_next", 23000), event("complete", 23001)]
+    completed = snapshot(exercise="grounding", direct_choice="grounding", status="completed", events=events)
+    assert save(client, session_id, completed).status_code == 200
+    events += [event("finish", 26000)]
+    assert save(client, session_id, snapshot(2, exercise="grounding", direct_choice="grounding",
+                                           status="finished", events=events)).status_code == 200
+    assert detail(client, session_id)["status"] == "finished"
+
+
+def test_finish_must_follow_full_breathing_completion_not_an_earlier_partial_event(client):
+    events = [event("instruction_visible", 10000), event("start", 12000),
+              event("complete", 13000, 1000, "clock"), event("finish", 14000, 2000),
+              event("complete", 72000, 60000, "clock")]
+    assert save(client, uid(), snapshot(status="finished", events=events)).status_code == 422
+
+
+@pytest.mark.parametrize("change", [
+    {"exercise": "grounding"},
+    {"exercise": "breathing", "answers": [0, 2, 0, 0, 0]},
+    {"exercise": "breathing", "answers": [0, 0, 0, 2, 2]},
+    {"exercise": "grounding", "direct_choice": "breathing"},
+])
+def test_selected_exercise_cannot_conflict_with_rule_or_deliberate_override(client, change):
+    session_id = uid()
+    assert save(client, session_id, snapshot(**change)).status_code == 422
+    assert client.get(f"/api/sessions/{session_id}").status_code == 404
+
+
+def test_explicit_direct_choice_can_override_suggestion_or_refusal(client):
+    for answers in ([2, 0, 0, 0, 0], [None, None, None, 2, 2]):
+        session_id = uid()
+        response = save(client, session_id, snapshot(answers=answers, direct_choice="grounding", exercise="grounding"))
+        assert response.status_code == 200, response.text
+        assert response.json()["result"]["code"] == "direct-choice"
+        assert detail(client, session_id)["exercise"] == "grounding"
+
+
+@pytest.mark.parametrize("change", ["drop", "change", "insert-before"])
+def test_later_revision_cannot_drop_change_or_reorder_saved_lifecycle(client, change):
+    session_id, original = uid(), snapshot()
+    assert save(client, session_id, original).status_code == 200
+    if change == "drop":
+        events = []
+    elif change == "change":
+        events = [dict(original["events"][0], active_ms=1)]
+    else:
+        events = [event("support_open", 9000, cause="support"), *original["events"]]
+    assert save(client, session_id, snapshot(2, events=events)).status_code == 409
+    saved = detail(client, session_id)
+    assert saved["revision"] == 1
+    assert saved["events"] == original["events"]
+    assert len(saved["lifecycle"]) == 1
+
+
+@pytest.mark.parametrize("cause", ["user", "support"])
+def test_timing_cannot_invent_exclusions_without_lifecycle_evidence(client, cause):
+    events = [event("instruction_visible", 10000), event("start", 12000),
+              event("complete", 312000, 60000, "clock"), event("finish", 316000, 60000)]
+    timing = {"raw_ms": 306000, "counted_ms": 60000, "excluded_ms": 246000,
+              "excluded_intervals": [{"start_ms": 12000, "end_ms": 258000, "cause": cause}],
+              "instruction_ms": 10000, "finish_ms": 316000, "entry_ms": 10000}
+    session_id = uid()
+    assert save(client, session_id, snapshot(status="finished", events=events, timing=timing)).status_code == 422
+    assert client.get(f"/api/sessions/{session_id}").status_code == 404
+
+
+def test_background_pause_cannot_be_relabelled_as_user_exclusion(client):
+    events = [event("instruction_visible", 10000), event("start", 12000),
+              event("background_pause", 20000, 8000, "background"), event("resume", 25000, 8000),
+              event("complete", 77000, 60000, "clock"), event("finish", 80000, 60000)]
+    timing = {"raw_ms": 70000, "counted_ms": 65000, "excluded_ms": 5000,
+              "excluded_intervals": [{"start_ms": 20000, "end_ms": 25000, "cause": "user"}],
+              "instruction_ms": 10000, "finish_ms": 80000, "entry_ms": 10000}
+    assert save(client, uid(), snapshot(status="finished", events=events, timing=timing)).status_code == 422
+    timing.update(counted_ms=70000, excluded_ms=0, excluded_intervals=[])
+    assert save(client, uid(), snapshot(status="finished", events=events, timing=timing)).status_code == 200
+
+
+def test_exclusions_support_clipping_splitting_tolerance_and_open_final_intervals(client):
+    events = [event("support_open", 9000, cause="support"), event("instruction_visible", 10000),
+              event("support_close", 11000, cause="support"), event("start", 12000),
+              event("pause", 20000, 8000), event("stop", 25000, 8000),
+              event("support_open", 26000, 8000, "support"), event("finish", 30000, 8000)]
+    timing = {"raw_ms": 20000, "counted_ms": 10000, "excluded_ms": 10000,
+              "excluded_intervals": [
+                  {"start_ms": 9000, "end_ms": 11000, "cause": "support"},
+                  {"start_ms": 20000, "end_ms": 22000, "cause": "user"},
+                  {"start_ms": 22000, "end_ms": 25000, "cause": "user"},
+                  {"start_ms": 26000, "end_ms": 30000, "cause": "support"}],
+              "instruction_ms": 10000, "finish_ms": 30000, "entry_ms": 10000}
+    assert save(client, uid(), snapshot(status="stopped", events=events, timing=timing)).status_code == 200
+    # Sub-millisecond sampling differences are tolerated, as for instruction/Finish.
+    timing["excluded_intervals"][1]["start_ms"] += 0.25
+    timing.update(excluded_ms=9999.75, counted_ms=10000.25)
+    assert save(client, uid(), snapshot(status="stopped", events=[dict(item, id=uid()) for item in events], timing=timing)).status_code == 200
+    timing["excluded_intervals"][1]["start_ms"] += 2
+    timing.update(excluded_ms=9997.75, counted_ms=10002.25)
+    assert save(client, uid(), snapshot(status="stopped", events=events, timing=timing)).status_code == 422

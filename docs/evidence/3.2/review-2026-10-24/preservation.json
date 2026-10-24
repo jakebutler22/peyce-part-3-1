@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-24",
+  "method": "SHA-256 comparison with pre-implementation baselines; read-only inspection of protected files",
+  "checks": [
+    {
+      "scope": "previous project",
+      "files_checked": 190,
+      "changed_files": [],
+      "unchanged": true
+    },
+    {
+      "scope": "archived Part 3.1 evidence",
+      "files_checked": 27,
+      "changed_files": [],
+      "unchanged": true
+    }
+  ]
+}

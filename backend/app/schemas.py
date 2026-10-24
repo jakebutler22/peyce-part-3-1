@@ -1,9 +1,51 @@
 from typing import Literal
 from uuid import UUID
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, model_validator
+from .domain import match_exercise
 
 Skill = Literal["breathing", "grounding"]
 Status = Literal["checkin", "choice", "ready", "active", "paused", "completed", "stopped", "interrupted", "finished"]
+
+
+def merged_spans(spans, lower, upper):
+    """Clip and merge spans; equivalent split/overlap representations are valid."""
+    result = []
+    for start, end in sorted((max(lower, start), min(upper, end)) for start, end in spans):
+        if end <= start:
+            continue
+        if result and start <= result[-1][1] + 1:
+            result[-1][1] = max(result[-1][1], end)
+        else:
+            result.append([start, end])
+    return result
+
+
+def observed_exclusions(events, finish):
+    """Only explicit user pauses/support suspend counted sequence time.
+
+    Background pauses stop pacing, but remain in whole-sequence timing.
+    Open permitted intervals close at the final action, as the client timer does.
+    """
+    spans = {"user": [], "support": []}
+    opened = {}
+    for event in events:
+        if event.at_ms > finish + 1:
+            break
+        if event.kind == "pause" and event.cause == "user":
+            opened.setdefault("user", event.at_ms)
+        elif event.kind == "support_open" and event.cause == "support":
+            opened.setdefault("support", event.at_ms)
+        closing = []
+        if event.kind in ("resume", "stop", "finish"):
+            closing.append("user")
+        if event.kind in ("support_close", "finish"):
+            closing.append("support")
+        for cause in closing:
+            if cause in opened:
+                spans[cause].append((opened.pop(cause), min(finish, event.at_ms)))
+    for cause, start in opened.items():
+        spans[cause].append((start, finish))
+    return spans
 
 
 class StrictModel(BaseModel):
@@ -76,12 +118,19 @@ class Snapshot(StrictModel):
             raise ValueError("Unanswered questions remain null")
         if self.status in ("ready", "active", "paused", "completed") and self.exercise is None:
             raise ValueError("Exercise state requires an explicit selected exercise")
+        if self.exercise is not None and self.exercise != match_exercise(self.answers, self.direct_choice)["exercise"]:
+            raise ValueError("Selected exercise must match the approved rule or an explicit direct choice")
         if len({e.id for e in self.events}) != len(self.events) or any(b.at_ms < a.at_ms for a, b in zip(self.events, self.events[1:])):
             raise ValueError("Lifecycle event identifiers are unique and offsets monotonic")
         if any(e.active_ms > e.at_ms + 1 for e in self.events):
             raise ValueError("Active exercise time cannot exceed the recorded session span")
-        if self.status == "completed" and not any(e.kind == "complete" for e in self.events):
-            raise ValueError("Completion requires an explicit lifecycle transition")
+        if self.exercise is not None and self.status in ("completed", "finished"):
+            completions = [i for i, e in enumerate(self.events) if e.kind == "complete"
+                           and (self.exercise != "breathing" or e.active_ms >= 60000)]
+            if not completions or not any(e.kind == "start" for e in self.events[:completions[0]]):
+                raise ValueError("Exercise completion requires Start followed by an explicit completion")
+            if self.status == "finished" and not any(e.kind == "finish" for e in self.events[completions[0] + 1:]):
+                raise ValueError("A finished exercise requires Finish after completion")
         if self.exercise == "breathing" and self.status in ("completed", "finished") and not any(e.kind == "complete" and e.active_ms >= 60000 for e in self.events):
             raise ValueError("Breathing completion requires six actual active cycles")
         if self.exercise == "breathing" and self.status in ("completed", "finished"):
@@ -99,6 +148,12 @@ class Snapshot(StrictModel):
                 raise ValueError("Timing must refer to the actual first instruction event")
             if self.status == "finished" and abs(next(e for e in reversed(self.events) if e.kind == "finish").at_ms - self.timing.finish_ms) > 1:
                 raise ValueError("Timing must include the actual final Finish event")
+            observed = observed_exclusions(self.events, self.timing.finish_ms)
+            for cause in ("user", "support"):
+                expected = merged_spans(observed[cause], self.timing.instruction_ms, self.timing.finish_ms)
+                claimed = merged_spans(((p.start_ms, p.end_ms) for p in self.timing.excluded_intervals if p.cause == cause), self.timing.instruction_ms, self.timing.finish_ms)
+                if len(expected) != len(claimed) or any(abs(a - b) > 1 for observed_span, claimed_span in zip(expected, claimed) for a, b in zip(observed_span, claimed_span)):
+                    raise ValueError("Timing exclusions must match recorded user-pause/support intervals")
         return self
 
 

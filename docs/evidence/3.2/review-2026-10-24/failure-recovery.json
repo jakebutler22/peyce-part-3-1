@@ -1,0 +1,250 @@
+{
+  "review_date": "2026-10-24",
+  "method": "Actual mobile Vue with explicitly enabled developer controls. Database fault enabled before first write left the confirmed session set unchanged at16. Start/support/Stop/Finish worked while unconfirmed. Clearing fault and retrying created exactly one stopped session with bootstrap revision1 and latest final revision. A separate mock timeout was left through Start/support/Stop/Finish; UI remained Home after8.5seconds.",
+  "query": "SELECT revision FROM revisions WHERE session_id=? ORDER BY revision; SELECT COUNT(*) FROM operations WHERE session_id=?; PRAGMA foreign_key_check;",
+  "before_session_count": 16,
+  "new_sessions": [
+    {
+      "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+      "status": "stopped",
+      "exercise": "breathing",
+      "revision": 8,
+      "timing": {
+        "counted_ms": 901.1000000238419,
+        "entry_ms": 346.2999999523163,
+        "excluded_intervals": [
+          {
+            "cause": "support",
+            "end_ms": 1310.0,
+            "start_ms": 921.6999999880791
+          }
+        ],
+        "excluded_ms": 388.30000001192093,
+        "finish_ms": 1635.699999988079,
+        "instruction_ms": 346.2999999523163,
+        "raw_ms": 1289.4000000357628
+      },
+      "lifecycle": [
+        {
+          "event_id": "718cd17d-ace6-4fd7-beb3-ae5de48bf2bb",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 2,
+          "kind": "instruction_visible",
+          "at_ms": 346.2999999523163,
+          "active_ms": 0.0,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:16.562+00:00",
+          "id": "718cd17d-ace6-4fd7-beb3-ae5de48bf2bb"
+        },
+        {
+          "event_id": "5e44ff95-8bf7-460e-9030-e6ee66700b84",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 3,
+          "kind": "start",
+          "at_ms": 634.0,
+          "active_ms": 0.0,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:16.850+00:00",
+          "id": "5e44ff95-8bf7-460e-9030-e6ee66700b84"
+        },
+        {
+          "event_id": "1b839519-c6d1-4458-b5ab-29555b55a1a9",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 4,
+          "kind": "support_open",
+          "at_ms": 921.6999999880791,
+          "active_ms": 287.69999998807907,
+          "cause": "support",
+          "created_at": "2026-10-24T15:29:17.141+00:00",
+          "id": "1b839519-c6d1-4458-b5ab-29555b55a1a9"
+        },
+        {
+          "event_id": "397be6c7-82ac-46ea-992d-83116a4f177c",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 4,
+          "kind": "pause",
+          "at_ms": 921.6999999880791,
+          "active_ms": 287.69999998807907,
+          "cause": "support",
+          "created_at": "2026-10-24T15:29:17.141+00:00",
+          "id": "397be6c7-82ac-46ea-992d-83116a4f177c"
+        },
+        {
+          "event_id": "26d5cbee-c6e4-4e7a-9477-5db33da3def6",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 6,
+          "kind": "support_close",
+          "at_ms": 1310.0,
+          "active_ms": 287.69999998807907,
+          "cause": "support",
+          "created_at": "2026-10-24T15:29:17.527+00:00",
+          "id": "26d5cbee-c6e4-4e7a-9477-5db33da3def6"
+        },
+        {
+          "event_id": "e2fd7a5b-e169-4e31-b100-4694782d907f",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 7,
+          "kind": "stop",
+          "at_ms": 1368.5,
+          "active_ms": 287.69999998807907,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:17.585+00:00",
+          "id": "e2fd7a5b-e169-4e31-b100-4694782d907f"
+        },
+        {
+          "event_id": "0b7ad551-6334-40f7-9902-ff191da0102e",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 8,
+          "kind": "finish",
+          "at_ms": 1635.699999988079,
+          "active_ms": 287.69999998807907,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:17.855+00:00",
+          "id": "0b7ad551-6334-40f7-9902-ff191da0102e"
+        }
+      ],
+      "explanations": [
+        {
+          "request_id": "b69cdfaf-0025-47e4-b4d9-c64eb2addbb0",
+          "session_id": "e18e88ab-51bf-4a79-9db6-5cc1f12bd214",
+          "revision": 2,
+          "mode": "mock",
+          "model_id": "peyce-mock-1.0",
+          "prompt_version": "peyce-acknowledgment-1.0",
+          "question_version": "peyce-original-1.0",
+          "policy_version": "peyce-routing-1.0",
+          "reason_code": "direct-choice",
+          "outcome": "obsolete",
+          "validation": "fallback-timeout",
+          "fragments_json": null,
+          "text": "You chose this exercise. You can change your mind at any time.",
+          "stale": 1,
+          "created_at": "2026-10-24T15:29:16.568+00:00",
+          "updated_at": "2026-10-24T15:29:24.572+00:00",
+          "fragments": null,
+          "references": [],
+          "superseded": true
+        }
+      ],
+      "committed_revisions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "operation_count": 8
+    },
+    {
+      "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+      "status": "stopped",
+      "exercise": "breathing",
+      "revision": 11,
+      "timing": {
+        "counted_ms": 861.4000000357628,
+        "entry_ms": 3356.600000023842,
+        "excluded_intervals": [
+          {
+            "cause": "support",
+            "end_ms": 4329.100000023842,
+            "start_ms": 3895.2000000476837
+          }
+        ],
+        "excluded_ms": 433.89999997615814,
+        "finish_ms": 4651.900000035763,
+        "instruction_ms": 3356.600000023842,
+        "raw_ms": 1295.300000011921
+      },
+      "lifecycle": [
+        {
+          "event_id": "cd3daeae-ca21-45fa-b093-0c83cb6ec2c9",
+          "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+          "revision": 11,
+          "kind": "instruction_visible",
+          "at_ms": 3356.600000023842,
+          "active_ms": 0.0,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:02.683+00:00",
+          "id": "cd3daeae-ca21-45fa-b093-0c83cb6ec2c9"
+        },
+        {
+          "event_id": "95e29f94-b8bc-49fd-bd1c-d7deec5b54e3",
+          "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+          "revision": 11,
+          "kind": "start",
+          "at_ms": 3610.900000035763,
+          "active_ms": 0.10000002384185791,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:02.683+00:00",
+          "id": "95e29f94-b8bc-49fd-bd1c-d7deec5b54e3"
+        },
+        {
+          "event_id": "eb7d6773-7840-44a7-a593-05d357cc3cf2",
+          "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+          "revision": 11,
+          "kind": "support_open",
+          "at_ms": 3895.2000000476837,
+          "active_ms": 284.4000000357628,
+          "cause": "support",
+          "created_at": "2026-10-24T15:29:02.683+00:00",
+          "id": "eb7d6773-7840-44a7-a593-05d357cc3cf2"
+        },
+        {
+          "event_id": "2909a916-077c-4b42-aa95-17f154a1429d",
+          "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+          "revision": 11,
+          "kind": "pause",
+          "at_ms": 3895.300000011921,
+          "active_ms": 284.5,
+          "cause": "support",
+          "created_at": "2026-10-24T15:29:02.683+00:00",
+          "id": "2909a916-077c-4b42-aa95-17f154a1429d"
+        },
+        {
+          "event_id": "d7f2b114-c1d8-4017-a6fd-73c37cd76e97",
+          "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+          "revision": 11,
+          "kind": "support_close",
+          "at_ms": 4329.100000023842,
+          "active_ms": 284.5,
+          "cause": "support",
+          "created_at": "2026-10-24T15:29:02.683+00:00",
+          "id": "d7f2b114-c1d8-4017-a6fd-73c37cd76e97"
+        },
+        {
+          "event_id": "764aaa7e-c3bf-435a-b171-721c4d6e1825",
+          "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+          "revision": 11,
+          "kind": "stop",
+          "at_ms": 4376.600000023842,
+          "active_ms": 284.5,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:02.683+00:00",
+          "id": "764aaa7e-c3bf-435a-b171-721c4d6e1825"
+        },
+        {
+          "event_id": "6e60eee9-c4c2-4240-9b89-d5bb1f36831a",
+          "session_id": "84429fbd-5208-4d37-8ffe-4228485c2153",
+          "revision": 11,
+          "kind": "finish",
+          "at_ms": 4651.900000035763,
+          "active_ms": 284.5,
+          "cause": "user",
+          "created_at": "2026-10-24T15:29:02.683+00:00",
+          "id": "6e60eee9-c4c2-4240-9b89-d5bb1f36831a"
+        }
+      ],
+      "explanations": [],
+      "committed_revisions": [
+        1,
+        11
+      ],
+      "operation_count": 2
+    }
+  ],
+  "foreign_key_check": [],
+  "live_attempts_after_checks": 2
+}

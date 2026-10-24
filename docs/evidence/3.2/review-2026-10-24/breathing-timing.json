@@ -1,0 +1,95 @@
+{
+  "review_date": "2026-10-24",
+  "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+  "script": "Fictional original-face answers [2,0,0,0,0]; actual ready screenshot, 10-second reading wait, deliberate Start, six real pacing cycles, actual completion, 8-second closing wait and Finish. All tool/decision overhead is counted.",
+  "timing": {
+    "counted_ms": 83102.40000003576,
+    "entry_ms": 21929.69999998808,
+    "excluded_intervals": [],
+    "excluded_ms": 0.0,
+    "finish_ms": 105032.10000002384,
+    "instruction_ms": 21929.69999998808,
+    "raw_ms": 83102.40000003576
+  },
+  "lifecycle": [
+    {
+      "event_id": "a9d87abc-151f-40be-b2e5-2d00c36999f5",
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 8,
+      "kind": "instruction_visible",
+      "at_ms": 21929.69999998808,
+      "active_ms": 0.0,
+      "cause": "user",
+      "created_at": "2026-10-24T15:24:24.825+00:00",
+      "id": "a9d87abc-151f-40be-b2e5-2d00c36999f5"
+    },
+    {
+      "event_id": "b8f34bd7-aeae-4642-bc99-c01340ceacb4",
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 9,
+      "kind": "start",
+      "at_ms": 33199.30000001192,
+      "active_ms": 0.10000002384185791,
+      "cause": "user",
+      "created_at": "2026-10-24T15:24:36.097+00:00",
+      "id": "b8f34bd7-aeae-4642-bc99-c01340ceacb4"
+    },
+    {
+      "event_id": "1545e597-809b-4155-bdad-9dc14b5e9f54",
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 10,
+      "kind": "complete",
+      "at_ms": 93205.90000003576,
+      "active_ms": 60000.0,
+      "cause": "clock",
+      "created_at": "2026-10-24T15:25:36.104+00:00",
+      "id": "1545e597-809b-4155-bdad-9dc14b5e9f54"
+    },
+    {
+      "event_id": "b7a5ebca-2350-4dc8-957a-5ba58978fe77",
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "kind": "finish",
+      "at_ms": 105032.10000002384,
+      "active_ms": 60000.0,
+      "cause": "user",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "id": "b7a5ebca-2350-4dc8-957a-5ba58978fe77"
+    }
+  ],
+  "saved_status": "finished",
+  "mock_explanations": [
+    {
+      "request_id": "4f6e298c-a11f-4504-a681-ea0af6b24584",
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 8,
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "prompt_version": "peyce-acknowledgment-1.0",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "body-cue",
+      "outcome": "validated",
+      "validation": "validated",
+      "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+      "stale": 0,
+      "created_at": "2026-10-24T15:24:24.840+00:00",
+      "updated_at": "2026-10-24T15:24:24.844+00:00",
+      "fragments": {
+        "closing_id": "choice",
+        "opening_id": "reflect",
+        "reason_code": "body-cue",
+        "reference_ids": [
+          "body",
+          "breathing"
+        ]
+      },
+      "references": [
+        "body",
+        "breathing"
+      ],
+      "superseded": true
+    }
+  ],
+  "limit": "One scripted intended-pace observation, not natural human or clinical evidence."
+}

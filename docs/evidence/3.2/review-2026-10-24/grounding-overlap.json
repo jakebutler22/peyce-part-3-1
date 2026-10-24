@@ -1,0 +1,219 @@
+{
+  "review_date": "2026-10-24",
+  "purpose": "Functional grounding completion and real overlapping user-pause/support validation; not an intended-pace timing demonstration. Back/Skip/keyboard checks and all ordinary tool/reading delays remain counted.",
+  "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+  "status": "finished",
+  "revision": 14,
+  "exercise": "grounding",
+  "result": {
+    "code": "direct-choice",
+    "exercise": "grounding",
+    "reason": "You chose this exercise. You can change your mind at any time."
+  },
+  "timing": {
+    "counted_ms": 41001.40000003576,
+    "entry_ms": 440.5999999642372,
+    "excluded_intervals": [
+      {
+        "cause": "support",
+        "end_ms": 10527.799999952316,
+        "start_ms": 8969.5
+      },
+      {
+        "cause": "user",
+        "end_ms": 11766.199999988079,
+        "start_ms": 7695.699999988079
+      }
+    ],
+    "excluded_ms": 4070.5,
+    "finish_ms": 45512.5,
+    "instruction_ms": 440.5999999642372,
+    "raw_ms": 45071.90000003576
+  },
+  "excluded_intervals_individually_summed_ms": 5628.799999952316,
+  "union_excluded_ms": 4070.5,
+  "lifecycle": [
+    {
+      "event_id": "61189a6d-5fb6-4c82-a0c4-94af3a523bcb",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 2,
+      "kind": "instruction_visible",
+      "at_ms": 440.5999999642372,
+      "active_ms": 0.0,
+      "cause": "user",
+      "created_at": "2026-10-24T15:26:38.795+00:00",
+      "id": "61189a6d-5fb6-4c82-a0c4-94af3a523bcb"
+    },
+    {
+      "event_id": "9d1f2ab1-e0e1-44c7-a730-5bee250ce5f3",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 3,
+      "kind": "start",
+      "at_ms": 7420.699999988079,
+      "active_ms": 0.0,
+      "cause": "user",
+      "created_at": "2026-10-24T15:26:45.794+00:00",
+      "id": "9d1f2ab1-e0e1-44c7-a730-5bee250ce5f3"
+    },
+    {
+      "event_id": "ae37da10-6c6c-4b9e-9ac8-fb2e93735335",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 4,
+      "kind": "pause",
+      "at_ms": 7695.699999988079,
+      "active_ms": 275.0,
+      "cause": "user",
+      "created_at": "2026-10-24T15:26:46.050+00:00",
+      "id": "ae37da10-6c6c-4b9e-9ac8-fb2e93735335"
+    },
+    {
+      "event_id": "58332c5f-4be7-4d08-9af2-a7ac29fef8c1",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 5,
+      "kind": "support_open",
+      "at_ms": 8969.5,
+      "active_ms": 275.0,
+      "cause": "support",
+      "created_at": "2026-10-24T15:26:47.327+00:00",
+      "id": "58332c5f-4be7-4d08-9af2-a7ac29fef8c1"
+    },
+    {
+      "event_id": "b631306e-109b-4562-bc96-fa96a81aee9c",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 6,
+      "kind": "support_close",
+      "at_ms": 10527.799999952316,
+      "active_ms": 275.0,
+      "cause": "support",
+      "created_at": "2026-10-24T15:26:48.885+00:00",
+      "id": "b631306e-109b-4562-bc96-fa96a81aee9c"
+    },
+    {
+      "event_id": "6685b883-f28a-4330-a0fc-008b265c6922",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 7,
+      "kind": "resume",
+      "at_ms": 11766.199999988079,
+      "active_ms": 275.0999999642372,
+      "cause": "user",
+      "created_at": "2026-10-24T15:26:50.123+00:00",
+      "id": "6685b883-f28a-4330-a0fc-008b265c6922"
+    },
+    {
+      "event_id": "247f9ea4-fd33-40b8-aa14-95926b41587c",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 8,
+      "kind": "sense_next",
+      "at_ms": 37593.39999997616,
+      "active_ms": 26102.19999998808,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:15.957+00:00",
+      "id": "247f9ea4-fd33-40b8-aa14-95926b41587c"
+    },
+    {
+      "event_id": "9d3a0c6f-997d-4055-8080-b07e4e9cc1d8",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 9,
+      "kind": "sense_next",
+      "at_ms": 38447.39999997616,
+      "active_ms": 26956.19999998808,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:16.802+00:00",
+      "id": "9d3a0c6f-997d-4055-8080-b07e4e9cc1d8"
+    },
+    {
+      "event_id": "546596ac-2baf-477d-b7a3-1309a2858dff",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 10,
+      "kind": "sense_next",
+      "at_ms": 39763.19999998808,
+      "active_ms": 28272.0,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:18.119+00:00",
+      "id": "546596ac-2baf-477d-b7a3-1309a2858dff"
+    },
+    {
+      "event_id": "1193e8a4-6619-4f84-8b0b-3c121c7420a5",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 11,
+      "kind": "sense_next",
+      "at_ms": 41194.799999952316,
+      "active_ms": 29703.599999964237,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:19.549+00:00",
+      "id": "1193e8a4-6619-4f84-8b0b-3c121c7420a5"
+    },
+    {
+      "event_id": "f578db39-4824-4e54-a23b-085ace54c760",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 12,
+      "kind": "sense_skip",
+      "at_ms": 42478.59999996424,
+      "active_ms": 30987.399999976158,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:20.833+00:00",
+      "id": "f578db39-4824-4e54-a23b-085ace54c760"
+    },
+    {
+      "event_id": "677dd394-359b-4162-91f1-c317a2319624",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 13,
+      "kind": "sense_next",
+      "at_ms": 43912.799999952316,
+      "active_ms": 32421.599999964237,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:22.269+00:00",
+      "id": "677dd394-359b-4162-91f1-c317a2319624"
+    },
+    {
+      "event_id": "fae7dcbd-6d74-42db-95dd-a469c4642bf3",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 13,
+      "kind": "complete",
+      "at_ms": 43912.799999952316,
+      "active_ms": 32421.599999964237,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:22.269+00:00",
+      "id": "fae7dcbd-6d74-42db-95dd-a469c4642bf3"
+    },
+    {
+      "event_id": "69f7ab37-9136-46dd-8aae-33bc2f2f776a",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 14,
+      "kind": "finish",
+      "at_ms": 45512.5,
+      "active_ms": 32421.599999964237,
+      "cause": "user",
+      "created_at": "2026-10-24T15:27:23.869+00:00",
+      "id": "69f7ab37-9136-46dd-8aae-33bc2f2f776a"
+    }
+  ],
+  "explanations": [
+    {
+      "request_id": "b81fde13-5276-408a-ac8c-76ff58c6faf0",
+      "session_id": "12cbaf62-41bd-42a8-b6e0-792d938cf8d8",
+      "revision": 2,
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "prompt_version": "peyce-acknowledgment-1.0",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "direct-choice",
+      "outcome": "validated",
+      "validation": "validated",
+      "text": "You chose grounding. You can choose or finish.",
+      "stale": 0,
+      "created_at": "2026-10-24T15:26:38.800+00:00",
+      "updated_at": "2026-10-24T15:26:38.801+00:00",
+      "fragments": {
+        "closing_id": "choice",
+        "opening_id": "reflect",
+        "reason_code": "direct-choice",
+        "reference_ids": []
+      },
+      "references": [],
+      "superseded": true
+    }
+  ],
+  "note": "The support interval lies inside the explicit user pause and is subtracted once in the union. Primary uninterrupted breathing is the <=90-second intended-pace demonstration."
+}

@@ -4,7 +4,7 @@ import { PhaseClock, phaseAt } from './clock.js';
 import { SequenceTimer } from './sequence.js';
 import { api, SaveQueue } from './api.js';
 
-export function usePrototype() {
+export function usePrototype({ request = api } = {}) {
   const screen = ref('home'), questionIndex = ref(0), answers = ref(Array(5).fill(null));
   const result = ref(null), exercise = ref('breathing'), origin = ref('direct'), selecting = ref(false);
   const senseIndex = ref(0), color = ref('pink'), reducedMotion = ref(false), paused = ref(false), pauseReason = ref('');
@@ -12,27 +12,28 @@ export function usePrototype() {
   const saveEnabled = ref(false), saveState = ref('unsaved'), saveMessage = ref('Not saved · choose saving before starting.');
   const historyItems = ref([]), historyLoading = ref(false), historyError = ref(''), selectedSession = ref(null);
   const explanationText = ref(''), explanationLabel = ref('Local rule · your choice stays available');
-  const verificationMode = import.meta.env.DEV && new URLSearchParams(location.search).has('verify');
+  const verificationMode = Boolean(import.meta.env?.DEV) && new URLSearchParams(location.search).has('verify');
   const providerFault = ref(''), saveFault = ref(false);
   let current = null, frame, lockUntil = 0, senseLockUntil = 0, selectTimeout, supportReturnFocus, pendingAdvance = false;
   let generation = 0, explanationAbort, groundElapsed = 0, groundAnchor = null;
+  let navigationRevision = 0, historyRequest = 0, detailRequest = 0;
   const clock = new PhaseClock();
   const id = () => crypto.randomUUID();
   const offset = () => current ? performance.now() - current.anchor : 0;
   const activeMs = () => exercise.value === 'breathing' ? clock.sample(performance.now()).elapsed : groundElapsed + (groundAnchor === null ? 0 : Math.max(0, performance.now() - groundAnchor));
   const acknowledged = new Set();
   const queue = new SaveQueue(async ({ sessionId, snapshot, bootstrap, fault }) => {
-    if (!acknowledged.has(sessionId) && snapshot.revision > 1) await api(`/sessions/${sessionId}/snapshot`, { method: 'PUT', body: bootstrap, fault });
-    const response = await api(`/sessions/${sessionId}/snapshot`, { method: 'PUT', body: snapshot, fault });
+    if (!acknowledged.has(sessionId) && snapshot.revision > 1) await request(`/sessions/${sessionId}/snapshot`, { method: 'PUT', body: bootstrap, fault });
+    const response = await request(`/sessions/${sessionId}/snapshot`, { method: 'PUT', body: snapshot, fault });
     acknowledged.add(sessionId); return response;
   });
   function invalidate() { generation++; explanationAbort?.abort(); explanationText.value = ''; explanationLabel.value = 'Local rule · your choice stays available'; }
-  function event(kind, cause = 'user') {
+  function event(kind, cause = 'user', at = offset()) {
     if (!current || current.final) return;
-    current.events.push({ id: id(), kind, at_ms: offset(), active_ms: current.started ? activeMs() : 0, cause });
+    current.events.push({ id: id(), kind, at_ms: at, active_ms: current.started ? activeMs() : 0, cause });
   }
   function focusHeading() { nextTick(() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); document.querySelector('main h1')?.focus({ preventScroll: true }); }); }
-  function show(next) { screen.value = next; focusHeading(); }
+  function show(next) { navigationRevision++; historyRequest++; detailRequest++; historyLoading.value = false; screen.value = next; focusHeading(); }
   function setStatus(value) { sessionStatus.value = value; if (current) current.status = value; }
   function newSession(direct = false) {
     invalidate(); cancelAnimationFrame(frame); clearTimeout(selectTimeout);
@@ -80,7 +81,7 @@ export function usePrototype() {
     const controller = new AbortController(); explanationAbort = controller;
     const timeout = setTimeout(() => controller.abort(), 20000);
     try {
-      const response = await api(`/sessions/${target.id}/explanation`, { method: 'POST', body: { revision, request_id: id() }, signal: controller.signal, fault: verificationMode ? providerFault.value : '' });
+      const response = await request(`/sessions/${target.id}/explanation`, { method: 'POST', body: { revision, request_id: id() }, signal: controller.signal, fault: verificationMode ? providerFault.value : '' });
       if (target !== current || context !== generation || screen.value !== 'ready' || revision !== target.revision || response.stale || response.status === 'obsolete') return;
       explanationText.value = response.text || '';
       explanationLabel.value = response.status === 'validated' ? (response.mode === 'mock' ? 'Mock wording · approved local rule' : 'Model-assisted wording · approved local rule') : 'Local fallback · your choice stays available';
@@ -93,7 +94,7 @@ export function usePrototype() {
     const target = current, context = generation;
     nextTick(() => requestAnimationFrame(async () => {
       if (target !== current || context !== generation || screen.value !== 'ready') return;
-      if (target.timer.instruction === null) { target.timer.showInstructions(offset()); event('instruction_visible'); }
+      if (target.timer.instruction === null) { const at = offset(); target.timer.showInstructions(at); event('instruction_visible', 'user', at); }
       const pending = persist(), revision = target.revision;
       if (!target.save) { explanationLabel.value = 'Local rule · session not saved'; return; }
       if (await pending) explain(target, revision, context);
@@ -103,8 +104,8 @@ export function usePrototype() {
   function finishRecord() {
     if (!current || current.final) return;
     invalidate(); cancelAnimationFrame(frame);
-    if (['active','paused'].includes(current.status)) { freeze(); current.timer.include('user', offset()); event('stop'); setStatus('stopped'); }
-    if (current.timer.instruction !== null) { event('finish'); current.timer.finish(offset()); }
+    if (['active','paused'].includes(current.status)) { freeze(); const at = offset(); current.timer.include('user', at); event('stop', 'user', at); setStatus('stopped'); }
+    if (current.timer.instruction !== null) { const at = offset(); event('finish', 'user', at); current.timer.finish(at); }
     if (current.status === 'completed') setStatus('finished');
     else if (['checkin','choice','ready'].includes(current.status)) { event('leave', 'navigation'); setStatus('stopped'); }
     current.finalSave = persist(); current.final = true; sessionStorage.removeItem('peyce-active-id');
@@ -113,7 +114,11 @@ export function usePrototype() {
     if (screen.value === 'checkin' && next !== 'checkin') { clearTimeout(selectTimeout); selecting.value = false; pendingAdvance = false; }
     if (['home','history'].includes(next)) finishRecord();
     if (next === 'checkin' && current) { invalidate(); setStatus('checkin'); persist(); }
-    show(next); if (next === 'history') { historyLoading.value = true; Promise.resolve(current?.finalSave).then(refreshHistory); }
+    show(next); if (next === 'history') {
+      const navigation = navigationRevision;
+      historyLoading.value = true;
+      Promise.resolve(current?.finalSave).then(() => { if (navigation === navigationRevision && screen.value === 'history') refreshHistory(); });
+    }
   }
   function beginCheckin() { finishRecord(); newSession(); show('intro'); }
   function directEntry() { finishRecord(); newSession(true); show('choice'); }
@@ -148,7 +153,7 @@ export function usePrototype() {
   function startExercise() {
     if (!current || current.final) return;
     // A deliberate Start cannot outrun the first painted instruction boundary.
-    if (current.timer.instruction === null) { current.timer.showInstructions(offset()); event('instruction_visible'); }
+    if (current.timer.instruction === null) { const at = offset(); current.timer.showInstructions(at); event('instruction_visible', 'user', at); }
     invalidate(); current.started = true; paused.value = false; pauseReason.value = ''; setStatus('active');
     if (exercise.value === 'breathing') { clock.start(performance.now()); timing.value = phaseAt(0); show('breathing'); frame = requestAnimationFrame(tick); }
     else { groundElapsed = 0; groundAnchor = performance.now(); senseIndex.value = 0; show('grounding'); }
@@ -158,16 +163,17 @@ export function usePrototype() {
   function pause(reason = '', cause = 'user') {
     if (!['breathing','grounding'].includes(screen.value) || paused.value) return;
     freeze(); paused.value = true; pauseReason.value = typeof reason === 'string' ? reason : '';
-    if (cause === 'user') current.timer.exclude('user', offset());
-    event(cause === 'background' ? 'background_pause' : 'pause', cause); setStatus('paused'); persist();
+    const at = offset();
+    if (cause === 'user') current.timer.exclude('user', at);
+    event(cause === 'background' ? 'background_pause' : 'pause', cause, at); setStatus('paused'); persist();
   }
   function resume() {
     if (!current || !paused.value || supportDialog.value?.open) return;
-    current.timer.include('user', offset());
+    const at = offset(); current.timer.include('user', at);
     if (exercise.value === 'breathing') clock.resume(performance.now()); else groundAnchor = performance.now();
-    paused.value = false; pauseReason.value = ''; event('resume'); setStatus('active'); persist();
+    paused.value = false; pauseReason.value = ''; event('resume', 'user', at); setStatus('active'); persist();
   }
-  function stop() { if (!current) return; invalidate(); cancelAnimationFrame(frame); freeze(); current.timer.include('user', offset()); paused.value = false; event('stop'); setStatus('stopped'); persist(); show('done'); }
+  function stop() { if (!current) return; invalidate(); cancelAnimationFrame(frame); freeze(); const at = offset(); current.timer.include('user', at); paused.value = false; event('stop', 'user', at); setStatus('stopped'); persist(); show('done'); }
   function backSense() { if (paused.value || senseIndex.value === 0) return; senseIndex.value--; focusHeading(); }
   function nextSense(skip = false) {
     if (paused.value || performance.now() < senseLockUntil) return;
@@ -178,13 +184,13 @@ export function usePrototype() {
   function openSupport() {
     supportReturnFocus = document.activeElement;
     if (selecting.value) { clearTimeout(selectTimeout); selecting.value = false; }
-    if (current && !current.final) { current.timer.exclude('support', offset()); event('support_open', 'support'); }
+    if (current && !current.final) { const at = offset(); current.timer.exclude('support', at); event('support_open', 'support', at); }
     pause('Paused while support is open. Resume when you are ready.', 'support');
     if (current && !current.final) persist(); supportDialog.value?.showModal();
   }
   function closeSupport() {
     supportDialog.value?.close(); supportReturnFocus?.focus();
-    if (current && !current.final) { current.timer.include('support', offset()); event('support_close', 'support'); persist(); }
+    if (current && !current.final) { const at = offset(); current.timer.include('support', at); event('support_close', 'support', at); persist(); }
     if (pendingAdvance && screen.value === 'checkin') { selecting.value = true; selectTimeout = setTimeout(advance, 360); }
   }
   function onVisibility() { if (document.hidden) pause('Paused when this tab moved into the background. Resume when you are ready.', 'background'); }
@@ -202,19 +208,25 @@ export function usePrototype() {
     }
   }
   async function refreshHistory() {
+    const requestId = ++historyRequest, navigation = navigationRevision;
+    const isCurrent = () => requestId === historyRequest && navigation === navigationRevision;
     historyLoading.value = true; historyError.value = '';
-    try { historyItems.value = (await api('/sessions', { fault: verificationMode && saveFault.value ? 'database' : '' })).sessions; }
-    catch { historyItems.value = []; historyError.value = 'Past sessions could not be loaded. Support and new exercises are still available.'; }
-    finally { historyLoading.value = false; }
+    try { const response = await request('/sessions', { fault: verificationMode && saveFault.value ? 'database' : '' }); if (isCurrent()) historyItems.value = response.sessions; }
+    catch { if (isCurrent()) { historyItems.value = []; historyError.value = 'Past sessions could not be loaded. Support and new exercises are still available.'; } }
+    finally { if (isCurrent()) historyLoading.value = false; }
   }
   async function openSession(sessionId) {
-    historyError.value = ''; selectedSession.value = null;
-    try { selectedSession.value = await api(`/sessions/${sessionId}`, { fault: verificationMode && saveFault.value ? 'database' : '' }); show('session-detail'); }
-    catch { historyError.value = 'This saved session could not be opened. Try again later.'; }
+    const requestId = ++detailRequest, navigation = navigationRevision;
+    const isCurrent = () => requestId === detailRequest && navigation === navigationRevision;
+    historyError.value = ''; selectedSession.value = null; historyLoading.value = true;
+    try { const response = await request(`/sessions/${sessionId}`, { fault: verificationMode && saveFault.value ? 'database' : '' }); if (isCurrent()) { selectedSession.value = response; show('session-detail'); } }
+    catch { if (isCurrent()) historyError.value = 'This saved session could not be opened. Try again later.'; }
+    finally { if (isCurrent()) historyLoading.value = false; }
   }
   async function clearHistory() {
-    historyError.value = '';
-    try { await api('/sessions', { method: 'DELETE' }); historyItems.value = []; selectedSession.value = null; }
+    historyRequest++; detailRequest++;
+    historyError.value = ''; historyLoading.value = false;
+    try { await request('/sessions', { method: 'DELETE' }); historyItems.value = []; selectedSession.value = null; }
     catch { historyError.value = 'Past sessions could not be cleared. Please try again.'; }
   }
   watch(color, () => { if (current && !current.final) { current.colorExplicit = true; invalidate(); persist(); } });
@@ -224,7 +236,7 @@ export function usePrototype() {
     const interruptedId = sessionStorage.getItem('peyce-active-id');
     if (interruptedId) {
       sessionStorage.removeItem('peyce-active-id');
-      try { const previous = await api(`/sessions/${interruptedId}`); if (['active','paused'].includes(previous.status)) await api(`/sessions/${interruptedId}/interrupt`, { method: 'POST', body: { revision: previous.revision, operation_id: id() } }); } catch { /* Unload/recovery is best effort; restart reconciliation also interrupts. */ }
+      try { const previous = await request(`/sessions/${interruptedId}`); if (['active','paused'].includes(previous.status)) await request(`/sessions/${interruptedId}/interrupt`, { method: 'POST', body: { revision: previous.revision, operation_id: id() } }); } catch { /* Unload/recovery is best effort; restart reconciliation also interrupts. */ }
     }
   });
   onUnmounted(() => { invalidate(); clearTimeout(selectTimeout); cancelAnimationFrame(frame); document.removeEventListener('visibilitychange', onVisibility); window.removeEventListener('pagehide', onPageHide); });

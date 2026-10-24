@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-24",
+  "verification_services_stopped": true,
+  "owned_processes": [
+    {
+      "pid": 24112,
+      "service": "FastAPI",
+      "port": 8012
+    },
+    {
+      "pid": 24133,
+      "service": "Vite",
+      "port": 5181
+    }
+  ],
+  "loopback_ports_closed": {
+    "5181": true,
+    "8012": true
+  },
+  "browser": "Owned audit tab closed; temporary viewport reset; injected fault reset to None.",
+  "unrelated_services_stopped": false,
+  "deployment": false
+}

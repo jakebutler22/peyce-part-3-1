@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-24",
+  "method": "Supported browser CSS viewport overrides and read-only DOM inspection of actual home",
+  "samples": [
+    {
+      "heading": "A momentat your pace.",
+      "height": 900,
+      "hidden": false,
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "heading": "A momentat your pace.",
+      "height": 800,
+      "hidden": false,
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "heading": "A momentat your pace.",
+      "height": 844,
+      "hidden": false,
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "heading": "A momentat your pace.",
+      "height": 800,
+      "hidden": false,
+      "scrollWidth": 360,
+      "width": 360
+    }
+  ],
+  "limits": "CSS simulation, document.hidden remained false; no physical device, screen-reader or real backgrounding claim."
+}

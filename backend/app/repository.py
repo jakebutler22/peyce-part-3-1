@@ -109,11 +109,15 @@ class Repository:
                 if replay["session_id"] != session_id or replay["kind"] != "snapshot" or replay["payload_json"] != payload:
                     raise Conflict("Operation identifier was already used for a different action")
                 return json.loads(replay["response_json"])
-            current = db.execute("SELECT revision FROM sessions WHERE id=?", (session_id,)).fetchone()
+            current = db.execute("SELECT revision,snapshot_json FROM sessions WHERE id=?", (session_id,)).fetchone()
             if current and revision <= current["revision"]:
                 raise Conflict("Snapshot revision must be newer than the saved revision")
             if not current and revision != 1:
                 raise Conflict("A new session starts at revision 1")
+            if current:
+                previous_events = json.loads(current["snapshot_json"])["events"]
+                if value["events"][:len(previous_events)] != previous_events:
+                    raise Conflict("Previously saved lifecycle events must remain an unchanged prefix")
             values = (now, now if value["status"] in ("finished", "stopped", "completed") else None,
                       revision, value["status"], value["exercise"], value["color"], int(value["color_explicit"]), payload, encoded(result))
             if current:

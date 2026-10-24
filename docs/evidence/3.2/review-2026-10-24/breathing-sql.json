@@ -1,0 +1,342 @@
+{
+  "query": "SELECT id,status,revision,exercise FROM sessions WHERE id=?; SELECT revision,role,source,COUNT(*) AS n FROM turns WHERE session_id=? GROUP BY revision,role,source; SELECT kind,at_ms,active_ms FROM lifecycle WHERE session_id=? ORDER BY at_ms; PRAGMA foreign_key_check;",
+  "session": {
+    "id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+    "status": "finished",
+    "revision": 11,
+    "exercise": "breathing"
+  },
+  "turn_counts": [
+    {
+      "revision": 3,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 1
+    },
+    {
+      "revision": 3,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 1
+    },
+    {
+      "revision": 4,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 2
+    },
+    {
+      "revision": 4,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 2
+    },
+    {
+      "revision": 5,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 3
+    },
+    {
+      "revision": 5,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 3
+    },
+    {
+      "revision": 6,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 4
+    },
+    {
+      "revision": 6,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 4
+    },
+    {
+      "revision": 7,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 7,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 8,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 8,
+      "role": "assistant",
+      "source": "validated-mock-acknowledgment",
+      "n": 1
+    },
+    {
+      "revision": 8,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 9,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 9,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 10,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 10,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 11,
+      "role": "assistant",
+      "source": "structured-turn",
+      "n": 5
+    },
+    {
+      "revision": 11,
+      "role": "user",
+      "source": "structured-turn",
+      "n": 5
+    }
+  ],
+  "current_turns": [
+    {
+      "id": 489,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 0,
+      "role": "assistant",
+      "question_id": "body",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How easy is it to let your shoulders and jaw soften right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 490,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 1,
+      "role": "user",
+      "question_id": "body",
+      "answer_id": 2,
+      "skipped": 0,
+      "text": "Hard right now",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 491,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 2,
+      "role": "assistant",
+      "question_id": "thought",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How easy is it to set a repeating thought aside for a moment?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 492,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 3,
+      "role": "user",
+      "question_id": "thought",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Easy",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 493,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 4,
+      "role": "assistant",
+      "question_id": "present",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How connected do you feel to what's around you?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 494,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 5,
+      "role": "user",
+      "question_id": "present",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Present",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 495,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 6,
+      "role": "assistant",
+      "question_id": "breathing",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How does following a gentle breathing rhythm sound right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 496,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 7,
+      "role": "user",
+      "question_id": "breathing",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Comfortable",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 497,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 8,
+      "role": "assistant",
+      "question_id": "grounding",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How does noticing a few things around you sound right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    },
+    {
+      "id": 498,
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 11,
+      "sequence": 9,
+      "role": "user",
+      "question_id": "grounding",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Comfortable",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-10-24T15:25:47.928+00:00",
+      "superseded": false
+    }
+  ],
+  "ready_explanations": [
+    {
+      "request_id": "4f6e298c-a11f-4504-a681-ea0af6b24584",
+      "session_id": "62cdd8f9-c5b6-4f4d-b8b9-919e4ebee760",
+      "revision": 8,
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "prompt_version": "peyce-acknowledgment-1.0",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "body-cue",
+      "outcome": "validated",
+      "validation": "validated",
+      "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+      "stale": 0,
+      "created_at": "2026-10-24T15:24:24.840+00:00",
+      "updated_at": "2026-10-24T15:24:24.844+00:00",
+      "fragments": {
+        "closing_id": "choice",
+        "opening_id": "reflect",
+        "reason_code": "body-cue",
+        "reference_ids": [
+          "body",
+          "breathing"
+        ]
+      },
+      "references": [
+        "body",
+        "breathing"
+      ],
+      "superseded": true
+    }
+  ],
+  "lifecycle": [
+    {
+      "kind": "instruction_visible",
+      "at_ms": 21929.69999998808,
+      "active_ms": 0.0
+    },
+    {
+      "kind": "start",
+      "at_ms": 33199.30000001192,
+      "active_ms": 0.10000002384185791
+    },
+    {
+      "kind": "complete",
+      "at_ms": 93205.90000003576,
+      "active_ms": 60000.0
+    },
+    {
+      "kind": "finish",
+      "at_ms": 105032.10000002384,
+      "active_ms": 60000.0
+    }
+  ],
+  "timing": {
+    "counted_ms": 83102.40000003576,
+    "entry_ms": 21929.69999998808,
+    "excluded_intervals": [],
+    "excluded_ms": 0.0,
+    "finish_ms": 105032.10000002384,
+    "instruction_ms": 21929.69999998808,
+    "raw_ms": 83102.40000003576
+  },
+  "foreign_key_check": []
+}
