@@ -1,0 +1,370 @@
+{
+  "date": "2026-10-25",
+  "method": "Read-only SQLite query output from real requests; provider prose/headers/keys/raw payload are not stored",
+  "attempt_counter_before": 4,
+  "attempt_counter_after": 6,
+  "maximum_attempts": 10,
+  "request_timeouts_seconds": [
+    15,
+    15
+  ],
+  "session_id": "93a02b76-d0f0-43b5-9bc0-19df1761f771",
+  "explanations": [
+    {
+      "request_id": "fefe041a-db45-4ea2-b7b6-886268945185",
+      "session_id": "93a02b76-d0f0-43b5-9bc0-19df1761f771",
+      "revision": 8,
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.0",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "body-cue",
+      "outcome": "fallback",
+      "validation": "fallback-invalid",
+      "stale": 0,
+      "created_at": "2026-10-26T00:31:29.504+00:00",
+      "updated_at": "2026-10-26T00:31:40.198+00:00",
+      "response": {
+        "diagnostic": {
+          "completion_tokens": 1000,
+          "finish_reason": "length",
+          "http_status": 200,
+          "invalid_stage": "content-truncated",
+          "reasoning_tokens": 1000
+        },
+        "fragments": null,
+        "mode": "openrouter",
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "references": [],
+        "request_id": "fefe041a-db45-4ea2-b7b6-886268945185",
+        "revision": 8,
+        "session_id": "93a02b76-d0f0-43b5-9bc0-19df1761f771",
+        "stale": false,
+        "status": "fallback",
+        "text": "You said softening your shoulders and jaw is \u201chard right now\u201d, and breathing sounds comfortable. A gentle rhythm is one option."
+      },
+      "committed_context": {
+        "snapshot": {
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "pink",
+          "color_explicit": false,
+          "direct_choice": null,
+          "events": [
+            {
+              "active_ms": 0.0,
+              "at_ms": 24130.0,
+              "cause": "user",
+              "id": "49d305ab-4e44-4b0d-89f3-ebcdb6d25656",
+              "kind": "instruction_visible"
+            }
+          ],
+          "exercise": "breathing",
+          "operation_id": "64ee4ebb-1180-41ba-9b7c-76bc874b09a9",
+          "revision": 8,
+          "status": "ready",
+          "timing": null
+        },
+        "result": {
+          "code": "body-cue",
+          "exercise": "breathing",
+          "reason": "You said softening your shoulders and jaw is \u201chard right now\u201d, and breathing sounds comfortable. A gentle rhythm is one option."
+        }
+      },
+      "committed_turns": [
+        {
+          "revision": 8,
+          "sequence": 0,
+          "role": "assistant",
+          "question_id": "body",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to let your shoulders and jaw soften right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 1,
+          "role": "user",
+          "question_id": "body",
+          "answer_id": 2,
+          "skipped": 0,
+          "text": "Hard right now",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 2,
+          "role": "assistant",
+          "question_id": "thought",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to set a repeating thought aside for a moment?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 3,
+          "role": "user",
+          "question_id": "thought",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Easy",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 4,
+          "role": "assistant",
+          "question_id": "present",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How connected do you feel to what's around you?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 5,
+          "role": "user",
+          "question_id": "present",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Present",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 6,
+          "role": "assistant",
+          "question_id": "breathing",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does following a gentle breathing rhythm sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 7,
+          "role": "user",
+          "question_id": "breathing",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 8,
+          "role": "assistant",
+          "question_id": "grounding",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does noticing a few things around you sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 9,
+          "role": "user",
+          "question_id": "grounding",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        }
+      ]
+    },
+    {
+      "request_id": "e27122a8-79f3-40f1-a044-5de4e537bb90",
+      "session_id": "93a02b76-d0f0-43b5-9bc0-19df1761f771",
+      "revision": 11,
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.0",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "body-cue",
+      "outcome": "fallback",
+      "validation": "fallback-invalid",
+      "stale": 0,
+      "created_at": "2026-10-26T00:32:22.483+00:00",
+      "updated_at": "2026-10-26T00:32:22.913+00:00",
+      "response": {
+        "diagnostic": {
+          "completion_tokens": 16,
+          "finish_reason": "stop",
+          "http_status": 200,
+          "invalid_stage": "content-json",
+          "reasoning_tokens": 0
+        },
+        "fragments": null,
+        "mode": "openrouter",
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "references": [],
+        "request_id": "e27122a8-79f3-40f1-a044-5de4e537bb90",
+        "revision": 11,
+        "session_id": "93a02b76-d0f0-43b5-9bc0-19df1761f771",
+        "stale": false,
+        "status": "fallback",
+        "text": "You said softening your shoulders and jaw is \u201chard right now\u201d, and breathing sounds comfortable. A gentle rhythm is one option."
+      },
+      "committed_context": {
+        "snapshot": {
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "pink",
+          "color_explicit": false,
+          "direct_choice": null,
+          "events": [
+            {
+              "active_ms": 0.0,
+              "at_ms": 24130.0,
+              "cause": "user",
+              "id": "49d305ab-4e44-4b0d-89f3-ebcdb6d25656",
+              "kind": "instruction_visible"
+            }
+          ],
+          "exercise": "breathing",
+          "operation_id": "d89b51db-eb52-41d9-a6e5-f04a63f2efa3",
+          "revision": 11,
+          "status": "ready",
+          "timing": null
+        },
+        "result": {
+          "code": "body-cue",
+          "exercise": "breathing",
+          "reason": "You said softening your shoulders and jaw is \u201chard right now\u201d, and breathing sounds comfortable. A gentle rhythm is one option."
+        }
+      },
+      "committed_turns": [
+        {
+          "revision": 11,
+          "sequence": 0,
+          "role": "assistant",
+          "question_id": "body",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to let your shoulders and jaw soften right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 1,
+          "role": "user",
+          "question_id": "body",
+          "answer_id": 2,
+          "skipped": 0,
+          "text": "Hard right now",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 2,
+          "role": "assistant",
+          "question_id": "thought",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to set a repeating thought aside for a moment?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 3,
+          "role": "user",
+          "question_id": "thought",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Easy",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 4,
+          "role": "assistant",
+          "question_id": "present",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How connected do you feel to what's around you?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 5,
+          "role": "user",
+          "question_id": "present",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Present",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 6,
+          "role": "assistant",
+          "question_id": "breathing",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does following a gentle breathing rhythm sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 7,
+          "role": "user",
+          "question_id": "breathing",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 8,
+          "role": "assistant",
+          "question_id": "grounding",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does noticing a few things around you sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 11,
+          "sequence": 9,
+          "role": "user",
+          "question_id": "grounding",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        }
+      ]
+    }
+  ],
+  "foreign_key_errors": [],
+  "finding": "Attempt5: HTTP200 content-truncated, length,1000 completion/1000 reasoning. Attempt6 after disabling reasoning: HTTP200 stop,16 completion/0 reasoning,content-json invalid. No validated contribution in these two attempts; no new authentication failure observed."
+}

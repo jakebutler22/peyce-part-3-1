@@ -1,0 +1,26 @@
+{
+  "date_local": "2026-10-25",
+  "backend": {
+    "command": "PYTHON_DOTENV_DISABLED=1 PEYCE_MODEL_MODE=mock PYTHONPATH=backend backend/.venv/bin/python -m pytest backend/tests -q",
+    "tests_passed": 86,
+    "elapsed_seconds": 1.25,
+    "warnings": [
+      "Existing Starlette TestClient httpx deprecation"
+    ]
+  },
+  "frontend": {
+    "command": "npm --prefix frontend run verify",
+    "tests_passed": 46,
+    "production_build": "passed"
+  },
+  "routine_tests": "Mocked provider only; isolated SQLite",
+  "live_demonstrations": {
+    "before": 2,
+    "after": 7,
+    "new_attempts": 5,
+    "authorized_ceiling": 10,
+    "validated_attempt": 7,
+    "zero_price_model_only": true
+  },
+  "no_part_3_3_evaluation": true
+}

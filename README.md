@@ -2,7 +2,7 @@
 
 Peyce is pronounced **peace** (/piːs/). It is a single-user localhost Vue → FastAPI → SQLite coursework application for **fictional use only**. Complete a gentle breathing sequence or private 5/4/3/2/1 grounding, choose whether to save the structured conversation/actions, and inspect acknowledged sessions in real SQLite-backed history. No person is monitoring it; it is not a support service. **Stop after Part 3.2.**
 
-The model has a small optional role: choose approved acknowledgment fragments/references for the current deterministic result. It cannot choose a skill, diagnose, score, change timing or control support. Mock mode is the default. **The genuine live-model criterion is currently unmet:** two authorized runtime attempts were rejected, including a confirmed HTTP 401. A usable server-local credential is needed; no additional live attempts run until the human updates it. Configuration availability and mock/fallback wording are not live success. [Verification](docs/part-3.2-verification.md) records the exact evidence and other limits.
+The model has a small optional role: choose approved acknowledgment fragments/references for the current deterministic result. It cannot choose a skill, diagnose, score, change timing or control support. **A genuine live contribution was validated and displayed on October 25:** the seventh authorized OpenRouter attempt supplied current-answer references and approved phrase IDs, which the application validated, rendered and persisted. The interface showed Model-assisted wording. Earlier provider/format failures remain separately recorded; the persistent total is **7/10 attempts**, within the **$0.00** authorization. The service was returned to default **mock mode**, restarted to verify durable history, then stopped after verification. [Verification](docs/part-3.2-verification.md) records the result, actual revisions and remaining limits.
 
 ## Run locally
 
@@ -32,12 +32,12 @@ Open `http://127.0.0.1:5181/`. Vite proxies `/api` to the loopback backend; no w
 For routine verification:
 
 ```sh
-PYTHONPATH=backend backend/.venv/bin/python -m pytest backend/tests -q
+PYTHON_DOTENV_DISABLED=1 PEYCE_MODEL_MODE=mock PYTHONPATH=backend backend/.venv/bin/python -m pytest backend/tests -q
 npm --prefix frontend test
 npm --prefix frontend run build
 ```
 
-The October 24 review passed **65 backend tests**, **46 frontend tests**, and the build. Actual browser checks covered four simulated viewports, SQLite history, injected provider/database faults, real reload/restart and a stopped-backend outage; local support and unsaved practice remained available. A fresh breathing sequence measured **83.1024 seconds** from first instructions through closing Finish, with **zero exclusions**; entry/check-in was a separate **21.9297 seconds**. The earlier October 20 sequence remains recorded at 88.1449 seconds. These scripted results include tool/decision overhead and are not natural-human timing or clinical evidence. See the [latest timing export](docs/evidence/3.2/review-2026-10-24/breathing-timing.json), [review summary](docs/evidence/3.2/review-2026-10-24/audit.md) and [full verification](docs/part-3.2-verification.md).
+The October 25 adapter review passed **86 backend tests**, **46 frontend tests**, and the build; routine tests use mocks/fake HTTP. The new **live-model** breathing session completed all six cycles, Finish and SQLite-backed history in **88.6376 seconds** from first instructions, with **zero exclusions**; entry/check-in was **6.3333 seconds** separately. [Live timing/events](docs/evidence/3.2/live-retry-2026-10-25/live-timing.json) and [saved provenance](docs/evidence/3.2/live-retry-2026-10-25/live-validated-session.json) preserve that actual result. Earlier browser checks covered four simulated viewports, SQLite history, injected faults, real reload/restart and a stopped-backend outage; support and unsaved practice remained available. The October 24 **mock** 83.1024-second run and October 20 88.1449-second run remain separately dated. These scripted results include tool/decision overhead and are not natural-human timing or clinical evidence. See [current verification](docs/part-3.2-verification.md) for assumptions and remaining limits.
 
 ## Configuration, history and failure behavior
 
@@ -59,7 +59,8 @@ Test faults are disabled by default. For a deliberate local mock check, set `PEY
 | [Part 3.2 verification](docs/part-3.2-verification.md) | Actual commands, expected/observed checks, timing, SQL, browser/live distinction and pending gates |
 | [API contract](docs/part-3.2-api-contract.md) / [backend setup](backend/README.md) | Callable routes, strict snapshots, mock/live configuration and persistence policy |
 | [Part 3.2 evidence](docs/evidence/3.2/) | New integrated screenshots, safe fictional SQL/session/timing and provider evidence |
-| [October 24 review](docs/evidence/3.2/review-2026-10-24/audit.md) | Fresh full-stack timing, pause/support overlap, save recovery, navigation fixes and exact remaining model blocker |
+| [October 24 review](docs/evidence/3.2/review-2026-10-24/audit.md) | Dated mock timing, pause/support overlap, save recovery, navigation fixes and the model blocker that remained then |
+| [October 25 live retry](docs/evidence/3.2/live-retry-2026-10-25/outcome.md) | Free-model catalog, actual failed approaches, validated live wording, complete live timing and durable history; previous mock timing is not relabeled live |
 | [AI use](AI-USE.md) / [evidence log](docs/evidence-log.md) / [handoff](handoffs/current.md) | Actual assistance, revised approaches and active stop boundary |
 
 The instructor-facing single `submissions/3.2/report.md` is packaged after the verified source/evidence commit, so it can cite a real immutable source SHA. Source publication and a generated report do not establish a guaranteed grade, student personal review or Canvas submission.
@@ -74,6 +75,6 @@ The instructor-facing single `submissions/3.2/report.md` is packaged after the v
 | [Part 3.1 verification](docs/verification.md) | Historical observations/screenshots, not new backend/model evidence |
 | [Asset provenance](docs/assets/provenance.md) / [font licenses](docs/assets/font-licenses.md) | Original bow/balloon and licensed local fonts; approximate inflation/recoloring limits |
 
-Five original optional face questions remain exact and versioned; they are not STAI or a validated assessment. Matching is a private design heuristic: current choice/refusal/unknown answers and support outrank a suggestion. Quiet decoration, generous controls and one-task screens remain design choices, not evidence of clinical benefit. A genuine hidden-tab/return round trip, physical held-key repeat, real-device/screen-reader use, natural usability, instructor acceptance of button-led conversation and student personal review remain limits. No accounts, training, production persistence, deployment, support service or Part 3.3 evaluation is added. **Part 3.2 is not fully complete while the real-model gate remains unmet.**
+Five original optional face questions remain exact and versioned; they are not STAI or a validated assessment. Matching is a private design heuristic: current choice/refusal/unknown answers and support outrank a suggestion. Quiet decoration, generous controls and one-task screens remain design choices, not evidence of clinical benefit. A genuine hidden-tab/return round trip, physical held-key repeat, real-device/screen-reader use, natural usability, instructor acceptance of button-led conversation and student personal review remain limits. One validated live contribution establishes the model integration for the observed case; it does not establish reliability across every case or resolve those human/accessibility limits. No accounts, training, production persistence, deployment, support service or Part 3.3 evaluation is added.
 
 The independent root is `/Users/jakebutler/Documents/ChatGPT/mental health vF`. The previous `Mental Health` repository remains read-only; its Git history/private data are not reused. Part 3.1 submission files and immutable history are preserved.

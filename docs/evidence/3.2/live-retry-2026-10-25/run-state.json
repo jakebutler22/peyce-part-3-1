@@ -1,0 +1,22 @@
+{
+  "date_local": "2026-10-25",
+  "owned_verification_services_stopped": true,
+  "owned_pids": [
+    36001,
+    35344
+  ],
+  "loopback_ports_closed": {
+    "5181": true,
+    "8012": true
+  },
+  "persistent_live_attempts": 7,
+  "maximum_attempts": 10,
+  "new_attempts_this_run": 5,
+  "configured_default_mode": "mock",
+  "mode_returned_to_mock_before_teardown": true,
+  "owned_browser_tab_closed": true,
+  "temporary_viewport_reset": true,
+  "unrelated_process_stopped": false,
+  "deployment": false,
+  "part_3_3_started": false
+}

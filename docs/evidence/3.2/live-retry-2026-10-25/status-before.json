@@ -1,0 +1,10 @@
+{
+  "mode": "openrouter",
+  "model_id": "nvidia/nemotron-3.5-lightning:free",
+  "live_configured": true,
+  "test_controls": false,
+  "question_version": "peyce-original-1.0",
+  "policy_version": "peyce-routing-1.0",
+  "live_attempts": 2,
+  "live_max_attempts": 10
+}

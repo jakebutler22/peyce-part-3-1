@@ -1,0 +1,39 @@
+{
+  "date_local": "2026-10-25",
+  "method": "Stopped actual owned live backend and started new mock-default process; GET status/session after restart",
+  "status_after_restart": {
+    "mode": "mock",
+    "model_id": "peyce-mock-1.0",
+    "live_configured": false,
+    "test_controls": false,
+    "question_version": "peyce-original-1.0",
+    "policy_version": "peyce-routing-1.0",
+    "live_attempts": 7,
+    "live_max_attempts": 10
+  },
+  "persisted_session": {
+    "id": "1e9f25f4-ccd2-4b2e-ab27-5e02dda9ccec",
+    "status": "finished",
+    "revision": 11,
+    "timing": {
+      "counted_ms": 88637.60000002384,
+      "entry_ms": 6333.300000011921,
+      "excluded_intervals": [],
+      "excluded_ms": 0.0,
+      "finish_ms": 94970.90000003576,
+      "instruction_ms": 6333.300000011921,
+      "raw_ms": 88637.60000002384
+    },
+    "explanation": {
+      "request_id": "33d3d4a4-4715-41da-ad79-e3ab252b0826",
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.1",
+      "outcome": "validated",
+      "validation": "validated",
+      "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+      "stale": 0
+    }
+  },
+  "live_attempts_unchanged": true
+}

@@ -1,0 +1,10 @@
+{
+  "date_local": "2026-10-25",
+  "publishable_files_scanned": 190,
+  "configured_credential_exposed": false,
+  "forbidden_files": [],
+  "backend_env_ignored": true,
+  "runtime_databases_included": false,
+  "provider_raw_prose_or_headers_in_evidence": false,
+  "fictional_evidence_only": true
+}

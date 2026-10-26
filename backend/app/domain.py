@@ -1,7 +1,7 @@
 """Pure versioned routing and approved model grammar. No clinical inference."""
 QUESTION_VERSION = "peyce-original-1.0"
 POLICY_VERSION = "peyce-routing-1.0"
-PROMPT_VERSION = "peyce-acknowledgment-1.0"
+PROMPT_VERSION = "peyce-acknowledgment-1.1"
 CONTENT_VERSION = "peyce-skills-1.0"
 QUESTIONS = [
     ("body", "How easy is it to let your shoulders and jaw soften right now?", ["Easy", "Takes some effort", "Hard right now"]),

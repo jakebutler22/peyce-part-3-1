@@ -1,0 +1,538 @@
+{
+  "date": "2026-10-25",
+  "method": "Actual localhost Vue actions, backend provider requests and read-only SQLite inspection; no injected faults",
+  "attempt_counter_before": 2,
+  "attempt_counter_after": 4,
+  "maximum_attempts": 10,
+  "outbound_requests_this_segment": 2,
+  "request_timeouts_seconds": [
+    8,
+    15
+  ],
+  "session": {
+    "id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+    "created_at": "2026-10-26T00:26:55.685+00:00",
+    "updated_at": "2026-10-26T00:29:46.222+00:00",
+    "revision": 15,
+    "status": "stopped",
+    "exercise": "breathing",
+    "snapshot": {
+      "answered": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "answers": [
+        0,
+        2,
+        1,
+        0,
+        0
+      ],
+      "color": "pink",
+      "color_explicit": false,
+      "direct_choice": "breathing",
+      "events": [
+        {
+          "active_ms": 0.0,
+          "at_ms": 30027.30000001192,
+          "cause": "user",
+          "id": "d4339790-489c-4eba-9b19-df64c4c08417",
+          "kind": "instruction_visible"
+        },
+        {
+          "active_ms": 0.09999996423721313,
+          "at_ms": 158444.69999998808,
+          "cause": "user",
+          "id": "9a41941d-79e1-410e-9a53-20d53a0802fd",
+          "kind": "start"
+        },
+        {
+          "active_ms": 2265.399999976158,
+          "at_ms": 160709.90000003576,
+          "cause": "support",
+          "id": "207fd8f4-0bb9-498a-b1a9-442f6f125a1c",
+          "kind": "support_open"
+        },
+        {
+          "active_ms": 2265.399999976158,
+          "at_ms": 160710.0,
+          "cause": "support",
+          "id": "ab829fb1-7f40-480f-a4b5-267f3b606860",
+          "kind": "pause"
+        },
+        {
+          "active_ms": 2265.399999976158,
+          "at_ms": 163393.5,
+          "cause": "support",
+          "id": "9c9ea505-dc58-405d-a700-242ebc13a37f",
+          "kind": "support_close"
+        },
+        {
+          "active_ms": 2265.399999976158,
+          "at_ms": 168092.69999998808,
+          "cause": "user",
+          "id": "5e30da4b-84b4-4b01-b681-790fe8872ae3",
+          "kind": "stop"
+        },
+        {
+          "active_ms": 2265.399999976158,
+          "at_ms": 170544.60000002384,
+          "cause": "user",
+          "id": "c0a88935-3f62-4e89-8469-55d94be44fd1",
+          "kind": "finish"
+        }
+      ],
+      "exercise": "breathing",
+      "operation_id": "d129e3be-94fe-4b20-8a78-af83176e0e33",
+      "revision": 15,
+      "status": "stopped",
+      "timing": {
+        "counted_ms": 137833.70000004768,
+        "entry_ms": 30027.30000001192,
+        "excluded_intervals": [
+          {
+            "cause": "support",
+            "end_ms": 163393.5,
+            "start_ms": 160709.90000003576
+          }
+        ],
+        "excluded_ms": 2683.599999964237,
+        "finish_ms": 170544.60000002384,
+        "instruction_ms": 30027.30000001192,
+        "raw_ms": 140517.30000001192
+      }
+    },
+    "result": {
+      "code": "direct-choice",
+      "exercise": "breathing",
+      "reason": "You chose this exercise. You can change your mind at any time."
+    }
+  },
+  "explanations": [
+    {
+      "request_id": "42935dab-6e3e-4cea-90a9-302bff20d5f6",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 8,
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.0",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "present-cue",
+      "outcome": "fallback",
+      "validation": "fallback-timeout",
+      "fragments_json": null,
+      "text": "You described a repeating thought as \u201cit keeps pulling me in\u201d, and noticing your surroundings sounds comfortable.",
+      "stale": 0,
+      "created_at": "2026-10-26T00:27:25.717+00:00",
+      "updated_at": "2026-10-26T00:27:33.724+00:00",
+      "fragments": null,
+      "references": [],
+      "response": {
+        "fragments": null,
+        "mode": "openrouter",
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "references": [],
+        "request_id": "42935dab-6e3e-4cea-90a9-302bff20d5f6",
+        "revision": 8,
+        "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+        "stale": false,
+        "status": "fallback",
+        "text": "You described a repeating thought as \u201cit keeps pulling me in\u201d, and noticing your surroundings sounds comfortable."
+      },
+      "committed_context": {
+        "snapshot": {
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "answers": [
+            0,
+            2,
+            1,
+            0,
+            0
+          ],
+          "color": "pink",
+          "color_explicit": false,
+          "direct_choice": null,
+          "events": [
+            {
+              "active_ms": 0.0,
+              "at_ms": 30027.30000001192,
+              "cause": "user",
+              "id": "d4339790-489c-4eba-9b19-df64c4c08417",
+              "kind": "instruction_visible"
+            }
+          ],
+          "exercise": "grounding",
+          "operation_id": "0d4215e6-4fb9-4ac5-ba62-a1d49f76b2be",
+          "revision": 8,
+          "status": "ready",
+          "timing": null
+        },
+        "result": {
+          "code": "present-cue",
+          "exercise": "grounding",
+          "reason": "You described a repeating thought as \u201cit keeps pulling me in\u201d, and noticing your surroundings sounds comfortable."
+        }
+      },
+      "committed_turns": [
+        {
+          "revision": 8,
+          "sequence": 0,
+          "role": "assistant",
+          "question_id": "body",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to let your shoulders and jaw soften right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 1,
+          "role": "user",
+          "question_id": "body",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Easy",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 2,
+          "role": "assistant",
+          "question_id": "thought",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to set a repeating thought aside for a moment?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 3,
+          "role": "user",
+          "question_id": "thought",
+          "answer_id": 2,
+          "skipped": 0,
+          "text": "It keeps pulling me in",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 4,
+          "role": "assistant",
+          "question_id": "present",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How connected do you feel to what's around you?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 5,
+          "role": "user",
+          "question_id": "present",
+          "answer_id": 1,
+          "skipped": 0,
+          "text": "A little distracted",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 6,
+          "role": "assistant",
+          "question_id": "breathing",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does following a gentle breathing rhythm sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 7,
+          "role": "user",
+          "question_id": "breathing",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 8,
+          "role": "assistant",
+          "question_id": "grounding",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does noticing a few things around you sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 8,
+          "sequence": 9,
+          "role": "user",
+          "question_id": "grounding",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        }
+      ]
+    },
+    {
+      "request_id": "6d2c8fb8-1543-4287-8a92-2eab25709c68",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 9,
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.0",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "direct-choice",
+      "outcome": "fallback",
+      "validation": "fallback-invalid",
+      "fragments_json": null,
+      "text": "You chose this exercise. You can change your mind at any time.",
+      "stale": 0,
+      "created_at": "2026-10-26T00:28:02.553+00:00",
+      "updated_at": "2026-10-26T00:28:10.454+00:00",
+      "fragments": null,
+      "references": [],
+      "response": {
+        "fragments": null,
+        "mode": "openrouter",
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "references": [],
+        "request_id": "6d2c8fb8-1543-4287-8a92-2eab25709c68",
+        "revision": 9,
+        "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+        "stale": false,
+        "status": "fallback",
+        "text": "You chose this exercise. You can change your mind at any time."
+      },
+      "committed_context": {
+        "snapshot": {
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "answers": [
+            0,
+            2,
+            1,
+            0,
+            0
+          ],
+          "color": "pink",
+          "color_explicit": false,
+          "direct_choice": "breathing",
+          "events": [
+            {
+              "active_ms": 0.0,
+              "at_ms": 30027.30000001192,
+              "cause": "user",
+              "id": "d4339790-489c-4eba-9b19-df64c4c08417",
+              "kind": "instruction_visible"
+            }
+          ],
+          "exercise": "breathing",
+          "operation_id": "fe2e129f-fc0f-4683-a9bd-aac247ad6f59",
+          "revision": 9,
+          "status": "ready",
+          "timing": null
+        },
+        "result": {
+          "code": "direct-choice",
+          "exercise": "breathing",
+          "reason": "You chose this exercise. You can change your mind at any time."
+        }
+      },
+      "committed_turns": [
+        {
+          "revision": 9,
+          "sequence": 0,
+          "role": "assistant",
+          "question_id": "body",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to let your shoulders and jaw soften right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 1,
+          "role": "user",
+          "question_id": "body",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Easy",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 2,
+          "role": "assistant",
+          "question_id": "thought",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How easy is it to set a repeating thought aside for a moment?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 3,
+          "role": "user",
+          "question_id": "thought",
+          "answer_id": 2,
+          "skipped": 0,
+          "text": "It keeps pulling me in",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 4,
+          "role": "assistant",
+          "question_id": "present",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How connected do you feel to what's around you?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 5,
+          "role": "user",
+          "question_id": "present",
+          "answer_id": 1,
+          "skipped": 0,
+          "text": "A little distracted",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 6,
+          "role": "assistant",
+          "question_id": "breathing",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does following a gentle breathing rhythm sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 7,
+          "role": "user",
+          "question_id": "breathing",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 8,
+          "role": "assistant",
+          "question_id": "grounding",
+          "answer_id": null,
+          "skipped": 0,
+          "text": "How does noticing a few things around you sound right now?",
+          "source": "structured-turn"
+        },
+        {
+          "revision": 9,
+          "sequence": 9,
+          "role": "user",
+          "question_id": "grounding",
+          "answer_id": 0,
+          "skipped": 0,
+          "text": "Comfortable",
+          "source": "structured-turn"
+        }
+      ]
+    }
+  ],
+  "lifecycle": [
+    {
+      "event_id": "d4339790-489c-4eba-9b19-df64c4c08417",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 8,
+      "kind": "instruction_visible",
+      "at_ms": 30027.30000001192,
+      "active_ms": 0.0,
+      "cause": "user",
+      "created_at": "2026-10-26T00:27:25.708+00:00"
+    },
+    {
+      "event_id": "9a41941d-79e1-410e-9a53-20d53a0802fd",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 10,
+      "kind": "start",
+      "at_ms": 158444.69999998808,
+      "active_ms": 0.09999996423721313,
+      "cause": "user",
+      "created_at": "2026-10-26T00:29:34.125+00:00"
+    },
+    {
+      "event_id": "207fd8f4-0bb9-498a-b1a9-442f6f125a1c",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 11,
+      "kind": "support_open",
+      "at_ms": 160709.90000003576,
+      "active_ms": 2265.399999976158,
+      "cause": "support",
+      "created_at": "2026-10-26T00:29:36.386+00:00"
+    },
+    {
+      "event_id": "ab829fb1-7f40-480f-a4b5-267f3b606860",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 11,
+      "kind": "pause",
+      "at_ms": 160710.0,
+      "active_ms": 2265.399999976158,
+      "cause": "support",
+      "created_at": "2026-10-26T00:29:36.386+00:00"
+    },
+    {
+      "event_id": "9c9ea505-dc58-405d-a700-242ebc13a37f",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 13,
+      "kind": "support_close",
+      "at_ms": 163393.5,
+      "active_ms": 2265.399999976158,
+      "cause": "support",
+      "created_at": "2026-10-26T00:29:39.067+00:00"
+    },
+    {
+      "event_id": "5e30da4b-84b4-4b01-b681-790fe8872ae3",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 14,
+      "kind": "stop",
+      "at_ms": 168092.69999998808,
+      "active_ms": 2265.399999976158,
+      "cause": "user",
+      "created_at": "2026-10-26T00:29:43.768+00:00"
+    },
+    {
+      "event_id": "c0a88935-3f62-4e89-8469-55d94be44fd1",
+      "session_id": "dcae0a4c-3952-4735-a7f8-b878e858ef08",
+      "revision": 15,
+      "kind": "finish",
+      "at_ms": 170544.60000002384,
+      "active_ms": 2265.399999976158,
+      "cause": "user",
+      "created_at": "2026-10-26T00:29:46.222+00:00"
+    }
+  ],
+  "foreign_key_errors": [],
+  "limits": "No validated live output. Attempt3 timed out; attempt4 failed strict output validation with generic historical diagnostics. Support/Start/Stop/Finish remained usable and status stayed stopped; no completion claimed. This is not the primary intended-pace timing run."
+}

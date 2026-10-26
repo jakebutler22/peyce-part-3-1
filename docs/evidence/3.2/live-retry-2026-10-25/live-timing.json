@@ -1,0 +1,72 @@
+{
+  "date_local": "2026-10-25",
+  "session_id": "1e9f25f4-ccd2-4b2e-ab27-5e02dda9ccec",
+  "status": "finished",
+  "revision": 11,
+  "model_mode": "openrouter",
+  "model_id": "nvidia/nemotron-3.5-lightning:free",
+  "model_status": "validated",
+  "prompt_version": "peyce-acknowledgment-1.1",
+  "script": "Fictional original-face body-cue answers [2,0,0,0,0]. Observe and capture actual live validated wording on ready, wait ten seconds for reading, deliberate Start, all six actual pacing cycles, observe completion, wait eight seconds for closing and Finish. All tool/provider/reading/decision overhead after instruction display is counted; no pauses or exclusions.",
+  "timing": {
+    "counted_ms": 88637.60000002384,
+    "entry_ms": 6333.300000011921,
+    "excluded_intervals": [],
+    "excluded_ms": 0.0,
+    "finish_ms": 94970.90000003576,
+    "instruction_ms": 6333.300000011921,
+    "raw_ms": 88637.60000002384
+  },
+  "stages": {
+    "instruction_to_start_seconds": 14.687400000035764,
+    "start_to_complete_seconds": 60.009099999964235,
+    "complete_to_finish_seconds": 13.941100000023841
+  },
+  "lifecycle": [
+    {
+      "event_id": "782976df-099f-42dd-b48b-5ec5b6a9ac70",
+      "session_id": "1e9f25f4-ccd2-4b2e-ab27-5e02dda9ccec",
+      "revision": 8,
+      "kind": "instruction_visible",
+      "at_ms": 6333.300000011921,
+      "active_ms": 0.0,
+      "cause": "user",
+      "created_at": "2026-10-26T00:35:02.419+00:00"
+    },
+    {
+      "event_id": "b2e3bc28-6f4a-494f-b9b7-461bb728dffa",
+      "session_id": "1e9f25f4-ccd2-4b2e-ab27-5e02dda9ccec",
+      "revision": 9,
+      "kind": "start",
+      "at_ms": 21020.700000047684,
+      "active_ms": 0.10000002384185791,
+      "cause": "user",
+      "created_at": "2026-10-26T00:35:17.107+00:00"
+    },
+    {
+      "event_id": "2bc30f23-3d77-4363-9153-87d6048eb3c2",
+      "session_id": "1e9f25f4-ccd2-4b2e-ab27-5e02dda9ccec",
+      "revision": 10,
+      "kind": "complete",
+      "at_ms": 81029.80000001192,
+      "active_ms": 60000.0,
+      "cause": "clock",
+      "created_at": "2026-10-26T00:36:17.117+00:00"
+    },
+    {
+      "event_id": "29210806-0d0c-4b78-9731-9fefce24321d",
+      "session_id": "1e9f25f4-ccd2-4b2e-ab27-5e02dda9ccec",
+      "revision": 11,
+      "kind": "finish",
+      "at_ms": 94970.90000003576,
+      "active_ms": 60000.0,
+      "cause": "user",
+      "created_at": "2026-10-26T00:36:31.057+00:00"
+    }
+  ],
+  "limit_seconds": 90,
+  "within_90_seconds": true,
+  "margin_seconds": 1.3623999999761582,
+  "entry_checkin_seconds": 6.333300000011921,
+  "limits": "One scripted intended-pace observation, not measured natural-human usability, clinical efficacy or guaranteed duration for everyone. All prior diagnostic sessions remain stopped and do not establish this duration."
+}
