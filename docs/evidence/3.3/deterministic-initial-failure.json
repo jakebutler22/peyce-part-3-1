@@ -1,0 +1,20 @@
+{
+  "scenario": "S17",
+  "layer": "API/SQLite; simulated cap in disposable temporary database",
+  "mode": "mocked-live-path; no network dispatch",
+  "expected": {
+    "mode": "mock",
+    "status": "validated",
+    "attempts": 10
+  },
+  "observed": {
+    "mode": "openrouter",
+    "status": "fallback",
+    "model_id": "nvidia/nemotron-3.5-lightning:free"
+  },
+  "attempts": 10,
+  "result": "fail",
+  "finding": "At the generation cap the application suppressed dispatch but reported OpenRouter fallback instead of a validated, honestly labeled mock.",
+  "real_runtime_database_accessed": false,
+  "correction_cycle": 1
+}

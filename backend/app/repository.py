@@ -248,7 +248,7 @@ class Repository:
             if stale:
                 response["status"] = "obsolete"
             if current:
-                db.execute("UPDATE explanations SET outcome=?,validation=?,model_id=?,fragments_json=?,references_json=?,text=?,stale=?,updated_at=?,response_json=? WHERE request_id=?", (response["status"], outcome, response["model_id"], encoded(response["fragments"]) if response["fragments"] else None, encoded(response["references"]), response["text"], int(stale), stamp(), encoded(response), str(request.request_id)))
+                db.execute("UPDATE explanations SET outcome=?,validation=?,mode=?,model_id=?,fragments_json=?,references_json=?,text=?,stale=?,updated_at=?,response_json=? WHERE request_id=?", (response["status"], outcome, response["mode"], response["model_id"], encoded(response["fragments"]) if response["fragments"] else None, encoded(response["references"]), response["text"], int(stale), stamp(), encoded(response), str(request.request_id)))
                 if response["status"] == "validated":
                     db.execute("INSERT INTO turns(session_id,revision,sequence,role,text,question_version,source,created_at) VALUES(?,?,99,'assistant',?,?,?,?)", (session_id, request.revision, response["text"], QUESTION_VERSION, "validated-" + response["mode"] + "-acknowledgment", stamp()))
             return response

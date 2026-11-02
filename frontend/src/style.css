@@ -18,3 +18,4 @@
 .record-section>.record-context{font-size:11px;color:var(--muted);margin:-5px 0 16px}.earlier-records{border-top:1px solid var(--line);margin-top:24px;padding-top:12px}.earlier-records summary{cursor:pointer;min-height:44px;padding:10px 0;font-size:12px;line-height:1.8;color:var(--rose)}.earlier-records>p{font-size:11px;line-height:1.8;color:var(--muted);margin:6px 0 14px}.revision-record{border-top:1px solid #f2eaf0}.revision-record>summary{font-size:11px;color:var(--muted)}.revision-record>.conversation-records{margin:12px 0 22px}
 /* Actual 1280px review: keep the decorative sense order and caption together. */
 .sense-art{display:grid;grid-template-columns:repeat(5,1fr);gap:0 14px;max-width:340px;font-size:64px;text-align:center}.sense-art small{grid-column:1/-1}
+.repeat-session{margin-bottom:24px}.repeat-session .fine-print{margin-top:10px}

@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { objectsFor } from './assets.js';
 import { questions, senses } from './data.js';
 import { usePrototype } from './usePrototype.js';
@@ -9,14 +9,13 @@ import BalloonPacer from './components/BalloonPacer.vue';
 const p = usePrototype();
 const {
   screen, questionIndex, answers, result, exercise, origin, selecting, senseIndex,
-  color, reducedMotion, timing, paused, pauseReason, sessionStatus, supportDialog,
+  color, colorStorageError, confirmingClear, reducedMotion, timing, paused, pauseReason, sessionStatus, supportDialog,
   saveEnabled, saveState, saveMessage, historyItems, historyLoading, historyError,
   selectedSession, explanationText, explanationLabel, verificationMode, providerFault, saveFault,
 } = p;
 const question = computed(() => questions[questionIndex.value]);
 const sense = computed(() => senses[senseIndex.value]);
 const title = computed(() => exercise.value === 'breathing' ? 'A gentle breathing rhythm.' : 'A little more here.');
-const confirmingClear = ref(false);
 const detail = computed(() => {
   const record = selectedSession.value;
   return record ? { ...record.session, ...record.snapshot, ...record } : null;
@@ -78,9 +77,9 @@ async function clearSavedHistory() {
       <section v-if="screen === 'home'" class="home-layout">
         <div class="opening-art"><DecorativeObject v-for="object in objectsFor('opening')" :key="object.id" :object-id="object.id"/><div class="art-rule"></div><span class="art-caption">One small moment.<br>Your own pace.</span></div>
         <div class="opening-copy">
-          <span class="eyebrow">PEYCE · PRONOUNCED “PEACE”</span><h1 tabindex="-1">A moment<br>at your <em>pace.</em></h1>
+          <span class="eyebrow">PEYCE · PRONOUNCED “PACE”</span><h1 tabindex="-1">A moment<br>at your <em>pace.</em></h1>
           <p class="lead">A gentle rhythm. A little grounding.<br>Room to choose what fits right now.</p>
-          <div class="save-choice"><label><input type="checkbox" v-model="saveEnabled"> <span>Save this fictional session on this device</span></label><p>Fictional coursework only. Saved answers and activity stay on this computer until you clear past sessions.</p></div>
+          <div class="save-choice"><label><input type="checkbox" v-model="saveEnabled"> <span>Save this fictional session on this device</span></label><p>Fictional coursework only. Saved answers and activity stay on this computer until you clear past sessions. Your chosen balloon colour is remembered in this browser separately.</p></div>
           <div class="opening-actions"><button class="primary" @click="p.beginCheckin">Find an exercise <span aria-hidden="true">→</span></button><button class="secondary" @click="p.directEntry">Choose an exercise</button></div>
           <p class="fine-print">Five optional questions, or go straight to a practice.<br>No typing. No account. You can leave at any time.</p>
         </div>
@@ -91,7 +90,7 @@ async function clearSavedHistory() {
       </section>
 
       <section v-else-if="screen === 'checkin'" class="checkin-stage">
-        <div class="section-top"><button class="back-button" :disabled="selecting" @click="p.backQuestion">← Back</button><span class="eyebrow">{{ questionIndex + 1 }} OF 5</span><DecorativeObject v-for="object in objectsFor('checkin')" :key="object.id" :object-id="object.id" class="quiet-bow"/></div>
+        <div class="section-top"><button class="back-button" @click="p.backQuestion">← Back</button><span class="eyebrow">{{ questionIndex + 1 }} OF 5</span><DecorativeObject v-for="object in objectsFor('checkin')" :key="object.id" :object-id="object.id" class="quiet-bow"/></div>
         <div class="question-progress" aria-hidden="true"><span v-for="n in 5" :key="n" :class="{ current: n === questionIndex + 1, passed: n < questionIndex + 1 }"></span></div>
         <h1 tabindex="-1" :key="question.id">{{ question.text }}</h1><p class="question-note">Choose what fits. There is no right answer.</p>
         <div class="face-options"><FaceOption v-for="(label, value) in question.labels" :key="value" :value="value" :label="label" :selected="answers[questionIndex] === value" :disabled="selecting" @choose="p.answer"/></div>
@@ -109,7 +108,7 @@ async function clearSavedHistory() {
         <div class="ready-copy"><button class="back-button" @click="p.readyBack">← Back</button><span class="eyebrow">{{ result?.code === 'direct-choice' ? 'YOUR CHOICE' : 'ONE OPTION FOR THIS MOMENT' }}</span><h1 tabindex="-1">{{ title }}</h1>
           <div class="explanation-block"><p class="reason">{{ explanationText || result?.reason }}</p><span class="explanation-source">{{ explanationLabel }}</span></div>
           <p class="lead exercise-intro" v-if="exercise === 'breathing'">Follow the balloon with a comfortable breath. In through your nose as it grows, then gently out through your mouth as it softens. No need to force it.</p><p class="lead exercise-intro" v-else>Notice five things you can see, then four you can feel, three you can hear, two you can smell, and one you can taste. Keep them to yourself. You can skip any sense.</p>
-          <div v-if="exercise === 'breathing'" class="visual-settings"><span class="setting-label">Balloon colour</span><div class="swatches"><button v-for="c in ['pink','red','pearl']" :key="c" :aria-label="c + ' balloon'" :aria-pressed="color === c" :class="['swatch', c, { chosen: color === c }]" @click="color = c"><span aria-hidden="true">{{ color === c ? '✓' : '' }}</span></button></div><label class="motion-choice"><input type="checkbox" v-model="reducedMotion"> Minimal motion</label></div>
+          <div v-if="exercise === 'breathing'" class="visual-settings"><span class="setting-label">Balloon colour</span><div class="swatches"><button v-for="c in ['pink','red','pearl']" :key="c" :aria-label="c + ' balloon'" :aria-pressed="color === c" :class="['swatch', c, { chosen: color === c }]" @click="p.chooseColor(c)"><span aria-hidden="true">{{ color === c ? '✓' : '' }}</span></button></div><label class="motion-choice"><input type="checkbox" v-model="reducedMotion"> Minimal motion</label><span v-if="colorStorageError" class="fine-print" role="status">{{ colorStorageError }}</span></div>
           <button class="primary" @click="p.startExercise">Start {{ exercise }} <span aria-hidden="true">→</span></button><button class="text-button" @click="p.choose(exercise === 'breathing' ? 'grounding' : 'breathing')">Try {{ exercise === 'breathing' ? 'grounding' : 'breathing' }} instead</button><button class="text-button finish-ready" @click="p.go('home')">Finish for now</button><p class="fine-print">{{ exercise === 'breathing' ? 'Six cycles · no breath hold · 60 seconds of pacing.' : 'One Next action per sense. About 90 seconds, at your pace.' }}<br>You can stop or switch at any time.</p></div>
         <div class="ready-visual" aria-hidden="true"><BalloonPacer v-if="exercise === 'breathing'" :inflation=".7" :color="color" :reduced-motion="reducedMotion"/><div v-else class="sense-art"><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><small>here, one sense at a time</small></div></div>
       </section>
@@ -133,8 +132,8 @@ async function clearSavedHistory() {
         <div v-else-if="!historyItems.length" class="history-notice"><h2>No saved sessions yet.</h2><p>Sessions appear here only when you choose to save and saving succeeds.</p></div>
         <div v-else class="session-list"><article v-for="s in historyItems" :key="s.id"><span class="session-date">{{ displayDate(s.created_at) }}</span><div><h2>{{ displaySkill(s.exercise) }}</h2><span>{{ displayStatus(s.status) }}</span></div><p v-if="s.result?.reason">{{ s.result.reason }}</p><button class="text-button session-open" @click="p.openSession(s.id)">View session <span class="sr-only">from {{ displayDate(s.created_at) }}</span> <span aria-hidden="true">→</span></button></article></div>
         <p class="fine-print">Only fictional sessions you chose to save are shown. Records stay on this computer until cleared. This is a record of actions, not an assessment.</p>
-        <div class="history-actions"><button class="text-button" @click="p.refreshHistory">Refresh history</button><button v-if="historyItems.length && !confirmingClear" class="text-button" @click="confirmingClear = true">Clear saved history</button></div>
-        <div v-if="confirmingClear" class="clear-confirmation" role="group" aria-labelledby="clear-title"><h2 id="clear-title">Clear all saved fictional sessions?</h2><p>This removes their saved answers and activity from this computer.</p><div><button class="secondary" @click="confirmingClear = false">Keep history</button><button class="primary" @click="clearSavedHistory">Yes, clear history</button></div></div>
+        <div class="history-actions"><button class="text-button" @click="p.refreshHistory">Refresh history</button><button v-if="!confirmingClear" class="text-button" @click="p.requestHistoryClear">Clear history and colour</button></div>
+        <div v-if="confirmingClear" class="clear-confirmation" role="group" aria-labelledby="clear-title"><h2 id="clear-title">Clear history and remembered colour?</h2><p>This removes saved fictional answers and activity from this computer and resets the balloon colour remembered in this browser.</p><div><button class="secondary" @click="p.cancelHistoryClear">Keep history and colour</button><button class="primary" @click="clearSavedHistory">Yes, clear history and colour</button></div></div>
       </section>
 
       <section v-else-if="screen === 'session-detail'" class="center-stage history-stage session-detail-stage">
@@ -142,6 +141,7 @@ async function clearSavedHistory() {
         <div v-if="historyLoading" class="history-notice" role="status">Loading this session…</div><div v-else-if="historyError" class="history-notice" role="status">{{ historyError }}</div>
         <template v-else-if="detail">
           <dl class="session-summary"><div><dt>Exercise</dt><dd>{{ displaySkill(detail.exercise) }}</dd></div><div><dt>Recorded status</dt><dd>{{ displayStatus(detail.status) }}</dd></div><div><dt>Started</dt><dd>{{ displayDate(detail.created_at) }}</dd></div><div><dt>Last saved</dt><dd>{{ displayDate(detail.updated_at) }}</dd></div></dl>
+          <div v-if="detail.status === 'finished' && ['breathing','grounding'].includes(detail.exercise)" class="repeat-session"><button class="secondary" @click="p.repeatSession">Repeat this exercise <span aria-hidden="true">→</span></button><p class="fine-print">Starts fresh, without previous answers or wording. {{ saveEnabled ? 'Saving is on for this visit.' : 'The new session will not be saved.' }}</p></div>
           <section class="record-section" aria-labelledby="record-choice"><h2 id="record-choice">Choice and explanation</h2><p>{{ detail.result?.reason || 'No exercise suggestion recorded.' }}</p><p v-if="detail.direct_choice" class="fine-print">Your deliberate choice: {{ displaySkill(detail.direct_choice) }}.</p><ol v-if="detail.explanations?.length" class="explanation-records"><li v-for="(item, i) in detail.explanations" :key="item.request_id || i"><p v-if="item.text">{{ item.text }}</p><span class="record-provenance">{{ explanationSource(item) }} · {{ item.outcome || item.status || 'Recorded' }}<template v-if="item.model_id"> · {{ item.model_id }}</template><template v-if="item.revision !== undefined"> · revision {{ item.revision }}{{ item.superseded ? ' (earlier)' : '' }}</template></span></li></ol></section>
           <section class="record-section" aria-labelledby="record-conversation">
             <h2 id="record-conversation">Check-in conversation</h2>

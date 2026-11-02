@@ -1,0 +1,35 @@
+{
+  "process_restart": true,
+  "health": {
+    "mode": "mock",
+    "model_id": "peyce-mock-1.0",
+    "live_configured": false,
+    "test_controls": true,
+    "question_version": "peyce-original-1.0",
+    "policy_version": "peyce-routing-1.0",
+    "live_attempts": 0,
+    "live_max_attempts": 10
+  },
+  "sessions_count": 16,
+  "finished": [
+    {
+      "id": "cf5ac6d6-2f35-40c7-b361-7cecf41d1eda",
+      "status": "finished",
+      "exercise": "breathing",
+      "color": "red",
+      "color_explicit": 1,
+      "revision": 11,
+      "snapshot_json": "{\"answered\":[true,true,true,true,true],\"answers\":[2,0,0,0,0],\"color\":\"red\",\"color_explicit\":true,\"direct_choice\":null,\"events\":[{\"active_ms\":0.0,\"at_ms\":6328.899999976158,\"cause\":\"user\",\"id\":\"9a6db14f-f978-44cb-9040-8a7adae473b7\",\"kind\":\"instruction_visible\"},{\"active_ms\":2.600000023841858,\"at_ms\":13269.799999952316,\"cause\":\"user\",\"id\":\"8af949b8-2e5d-4a37-9927-7e73c6ccba08\",\"kind\":\"start\"},{\"active_ms\":60000.0,\"at_ms\":73276.69999992847,\"cause\":\"clock\",\"id\":\"552b4d8b-db37-47a2-a919-90d353f392da\",\"kind\":\"complete\"},{\"active_ms\":60000.0,\"at_ms\":80789.89999997616,\"cause\":\"user\",\"id\":\"bd430a0c-804c-4b8b-9152-1fe38f65136a\",\"kind\":\"finish\"}],\"exercise\":\"breathing\",\"operation_id\":\"24e70ad6-6fc9-41cb-a396-074235e5edf7\",\"revision\":11,\"status\":\"finished\",\"timing\":{\"counted_ms\":74461.0,\"entry_ms\":6328.899999976158,\"excluded_intervals\":[],\"excluded_ms\":0.0,\"finish_ms\":80789.89999997616,\"instruction_ms\":6328.899999976158,\"raw_ms\":74461.0}}"
+    },
+    {
+      "id": "78c07b56-dc74-4c92-9808-4d1b4d9f7a97",
+      "status": "finished",
+      "exercise": "grounding",
+      "color": "red",
+      "color_explicit": 1,
+      "revision": 15,
+      "snapshot_json": "{\"answered\":[true,true,true,true,true],\"answers\":[0,2,0,0,0],\"color\":\"red\",\"color_explicit\":true,\"direct_choice\":null,\"events\":[{\"active_ms\":0.0,\"at_ms\":6373.899999976158,\"cause\":\"user\",\"id\":\"af3f3c0b-1cdd-4be1-a05e-35a8b914f25d\",\"kind\":\"instruction_visible\"},{\"active_ms\":0.09999990463256836,\"at_ms\":13249.700000047684,\"cause\":\"user\",\"id\":\"60fc038c-c3e0-4c87-b1e1-8166f12dd873\",\"kind\":\"start\"},{\"active_ms\":23617.299999952316,\"at_ms\":36867.0,\"cause\":\"user\",\"id\":\"02b7eed1-7c1b-4d36-8f7e-bb6609459056\",\"kind\":\"sense_next\"},{\"active_ms\":39979.799999952316,\"at_ms\":53228.700000047684,\"cause\":\"user\",\"id\":\"6965f4ae-1efb-4948-986b-1a25cc65b473\",\"kind\":\"sense_next\"},{\"active_ms\":56043.0,\"at_ms\":69292.70000004768,\"cause\":\"user\",\"id\":\"1b9c2664-ddf9-4443-b04b-2bff56495b8f\",\"kind\":\"sense_next\"},{\"active_ms\":64446.59999990463,\"at_ms\":77696.20000004768,\"cause\":\"user\",\"id\":\"9a6b84b3-d144-4cbe-90ee-346768f599b1\",\"kind\":\"sense_next\"},{\"active_ms\":68939.39999997616,\"at_ms\":82189.10000002384,\"cause\":\"user\",\"id\":\"895357fe-1eb0-4b11-ba48-a717657d4357\",\"kind\":\"sense_next\"},{\"active_ms\":68939.59999990463,\"at_ms\":82189.29999995232,\"cause\":\"user\",\"id\":\"c06e0c9e-2ce0-4152-b1c0-d62763fc7c40\",\"kind\":\"complete\"},{\"active_ms\":68939.59999990463,\"at_ms\":82613.89999997616,\"cause\":\"user\",\"id\":\"5383da75-7ed9-42a9-b803-b8057cc56446\",\"kind\":\"finish\"}],\"exercise\":\"grounding\",\"operation_id\":\"1ce2d910-1d75-4347-b36c-423a96a7be25\",\"revision\":15,\"status\":\"finished\",\"timing\":{\"counted_ms\":76240.0,\"entry_ms\":6373.899999976158,\"excluded_intervals\":[],\"excluded_ms\":0.0,\"finish_ms\":82613.89999997616,\"instruction_ms\":6373.899999976158,\"raw_ms\":76240.0}}"
+    }
+  ],
+  "foreign_keys": []
+}

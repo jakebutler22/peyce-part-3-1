@@ -1,0 +1,17 @@
+{
+  "date_local": "2026-11-02",
+  "starting_sha": "698b2e4d432b4f16a75f29307bd9435b86b33f75",
+  "starting_tracked_status": "clean before agent work",
+  "remote": "https://github.com/jakebutler22/peyce-part-3-1.git",
+  "runtime_attempts": 7,
+  "runtime_session_count": 21,
+  "frozen_artifact_count": 118,
+  "historical_tests": {
+    "backend": 86,
+    "frontend": 46,
+    "build": "passed Oct25, not rerun yet"
+  },
+  "pronunciation_change": "Latest user chooses pace /pe\u026as/; historicalpeace preserved",
+  "rubric_provenance": "Nov2 supplied prompt transcription; actual Part3.3 screenshots unavailable, no Canvas access",
+  "due_local": "2026-11-02 23:59 America/New_York"
+}

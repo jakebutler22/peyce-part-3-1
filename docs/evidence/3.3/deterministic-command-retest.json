@@ -1,0 +1,12 @@
+{
+  "layer": "test launcher and documentation; no application defect",
+  "initial_command_from_repository_root": "PYTHON_DOTENV_DISABLED=1 PEYCE_MODEL_MODE=mock backend/.venv/bin/python -m pytest -q backend/tests",
+  "initial_observation": "Collection failed with ModuleNotFoundError: No module named 'app'; existing backend tests expect backend as the import root.",
+  "decision": "Document the explicit PYTHONPATH for the root invocation. Running the same command inside backend also remains valid. No application import or runtime behavior was changed.",
+  "corrected_command_from_repository_root": "PYTHONPATH=backend PYTHON_DOTENV_DISABLED=1 PEYCE_MODEL_MODE=mock backend/.venv/bin/python -m pytest -q backend/tests",
+  "retest_observation": "88 passed, 1 existing Starlette/httpx deprecation warning",
+  "result": "pass-after-command-correction",
+  "correction_cycles_for_this_launcher_issue": 1,
+  "live_calls": 0,
+  "real_runtime_database_accessed": false
+}

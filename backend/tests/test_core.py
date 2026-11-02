@@ -131,6 +131,7 @@ def test_openrouter_adapter_passes_real_turn_context_and_zero_price_constraints_
     assert function["parameters"]["required"] == ["reason_code", "opening_id", "reference_ids", "closing_id"]
     assert body["tool_choice"] == {"type": "function", "function": {"name": "acknowledge_current_rule"}}
     assert "no Markdown fences" in body["messages"][0]["content"]
+    assert "pronounced pace, /peɪs/" in body["messages"][0]["content"]
     assert body["max_tokens"] == 1000
     assert body["reasoning"] == {"enabled": False, "exclude": True}
     assert [m["content"] for m in body["messages"] if m["role"] == "user"] == ["Hard right now", "Easy", "Present", "Comfortable", "Comfortable"]
@@ -330,4 +331,4 @@ def test_valid_response_diagnostics_do_not_change_the_approved_model_contributio
     assert response["diagnostic"] == {"http_status": 200, "finish_reason": "tool_calls", "completion_tokens": 44, "reasoning_tokens": 0}
     saved = repository.get(session_id)
     assert saved["exercise"] == "breathing" and saved["result"]["code"] == "body-cue"
-    assert saved["explanations"][0]["prompt_version"] == "peyce-acknowledgment-1.1"
+    assert saved["explanations"][0]["prompt_version"] == "peyce-acknowledgment-1.2"

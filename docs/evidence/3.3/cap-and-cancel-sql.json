@@ -1,0 +1,29 @@
+{
+  "sessions_after_cancel": 20,
+  "artificial_attempts": 10,
+  "latest_explanation": {
+    "request_id": "9a291337-d6da-48a4-a2a4-2c7c5fc15b53",
+    "session_id": "99e7aad8-b393-4884-ba49-2d609f86b187",
+    "revision": 2,
+    "mode": "mock",
+    "model_id": "peyce-mock-1.0",
+    "prompt_version": "peyce-acknowledgment-1.2",
+    "question_version": "peyce-original-1.0",
+    "policy_version": "peyce-routing-1.0",
+    "reason_code": "direct-choice",
+    "outcome": "validated",
+    "validation": "validated-mock-live-limit",
+    "fragments_json": "{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"direct-choice\",\"reference_ids\":[]}",
+    "references_json": "[]",
+    "text": "You chose breathing. You can choose or finish.",
+    "stale": 0,
+    "created_at": "2026-11-02T23:12:27.633+00:00",
+    "updated_at": "2026-11-02T23:12:27.635+00:00",
+    "response_json": "{\"fragments\":{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"direct-choice\",\"reference_ids\":[]},\"mode\":\"mock\",\"model_id\":\"peyce-mock-1.0\",\"references\":[],\"request_id\":\"9a291337-d6da-48a4-a2a4-2c7c5fc15b53\",\"revision\":2,\"session_id\":\"99e7aad8-b393-4884-ba49-2d609f86b187\",\"stale\":false,\"status\":\"validated\",\"text\":\"You chose breathing. You can choose or finish.\"}"
+  },
+  "restarted_unfinished": {
+    "id": "03478296-08c2-452e-977d-64872a5f735b",
+    "status": "interrupted",
+    "revision": 3
+  }
+}

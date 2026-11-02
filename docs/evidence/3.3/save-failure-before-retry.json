@@ -1,0 +1,95 @@
+{
+  "sessions": [
+    {
+      "id": "c5c77fe0-0048-4fca-a195-dc3da4dd051a",
+      "status": "stopped",
+      "exercise": "breathing",
+      "revision": 10
+    },
+    {
+      "id": "cf5ac6d6-2f35-40c7-b361-7cecf41d1eda",
+      "status": "finished",
+      "exercise": "breathing",
+      "revision": 11
+    },
+    {
+      "id": "1de599c4-42b3-47f5-baae-118bbe4130e9",
+      "status": "ready",
+      "exercise": "breathing",
+      "revision": 2
+    },
+    {
+      "id": "78c07b56-dc74-4c92-9808-4d1b4d9f7a97",
+      "status": "finished",
+      "exercise": "grounding",
+      "revision": 15
+    },
+    {
+      "id": "cdbb3fc2-c7d2-4b7b-bcb4-1cd09cbd405b",
+      "status": "stopped",
+      "exercise": "grounding",
+      "revision": 12
+    },
+    {
+      "id": "7d80e0f3-17e1-4393-ad9f-025f8988f492",
+      "status": "stopped",
+      "exercise": "breathing",
+      "revision": 3
+    },
+    {
+      "id": "fe224092-b645-49c6-a511-cc4406bddb08",
+      "status": "stopped",
+      "exercise": "grounding",
+      "revision": 13
+    },
+    {
+      "id": "0caf1409-87d0-468c-b297-a67f0c29ced8",
+      "status": "stopped",
+      "exercise": "breathing",
+      "revision": 16
+    },
+    {
+      "id": "57744549-7b72-4efd-b154-75d1c0993619",
+      "status": "stopped",
+      "exercise": "grounding",
+      "revision": 5
+    },
+    {
+      "id": "e6e0d391-9fd0-4a27-90a9-7f086a351c1f",
+      "status": "ready",
+      "exercise": "grounding",
+      "revision": 3
+    },
+    {
+      "id": "286c4d60-c9a2-46d4-9570-8d5fdb9e1504",
+      "status": "stopped",
+      "exercise": "grounding",
+      "revision": 5
+    },
+    {
+      "id": "2cbfb52c-1602-4dc3-aa4c-7a196b677c38",
+      "status": "stopped",
+      "exercise": "grounding",
+      "revision": 5
+    },
+    {
+      "id": "11fffdda-242d-4e87-b7b1-b8da4b1cab2d",
+      "status": "ready",
+      "exercise": "grounding",
+      "revision": 2
+    },
+    {
+      "id": "6d9756b2-5659-4f38-bd2c-bd825cfab2f2",
+      "status": "stopped",
+      "exercise": "grounding",
+      "revision": 5
+    },
+    {
+      "id": "fafc4a5a-4eaf-4a53-8b64-0513199fec0b",
+      "status": "stopped",
+      "exercise": "breathing",
+      "revision": 5
+    }
+  ],
+  "count": 15
+}

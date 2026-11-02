@@ -1,0 +1,211 @@
+{
+  "normal_runs": [
+    {
+      "id": "cf5ac6d6-2f35-40c7-b361-7cecf41d1eda",
+      "exercise": "breathing",
+      "timing": {
+        "counted_ms": 74461.0,
+        "entry_ms": 6328.899999976158,
+        "excluded_intervals": [],
+        "excluded_ms": 0.0,
+        "finish_ms": 80789.89999997616,
+        "instruction_ms": 6328.899999976158,
+        "raw_ms": 74461.0
+      },
+      "events": [
+        {
+          "active_ms": 0.0,
+          "at_ms": 6328.899999976158,
+          "cause": "user",
+          "id": "9a6db14f-f978-44cb-9040-8a7adae473b7",
+          "kind": "instruction_visible"
+        },
+        {
+          "active_ms": 2.600000023841858,
+          "at_ms": 13269.799999952316,
+          "cause": "user",
+          "id": "8af949b8-2e5d-4a37-9927-7e73c6ccba08",
+          "kind": "start"
+        },
+        {
+          "active_ms": 60000.0,
+          "at_ms": 73276.69999992847,
+          "cause": "clock",
+          "id": "552b4d8b-db37-47a2-a919-90d353f392da",
+          "kind": "complete"
+        },
+        {
+          "active_ms": 60000.0,
+          "at_ms": 80789.89999997616,
+          "cause": "user",
+          "id": "bd430a0c-804c-4b8b-9152-1fe38f65136a",
+          "kind": "finish"
+        }
+      ]
+    },
+    {
+      "id": "78c07b56-dc74-4c92-9808-4d1b4d9f7a97",
+      "exercise": "grounding",
+      "timing": {
+        "counted_ms": 76240.0,
+        "entry_ms": 6373.899999976158,
+        "excluded_intervals": [],
+        "excluded_ms": 0.0,
+        "finish_ms": 82613.89999997616,
+        "instruction_ms": 6373.899999976158,
+        "raw_ms": 76240.0
+      },
+      "events": [
+        {
+          "active_ms": 0.0,
+          "at_ms": 6373.899999976158,
+          "cause": "user",
+          "id": "af3f3c0b-1cdd-4be1-a05e-35a8b914f25d",
+          "kind": "instruction_visible"
+        },
+        {
+          "active_ms": 0.09999990463256836,
+          "at_ms": 13249.700000047684,
+          "cause": "user",
+          "id": "60fc038c-c3e0-4c87-b1e1-8166f12dd873",
+          "kind": "start"
+        },
+        {
+          "active_ms": 23617.299999952316,
+          "at_ms": 36867.0,
+          "cause": "user",
+          "id": "02b7eed1-7c1b-4d36-8f7e-bb6609459056",
+          "kind": "sense_next"
+        },
+        {
+          "active_ms": 39979.799999952316,
+          "at_ms": 53228.700000047684,
+          "cause": "user",
+          "id": "6965f4ae-1efb-4948-986b-1a25cc65b473",
+          "kind": "sense_next"
+        },
+        {
+          "active_ms": 56043.0,
+          "at_ms": 69292.70000004768,
+          "cause": "user",
+          "id": "1b9c2664-ddf9-4443-b04b-2bff56495b8f",
+          "kind": "sense_next"
+        },
+        {
+          "active_ms": 64446.59999990463,
+          "at_ms": 77696.20000004768,
+          "cause": "user",
+          "id": "9a6b84b3-d144-4cbe-90ee-346768f599b1",
+          "kind": "sense_next"
+        },
+        {
+          "active_ms": 68939.39999997616,
+          "at_ms": 82189.10000002384,
+          "cause": "user",
+          "id": "895357fe-1eb0-4b11-ba48-a717657d4357",
+          "kind": "sense_next"
+        },
+        {
+          "active_ms": 68939.59999990463,
+          "at_ms": 82189.29999995232,
+          "cause": "user",
+          "id": "c06e0c9e-2ce0-4152-b1c0-d62763fc7c40",
+          "kind": "complete"
+        },
+        {
+          "active_ms": 68939.59999990463,
+          "at_ms": 82613.89999997616,
+          "cause": "user",
+          "id": "5383da75-7ed9-42a9-b803-b8057cc56446",
+          "kind": "finish"
+        }
+      ]
+    }
+  ],
+  "overlap_runs": [
+    {
+      "id": "0caf1409-87d0-468c-b297-a67f0c29ced8",
+      "status": "stopped",
+      "exercise": "breathing",
+      "timing": {
+        "counted_ms": 4146.699999928474,
+        "entry_ms": 7275.299999952316,
+        "excluded_intervals": [
+          {
+            "cause": "support",
+            "end_ms": 11510.5,
+            "start_ms": 10015.899999976158
+          },
+          {
+            "cause": "user",
+            "end_ms": 11882.100000023842,
+            "start_ms": 9571.299999952316
+          }
+        ],
+        "excluded_ms": 2310.8000000715256,
+        "finish_ms": 13732.799999952316,
+        "instruction_ms": 7275.299999952316,
+        "raw_ms": 6457.5
+      },
+      "sum_interval_ms": 3805.4000000953674,
+      "events": [
+        {
+          "active_ms": 0.0,
+          "at_ms": 7275.299999952316,
+          "cause": "user",
+          "id": "26122e59-eb62-42af-bda9-9f42fb1f3652",
+          "kind": "instruction_visible"
+        },
+        {
+          "active_ms": 0.10000002384185791,
+          "at_ms": 7581.5,
+          "cause": "user",
+          "id": "99c57a97-2951-4333-b3b4-baead3c5e717",
+          "kind": "start"
+        },
+        {
+          "active_ms": 1989.3999999761581,
+          "at_ms": 9571.299999952316,
+          "cause": "user",
+          "id": "6300d7e5-c465-4bac-99bb-50595b0c9d25",
+          "kind": "pause"
+        },
+        {
+          "active_ms": 1989.3999999761581,
+          "at_ms": 10015.899999976158,
+          "cause": "support",
+          "id": "2ab4fc15-0bd7-41dd-b6b3-47d80d48f6fc",
+          "kind": "support_open"
+        },
+        {
+          "active_ms": 1989.3999999761581,
+          "at_ms": 11510.5,
+          "cause": "support",
+          "id": "441071e1-e062-4b2e-bf10-83f1fda6bde5",
+          "kind": "support_close"
+        },
+        {
+          "active_ms": 1989.5,
+          "at_ms": 11882.100000023842,
+          "cause": "user",
+          "id": "dc5b16da-f015-41f5-b4fa-c7bf893e2a47",
+          "kind": "resume"
+        },
+        {
+          "active_ms": 3439.899999976158,
+          "at_ms": 13332.600000023842,
+          "cause": "user",
+          "id": "06e1a09c-0f0a-455b-84de-f2d43fa1e3c3",
+          "kind": "stop"
+        },
+        {
+          "active_ms": 3439.899999976158,
+          "at_ms": 13732.799999952316,
+          "cause": "user",
+          "id": "6b7b00cb-2142-4e4c-9f14-03c76fc195f8",
+          "kind": "finish"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-02",
+  "status": "incomplete",
+  "finished_application_video": null,
+  "process_screencast": null,
+  "playback_verified": false,
+  "anonymous_reviewer_access_verified": false,
+  "observed_blocker": "Browser capability inspection exposed screenshots and no video capture. QuickTime New Screen Recording did not expose a controllable toolbar; selecting the capture app timed out. No recording was created.",
+  "reported_early": true,
+  "script": "docs/part-3.3-demo-script.md",
+  "not_video_evidence": ["scripts", "screenshots", "test logs"],
+  "human_action": "Capture the scoped app and process chapters locally using the exact guide, verify real normal-speed playback/readability, and add durable anonymously accessible video links to the report. Do not include private desktop, email or credentials."
+}

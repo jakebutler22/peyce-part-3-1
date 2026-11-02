@@ -1,13 +1,16 @@
-import { ref, nextTick, onMounted, onUnmounted, watch } from 'vue';
+import { ref, nextTick, onMounted, onUnmounted } from 'vue';
 import { matchExercise } from './matching.js';
 import { PhaseClock, phaseAt } from './clock.js';
 import { SequenceTimer } from './sequence.js';
 import { api, SaveQueue } from './api.js';
+import { BALLOON_COLORS, createColorPreference } from './preferences.js';
 
-export function usePrototype({ request = api } = {}) {
+export function usePrototype({ request = api, colorPreference = createColorPreference() } = {}) {
+  const rememberedColor = colorPreference.read();
   const screen = ref('home'), questionIndex = ref(0), answers = ref(Array(5).fill(null));
   const result = ref(null), exercise = ref('breathing'), origin = ref('direct'), selecting = ref(false);
-  const senseIndex = ref(0), color = ref('pink'), reducedMotion = ref(false), paused = ref(false), pauseReason = ref('');
+  const senseIndex = ref(0), color = ref(rememberedColor || 'pink'), reducedMotion = ref(false), paused = ref(false), pauseReason = ref('');
+  const colorStorageError = ref(''), confirmingClear = ref(false);
   const timing = ref(phaseAt(0)), sessionStatus = ref('checkin'), supportDialog = ref(null);
   const saveEnabled = ref(false), saveState = ref('unsaved'), saveMessage = ref('Not saved · choose saving before starting.');
   const historyItems = ref([]), historyLoading = ref(false), historyError = ref(''), selectedSession = ref(null);
@@ -16,7 +19,8 @@ export function usePrototype({ request = api } = {}) {
   const providerFault = ref(''), saveFault = ref(false);
   let current = null, frame, lockUntil = 0, senseLockUntil = 0, selectTimeout, supportReturnFocus, pendingAdvance = false;
   let generation = 0, explanationAbort, groundElapsed = 0, groundAnchor = null;
-  let navigationRevision = 0, historyRequest = 0, detailRequest = 0;
+  let navigationRevision = 0, historyRequest = 0, detailRequest = 0, colorRevision = 0;
+  let colorExplicit = Boolean(rememberedColor);
   const clock = new PhaseClock();
   const id = () => crypto.randomUUID();
   const offset = () => current ? performance.now() - current.anchor : 0;
@@ -33,11 +37,11 @@ export function usePrototype({ request = api } = {}) {
     current.events.push({ id: id(), kind, at_ms: at, active_ms: current.started ? activeMs() : 0, cause });
   }
   function focusHeading() { nextTick(() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); document.querySelector('main h1')?.focus({ preventScroll: true }); }); }
-  function show(next) { navigationRevision++; historyRequest++; detailRequest++; historyLoading.value = false; screen.value = next; focusHeading(); }
+  function show(next) { navigationRevision++; historyRequest++; detailRequest++; historyLoading.value = false; confirmingClear.value = false; screen.value = next; focusHeading(); }
   function setStatus(value) { sessionStatus.value = value; if (current) current.status = value; }
   function newSession(direct = false) {
     invalidate(); cancelAnimationFrame(frame); clearTimeout(selectTimeout);
-    current = { id: id(), anchor: performance.now(), revision: 0, events: [], timer: new SequenceTimer(), answered: Array(5).fill(false), direct: null, exercise: null, status: direct ? 'choice' : 'checkin', save: saveEnabled.value, final: false, started: false, colorExplicit: false };
+    current = { id: id(), anchor: performance.now(), revision: 0, events: [], timer: new SequenceTimer(), answered: Array(5).fill(false), direct: null, exercise: null, status: direct ? 'choice' : 'checkin', save: saveEnabled.value, final: false, started: false, colorExplicit };
     answers.value = Array(5).fill(null); result.value = null; questionIndex.value = 0; senseIndex.value = 0; selecting.value = false;
     paused.value = false; timing.value = phaseAt(0); clock.elapsed = 0; clock.anchor = null; groundElapsed = 0; groundAnchor = null;
     sessionStatus.value = current.status; origin.value = direct ? 'direct' : 'checkin';
@@ -73,7 +77,9 @@ export function usePrototype({ request = api } = {}) {
   async function retrySave() {
     if (!current?.last) return;
     const target = current;
-    await write({ ...target.last, fault: verificationMode && saveFault.value ? 'database' : '' }, target);
+    const captured = { ...target.last, fault: verificationMode && saveFault.value ? 'database' : '' };
+    const response = await write(captured, target);
+    if (response && current === target && captured.snapshot.revision === target.revision && screen.value === 'ready' && explanationLabel.value === 'Local rule · saving unavailable') explanationLabel.value = 'Local rule · optional wording not requested';
   }
   async function explain(target, revision, context) {
     if (target !== current || context !== generation || screen.value !== 'ready' || revision !== target.revision) return;
@@ -138,10 +144,28 @@ export function usePrototype({ request = api } = {}) {
     clearTimeout(selectTimeout); selecting.value = false; pendingAdvance = false; invalidate();
     answers.value = Array(5).fill(null); current.answered = Array(5).fill(false); current.direct = null; current.exercise = null; result.value = null; origin.value = 'direct'; setStatus('choice'); persist(); show('choice');
   }
-  function backQuestion() { if (selecting.value) return; invalidate(); result.value = null; if (questionIndex.value > 0) { questionIndex.value--; focusHeading(); } else show('intro'); }
+  function backQuestion() {
+    if (screen.value !== 'checkin') return;
+    clearTimeout(selectTimeout); selecting.value = false; pendingAdvance = false; lockUntil = 0;
+    invalidate(); result.value = null;
+    if (questionIndex.value > 0) { questionIndex.value--; focusHeading(); } else show('intro');
+  }
   function choose(skill) {
     if (!current || current.final || screen.value === 'done') { finishRecord(); newSession(true); }
     invalidate(); exercise.value = skill; current.direct = skill; result.value = matchExercise(answers.value, skill); ready();
+  }
+  function chooseColor(value) {
+    if (!BALLOON_COLORS.includes(value)) return;
+    color.value = value; colorExplicit = true; colorRevision++;
+    colorStorageError.value = colorPreference.save(value) ? '' : 'This colour works now, but this browser could not remember it.';
+    if (current && !current.final) { current.colorExplicit = true; invalidate(); persist(); }
+  }
+  function repeatSession() {
+    const record = selectedSession.value;
+    if (!record || record.status !== 'finished' || !['breathing', 'grounding'].includes(record.exercise)) return false;
+    const skill = record.exercise;
+    finishRecord(); newSession(true); selectedSession.value = null; choose(skill);
+    return true;
   }
   function readyBack() { invalidate(); if (origin.value === 'checkin') { questionIndex.value = 4; setStatus('checkin'); current.direct = null; current.exercise = null; persist(); show('checkin'); } else { setStatus('choice'); current.exercise = null; persist(); show('choice'); } }
   function tick(now) {
@@ -223,13 +247,22 @@ export function usePrototype({ request = api } = {}) {
     catch { if (isCurrent()) historyError.value = 'This saved session could not be opened. Try again later.'; }
     finally { if (isCurrent()) historyLoading.value = false; }
   }
+  function requestHistoryClear() { confirmingClear.value = true; }
+  function cancelHistoryClear() { confirmingClear.value = false; }
   async function clearHistory() {
+    if (!confirmingClear.value) return false;
+    const chosenColorRevision = colorRevision;
     historyRequest++; detailRequest++;
     historyError.value = ''; historyLoading.value = false;
-    try { await request('/sessions', { method: 'DELETE' }); historyItems.value = []; selectedSession.value = null; }
-    catch { historyError.value = 'Past sessions could not be cleared. Please try again.'; }
+    try {
+      await request('/sessions', { method: 'DELETE' }); historyItems.value = []; selectedSession.value = null; confirmingClear.value = false;
+      if (chosenColorRevision === colorRevision) {
+        if (!colorPreference.clear()) { historyError.value = 'Saved history was cleared, but this browser could not clear the remembered colour.'; return false; }
+        color.value = 'pink'; colorExplicit = false; colorStorageError.value = '';
+      }
+      return true;
+    } catch { historyError.value = 'Past sessions could not be cleared. Please try again.'; return false; }
   }
-  watch(color, () => { if (current && !current.final) { current.colorExplicit = true; invalidate(); persist(); } });
   onMounted(async () => {
     reducedMotion.value = matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.addEventListener('visibilitychange', onVisibility); window.addEventListener('pagehide', onPageHide);
@@ -240,5 +273,5 @@ export function usePrototype({ request = api } = {}) {
     }
   });
   onUnmounted(() => { invalidate(); clearTimeout(selectTimeout); cancelAnimationFrame(frame); document.removeEventListener('visibilitychange', onVisibility); window.removeEventListener('pagehide', onPageHide); });
-  return { screen, questionIndex, answers, result, exercise, origin, selecting, senseIndex, color, reducedMotion, timing, paused, pauseReason, sessionStatus, supportDialog, saveEnabled, saveState, saveMessage, historyItems, historyLoading, historyError, selectedSession, explanationText, explanationLabel, verificationMode, providerFault, saveFault, go, beginCheckin, directEntry, answer, skipAll, backQuestion, choose, readyBack, startExercise, pause, resume, stop, backSense, nextSense, openSupport, closeSupport, dialogKey, refreshHistory, openSession, clearHistory, retrySave };
+  return { screen, questionIndex, answers, result, exercise, origin, selecting, senseIndex, color, colorStorageError, confirmingClear, reducedMotion, timing, paused, pauseReason, sessionStatus, supportDialog, saveEnabled, saveState, saveMessage, historyItems, historyLoading, historyError, selectedSession, explanationText, explanationLabel, verificationMode, providerFault, saveFault, go, beginCheckin, directEntry, answer, skipAll, backQuestion, choose, chooseColor, repeatSession, readyBack, startExercise, pause, resume, stop, backSense, nextSense, openSupport, closeSupport, dialogKey, refreshHistory, openSession, requestHistoryClear, cancelHistoryClear, clearHistory, retrySave };
 }

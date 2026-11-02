@@ -1,0 +1,8 @@
+{
+  "date": "2026-11-02",
+  "layer": "Actual supported browser interactions and separate SQLite observation",
+  "expectations": "backend/tests/fixtures/evaluation-3.3.json",
+  "normalBreathing": "6s instructions + 60s active + immediate deliberate Finish, no exclusions",
+  "normalGrounding": "6s instructions, private 4s/item (20,16,12,8,4s), deliberate advances and Finish, no exclusions",
+  "additional": "S03–S18, saved repeat/color/reload, cancellation, real process outage/restart, simulated faults/cap, responsive and keyboard"
+}

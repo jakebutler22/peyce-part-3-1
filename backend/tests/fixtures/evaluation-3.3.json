@@ -1,0 +1,1880 @@
+{
+  "evaluation_version": "peyce-evaluation-3.3-1.0",
+  "predeclared_on": "2026-11-02",
+  "expectations_source": "User-invoked Part3.3 request and existing original-1.0/routing-1.0 rules; written before this runner execution.",
+  "fictional_only": true,
+  "network_policy": "No live calls; disposable SQLite only; .env loading disabled by runner.",
+  "layer_policy": "API/lifespan/SQL assertions supplement actual browser evidence. Synthetic event offsets do not establish real skill duration. S09/S18 and B1 are explicitly deferred to controller/GUI layers, not marked API passes.",
+  "question_version": "peyce-original-1.0",
+  "policy_version": "peyce-routing-1.0",
+  "expected_prompt_version": "peyce-acknowledgment-1.2",
+  "scenarios": [
+    {
+      "id": "S01",
+      "title": "New saved body-tension case",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "New empty disposable SQLite; saving explicitly selected",
+      "actions": [
+        "Save original face selections",
+        "Request mock acknowledgment",
+        "Submit Start, six-cycle completion, Finish",
+        "Read history and SQL"
+      ],
+      "expected": {
+        "rule": "body-cue",
+        "exercise": "breathing",
+        "status": "finished",
+        "active_ms": 60000,
+        "counted_ms": 66000
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual GUI",
+        "Real wall-clock breathing timing"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S02",
+      "title": "New saved attention/grounding case",
+      "inputs": [
+        {
+          "name": "attention-cue",
+          "answers": [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 2,
+              "received": true,
+              "label": "It keeps pulling me in"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "New empty disposable SQLite; saving selected",
+      "actions": [
+        "Save selections",
+        "Request mock acknowledgment",
+        "Record seen/felt/heard/smelled/tasted steps in order",
+        "Complete and Finish"
+      ],
+      "expected": {
+        "rule": "present-cue",
+        "exercise": "grounding",
+        "sense_actions": 5,
+        "status": "finished",
+        "counted_ms": 33000
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual GUI",
+        "Real wall-clock grounding timing"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S03",
+      "title": "Skip one question",
+      "inputs": [
+        {
+          "name": "skip-body",
+          "answers": [
+            null,
+            2,
+            1,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": true,
+              "label": "Skipped this question"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 2,
+              "received": true,
+              "label": "It keeps pulling me in"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 1,
+              "received": true,
+              "label": "A little distracted"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Check-in with explicit skipped first question",
+      "actions": [
+        "Save skipped-body selection",
+        "Observe transparent choice",
+        "Deliberately choose grounding",
+        "Request new mock acknowledgment"
+      ],
+      "expected": {
+        "rule": "equal-choice",
+        "exercise": null,
+        "skipped_question": "body",
+        "references_must_exclude": [
+          "body"
+        ]
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual skip control"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S04",
+      "title": "Skip all/direct access",
+      "inputs": [
+        {
+          "name": "direct-breathing",
+          "answers": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "answered": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "direct_choice": "breathing",
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "present",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            }
+          ]
+        },
+        {
+          "name": "direct-grounding",
+          "answers": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "answered": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "direct_choice": "grounding",
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "present",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            }
+          ]
+        }
+      ],
+      "initial_state": "No received answers",
+      "actions": [
+        "Create a direct choice for each offered skill",
+        "Request mock wording"
+      ],
+      "expected": {
+        "rule": "direct-choice",
+        "no_user_turns": true,
+        "both_skills_allowed": true
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual direct-access controls"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S05",
+      "title": "Back and correct an answer",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        },
+        {
+          "name": "attention-cue",
+          "answers": [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 2,
+              "received": true,
+              "label": "It keeps pulling me in"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Saved ready body-cue revision with prior acknowledgment",
+      "actions": [
+        "Save correction in newer revision",
+        "Request current acknowledgment",
+        "Inspect current and superseded turns"
+      ],
+      "expected": {
+        "old_rule": "body-cue",
+        "new_rule": "present-cue",
+        "exercise": "grounding",
+        "current_unique_questions": 5,
+        "references_must_include": "thought"
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual Back/automatic-advance behavior"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S06",
+      "title": "Mixed/tied/insufficient answers",
+      "inputs": [
+        {
+          "name": "tie",
+          "answers": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 1,
+              "received": true,
+              "label": "Takes some effort"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 1,
+              "received": true,
+              "label": "It comes back"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 1,
+              "received": true,
+              "label": "A little distracted"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        },
+        {
+          "name": "missing-body",
+          "answers": [
+            null,
+            2,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": true,
+              "label": "Skipped this question"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 2,
+              "received": true,
+              "label": "It keeps pulling me in"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        },
+        {
+          "name": "uncertain-preferences",
+          "answers": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 2,
+              "received": true,
+              "label": "It keeps pulling me in"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 2,
+              "received": true,
+              "label": "Far away"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 1,
+              "received": true,
+              "label": "Not sure"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 1,
+              "received": true,
+              "label": "Not sure"
+            }
+          ]
+        }
+      ],
+      "initial_state": "New check-in for each fictional variant",
+      "actions": [
+        "Save selections as choice state",
+        "Read approved result"
+      ],
+      "expected": {
+        "rule": "equal-choice",
+        "exercise": null,
+        "no_score": true
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual uncertainty/choice presentation"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S07",
+      "title": "Current preference or refusal conflicts",
+      "inputs": [
+        {
+          "name": "prefer-grounding",
+          "answers": [
+            2,
+            0,
+            0,
+            2,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 2,
+              "received": true,
+              "label": "I'd rather not"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        },
+        {
+          "name": "decline-both",
+          "answers": [
+            2,
+            0,
+            0,
+            2,
+            2
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 2,
+              "received": true,
+              "label": "I'd rather not"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 2,
+              "received": true,
+              "label": "I'd rather not"
+            }
+          ]
+        },
+        {
+          "name": "deliberate-override",
+          "answers": [
+            2,
+            0,
+            0,
+            2,
+            2
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": "breathing",
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 2,
+              "received": true,
+              "label": "I'd rather not"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 2,
+              "received": true,
+              "label": "I'd rather not"
+            }
+          ]
+        }
+      ],
+      "initial_state": "A body cue or old preference may favor breathing",
+      "actions": [
+        "Save current preference/refusal",
+        "Read result",
+        "Accept a later explicit direct choice"
+      ],
+      "expected": {
+        "rules": [
+          "grounding-comfort",
+          "both-declined",
+          "direct-choice"
+        ],
+        "exercises": [
+          "grounding",
+          null,
+          "breathing"
+        ]
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual current-choice controls",
+        "History preference cannot force a skill"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S08",
+      "title": "Returning saved session",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        },
+        {
+          "name": "direct-breathing",
+          "answers": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "answered": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "direct_choice": "breathing",
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "present",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Finished saved red balloon session",
+      "actions": [
+        "Read saved detail",
+        "Create new repeat ID with explicit prior color",
+        "Inspect no inherited answers/timing/completion/acknowledgment"
+      ],
+      "expected": {
+        "remembered_color": "red",
+        "fresh_id": true,
+        "new_status": "ready",
+        "new_timing": null,
+        "new_answers": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "new_model_output_count": 0
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual Repeat control",
+        "Explicit browser color preference"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S09",
+      "title": "Unsaved practice/backend unavailable",
+      "inputs": [
+        {
+          "name": "direct-breathing",
+          "answers": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "answered": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "direct_choice": "breathing",
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "present",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Browser unsaved mode with API unavailable",
+      "actions": [
+        "Use exercise without saving",
+        "Open local support"
+      ],
+      "expected": {
+        "no_api_dependency": true,
+        "no_saved_label": true,
+        "no_persisted_answers": true
+      },
+      "automated_layers": [],
+      "required_other_layers": [
+        "Controller",
+        "Actual GUI/backend outage"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S10",
+      "title": "Pause/resume with overlapping support",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Saved active breathing",
+      "actions": [
+        "Pause 20-26s",
+        "Open support 22-24s during pause",
+        "Resume",
+        "Complete and Finish"
+      ],
+      "expected": {
+        "excluded_ms": 6000,
+        "counted_ms": 66000,
+        "raw_ms": 72000,
+        "background_counts": true
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual phase/balloon synchronization",
+        "Actual support/Resume controls"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S11",
+      "title": "Stop/leave/refresh/restart unfinished",
+      "inputs": [
+        {
+          "name": "direct-breathing",
+          "answers": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "answered": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "direct_choice": "breathing",
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "present",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Separate active, paused and stopped disposable sessions",
+      "actions": [
+        "Interrupt active via endpoint",
+        "Restart app lifespan with paused row",
+        "Stop then Finish separate row",
+        "Inspect no manufactured completion"
+      ],
+      "expected": {
+        "statuses": [
+          "interrupted",
+          "interrupted",
+          "stopped"
+        ],
+        "no_complete_event": true,
+        "no_finished_timing": true
+      },
+      "automated_layers": [
+        "API",
+        "SQLite",
+        "Application lifespan"
+      ],
+      "required_other_layers": [
+        "Actual browser refresh",
+        "Real backend process restart"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S12",
+      "title": "Provider faults",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Saved ready session; deterministic test controls",
+      "actions": [
+        "Inject provider rejection",
+        "Inject timeout",
+        "Inject invalid structured result"
+      ],
+      "expected": {
+        "statuses": [
+          "fallback",
+          "fallback",
+          "fallback"
+        ],
+        "validations": [
+          "fallback-provider",
+          "fallback-timeout",
+          "fallback-invalid"
+        ],
+        "exercise_unchanged": "breathing"
+      },
+      "automated_layers": [
+        "API",
+        "SQLite",
+        "Mock"
+      ],
+      "required_other_layers": [
+        "Actual fallback labels",
+        "Choice/Stop/support availability"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S13",
+      "title": "Late response after Start/correction",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        },
+        {
+          "name": "attention-cue",
+          "answers": [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 2,
+              "received": true,
+              "label": "It keeps pulling me in"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Pending controlled mock result",
+      "actions": [
+        "Start while old request waits",
+        "Correct answers while separate old request waits",
+        "Inspect obsolete provenance/current context"
+      ],
+      "expected": {
+        "stale": true,
+        "status": "obsolete",
+        "new_states": [
+          "active",
+          "ready"
+        ],
+        "new_rule": "present-cue"
+      },
+      "automated_layers": [
+        "API",
+        "SQLite",
+        "Mock concurrency"
+      ],
+      "required_other_layers": [
+        "Actual controller screen/focus stability"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S14",
+      "title": "Database failure/retry",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "No saved row; save fault enabled",
+      "actions": [
+        "Reject first write with HTTP503",
+        "Retry same operation",
+        "Replay again",
+        "Read relational counts"
+      ],
+      "expected": {
+        "first_http": 503,
+        "absent_after_failure": true,
+        "sessions": 1,
+        "lifecycle_events": 1,
+        "user_turns": 5
+      },
+      "automated_layers": [
+        "API",
+        "SQLite",
+        "Mock fault"
+      ],
+      "required_other_layers": [
+        "Actual unconfirmed/retry labels"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S15",
+      "title": "Backend restart with saved history",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Finished saved red session and mock provenance",
+      "actions": [
+        "Close/recreate FastAPI lifespan on same disposable DB",
+        "Read detail/history",
+        "Inspect foreign keys and preserved fields"
+      ],
+      "expected": {
+        "status": "finished",
+        "color": "red",
+        "mode": "mock",
+        "foreign_key_errors": 0,
+        "provenance_preserved": true
+      },
+      "automated_layers": [
+        "API",
+        "SQLite",
+        "Application lifespan"
+      ],
+      "required_other_layers": [
+        "Real process restart",
+        "Actual history refresh"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S16",
+      "title": "Clear history",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Disposable sessions and artificial durable attempt ledger7",
+      "actions": [
+        "Delete local history using API",
+        "Inspect cascaded relations",
+        "Inspect attempt ledger unchanged"
+      ],
+      "expected": {
+        "remaining_sessions": 0,
+        "related_rows": 0,
+        "attempts": 7
+      },
+      "automated_layers": [
+        "API",
+        "SQLite"
+      ],
+      "required_other_layers": [
+        "Actual confirmation/cancel UI"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S17",
+      "title": "Mock/live and call-limit boundary",
+      "inputs": [
+        {
+          "name": "body-cue",
+          "answers": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answered": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "direct_choice": null,
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": 2,
+              "received": true,
+              "label": "Hard right now"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": 0,
+              "received": true,
+              "label": "Easy"
+            },
+            {
+              "question_id": "present",
+              "answer_id": 0,
+              "received": true,
+              "label": "Present"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": 0,
+              "received": true,
+              "label": "Comfortable"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Isolated fixture counters only; default mock and fake OpenRouter transport",
+      "actions": [
+        "Assert mock makes no outbound request",
+        "Simulate9/10 boundary using mocked transport",
+        "At10/10 request another explanation",
+        "Replay capped request",
+        "Clear history and inspect ledger"
+      ],
+      "expected": {
+        "default_mode": "mock",
+        "mock_dispatches": 0,
+        "simulated_dispatches": 1,
+        "after_cap_mode": "mock",
+        "after_cap_model": "peyce-mock-1.0",
+        "final_attempts": 10,
+        "real_network_calls": 0
+      },
+      "automated_layers": [
+        "API",
+        "SQLite",
+        "Mocked transport"
+      ],
+      "required_other_layers": [
+        "Actual honest source label at simulated cap"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    },
+    {
+      "id": "S18",
+      "title": "Keyboard/rapid/narrow/reduced motion",
+      "inputs": [
+        {
+          "name": "direct-breathing",
+          "answers": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "answered": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "direct_choice": "breathing",
+          "selections": [
+            {
+              "question_id": "body",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "thought",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "present",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "breathing",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            },
+            {
+              "question_id": "grounding",
+              "answer_id": null,
+              "received": false,
+              "label": "Unanswered"
+            }
+          ]
+        }
+      ],
+      "initial_state": "Actual controller and four simulated viewports",
+      "actions": [
+        "Exercise keyboard controls and rapid repeats",
+        "Inspect390/360 layouts",
+        "Observe reduced-motion cues/progress"
+      ],
+      "expected": {
+        "no_accidental_progression": true,
+        "support_visible": true,
+        "no_false_completion": true
+      },
+      "automated_layers": [],
+      "required_other_layers": [
+        "Controller",
+        "Actual GUI/viewport/keyboard"
+      ],
+      "evidence_path": "docs/evidence/3.3/deterministic-run-{1,2}.json"
+    }
+  ],
+  "behaviors": [
+    {
+      "id": "B1",
+      "meaning": "Local support is independent of backend/provider permission",
+      "cases": [
+        "S01",
+        "S02",
+        "S04",
+        "S08",
+        "S09",
+        "S12",
+        "S13"
+      ],
+      "executable_layer": "frontend actual-controller helper plus root GUI",
+      "api_result": "not evaluated; support is local UI"
+    },
+    {
+      "id": "B2",
+      "meaning": "Current choice and explicit lifecycle retain authority; no fabricated completion/stale context",
+      "cases": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S07",
+        "S10",
+        "S11",
+        "S13"
+      ],
+      "executable_layer": "API cross-case helper plus frontend controller/GUI",
+      "limits": "API cannot establish displayed controls, physical keys, balloon animation or focus"
+    },
+    {
+      "id": "B3",
+      "meaning": "Committed SQLite agrees with receipts/provenance after retry/reload/restart/clear",
+      "cases": [
+        "S01",
+        "S05",
+        "S08",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "executable_layer": "API/SQLite cross-case helper plus root actual GUI/SQL",
+      "limits": "Application lifespan restart is not a process restart; no live success inferred from mocked transport"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "80e03777-32a8-4647-98a5-a788c381ff96",
+  "status": "interrupted",
+  "revision": 3,
+  "snapshot": {
+    "answered": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "answers": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "color": "red",
+    "color_explicit": true,
+    "direct_choice": "grounding",
+    "events": [
+      {
+        "active_ms": 0.0,
+        "at_ms": 412.1999999284744,
+        "cause": "user",
+        "id": "a869d3f0-8acf-4f53-a088-0ba874084f56",
+        "kind": "instruction_visible"
+      },
+      {
+        "active_ms": 0.0,
+        "at_ms": 9097.699999928474,
+        "cause": "user",
+        "id": "378180e6-bdf4-4c13-8c48-ce639aeca6aa",
+        "kind": "start"
+      }
+    ],
+    "exercise": "grounding",
+    "operation_id": "4a97aab3-a735-4a3f-9e04-48c0a98506ec",
+    "revision": 3,
+    "status": "interrupted",
+    "timing": null
+  },
+  "counts": {
+    "lifecycle": 2,
+    "revisions": 3,
+    "turns": 0,
+    "explanations": 0,
+    "operations": 4
+  },
+  "foreign_keys": [],
+  "query_repair": "initial observation used nonexistent table names; corrected from sqlite_master, no app defect"
+}

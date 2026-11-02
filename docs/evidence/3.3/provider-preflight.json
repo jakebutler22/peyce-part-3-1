@@ -1,0 +1,89 @@
+{
+  "checked_at_utc": "2026-11-02T19:11:48.314682+00:00",
+  "metadata_request_count": 2,
+  "generation_requests": 0,
+  "credentials_used": false,
+  "runtime_ledger_accessed": false,
+  "sources": [
+    {
+      "url": "https://openrouter.ai/nvidia/nemotron-3.5-lightning:free",
+      "kind": "official public model page via browse",
+      "status": "opened",
+      "observed_at_utc": "2026-11-02 19:11:28 UTC",
+      "observations": {
+        "listed_exact_model": true,
+        "prompt_price": "Free",
+        "completion_price": "Free",
+        "tools": true,
+        "tool_choice": true,
+        "response_format": false
+      }
+    },
+    {
+      "url": "https://openrouter.ai/api/v1/models",
+      "kind": "official catalog API; no authentication",
+      "status": 200
+    }
+  ],
+  "exact_model_listed": true,
+  "model": {
+    "id": "nvidia/nemotron-3.5-lightning:free",
+    "name": "NVIDIA: Nemotron 3.5 Lightning (free)",
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    },
+    "supported_parameters": [
+      "include_reasoning",
+      "max_tokens",
+      "reasoning",
+      "seed",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_p"
+    ],
+    "context_length": 1000000,
+    "top_level_provider": null,
+    "default_parameters": {},
+    "reasoning": {
+      "mandatory": false
+    }
+  },
+  "input_output_zero": true,
+  "request_options_supported": {
+    "max_tokens": true,
+    "reasoning": true,
+    "temperature": true,
+    "tool_choice": true,
+    "tools": true
+  },
+  "adapter_inspection": {
+    "path": "backend/app/explanations.py",
+    "prompt_version": "peyce-acknowledgment-1.2",
+    "named_tool": "acknowledge_current_rule",
+    "tool_choice": "forced exact function",
+    "reasoning": {
+      "enabled": false,
+      "exclude": true
+    },
+    "max_tokens": 1000,
+    "temperature": 0.2,
+    "response_format_present": false,
+    "provider": {
+      "require_parameters": true,
+      "allow_fallbacks": false,
+      "max_price": {
+        "prompt": 0,
+        "completion": 0
+      }
+    },
+    "automatic_retries": 0
+  },
+  "metadata_dispatch_gate_pass": true,
+  "limitations": [
+    "Metadata eligibility is not a successful generation, credential validation or endpoint availability guarantee.",
+    "Root must verify current durable ledger and configured exact model/budget before dispatch; this preflight never opens them.",
+    "No paid fallback, model substitution or extra allowance is authorized."
+  ]
+}

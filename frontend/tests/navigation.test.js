@@ -56,6 +56,7 @@ test('a stale detail failure cannot replace the successful current detail with a
 test('a history response started before clearing cannot resurrect deleted rows', async () => {
   const { p, pending } = await controller();
   const reading = p.refreshHistory();
+  p.requestHistoryClear();
   const clearing = p.clearHistory();
   pending[1].resolve({ cleared: true });
   await clearing;

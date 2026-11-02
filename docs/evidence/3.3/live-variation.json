@@ -1,0 +1,595 @@
+{
+  "date": "2026-11-02",
+  "fictional_only": true,
+  "layer": "Actual HTTP to localhost FastAPI; actual OpenRouter dispatches; SQLite readback",
+  "before": {
+    "mode": "openrouter",
+    "model_id": "nvidia/nemotron-3.5-lightning:free",
+    "live_configured": true,
+    "test_controls": false,
+    "question_version": "peyce-original-1.0",
+    "policy_version": "peyce-routing-1.0",
+    "live_attempts": 7,
+    "live_max_attempts": 10
+  },
+  "prompt_version": "peyce-acknowledgment-1.2",
+  "settings": {
+    "temperature": 0.2,
+    "max_tokens": 1000,
+    "reasoning": {
+      "enabled": false,
+      "exclude": true
+    },
+    "tool_choice": "acknowledge_current_rule",
+    "timeout_seconds": 15,
+    "automatic_retries": 0,
+    "budget_usd": 0,
+    "provider": {
+      "require_parameters": true,
+      "allow_fallbacks": false,
+      "max_price": {
+        "prompt": 0,
+        "completion": 0
+      }
+    }
+  },
+  "metadata_evidence": "provider-preflight.json",
+  "cases": [
+    {
+      "label": "repeated-body-1",
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "request_id": "8d6a33a3-0180-442c-9c64-010bad3169f9",
+      "answers": [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "answered": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "exercise": "breathing",
+      "color": "pink",
+      "latency_seconds": 0.8858771249651909,
+      "response": {
+        "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+        "revision": 1,
+        "request_id": "8d6a33a3-0180-442c-9c64-010bad3169f9",
+        "mode": "openrouter",
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "status": "validated",
+        "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+        "fragments": {
+          "reason_code": "body-cue",
+          "opening_id": "reflect",
+          "reference_ids": [
+            "body",
+            "breathing"
+          ],
+          "closing_id": "choice"
+        },
+        "references": [
+          "body",
+          "breathing"
+        ],
+        "stale": false,
+        "diagnostic": {
+          "finish_reason": "tool_calls",
+          "http_status": 200,
+          "completion_tokens": 31,
+          "reasoning_tokens": 0
+        }
+      },
+      "ledger_after": 8
+    },
+    {
+      "label": "repeated-body-2",
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "request_id": "0939164a-a4ff-4210-8dca-62f091c72636",
+      "answers": [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "answered": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "exercise": "breathing",
+      "color": "pink",
+      "latency_seconds": 0.5650102089857683,
+      "response": {
+        "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+        "revision": 1,
+        "request_id": "0939164a-a4ff-4210-8dca-62f091c72636",
+        "mode": "openrouter",
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "status": "validated",
+        "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+        "fragments": {
+          "reason_code": "body-cue",
+          "opening_id": "reflect",
+          "reference_ids": [
+            "body",
+            "breathing"
+          ],
+          "closing_id": "choice"
+        },
+        "references": [
+          "body",
+          "breathing"
+        ],
+        "stale": false,
+        "diagnostic": {
+          "finish_reason": "tool_calls",
+          "http_status": 200,
+          "completion_tokens": 31,
+          "reasoning_tokens": 0
+        }
+      },
+      "ledger_after": 9
+    },
+    {
+      "label": "contrast-attention-1",
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "request_id": "186da111-3c39-4bb6-9168-0e560481b29d",
+      "answers": [
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "answered": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "exercise": "grounding",
+      "color": "pink",
+      "latency_seconds": 0.5839344159467146,
+      "response": {
+        "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+        "revision": 1,
+        "request_id": "186da111-3c39-4bb6-9168-0e560481b29d",
+        "mode": "openrouter",
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "status": "validated",
+        "text": "You selected repeating thought: \u201cIt keeps pulling me in\u201d; grounding: \u201cComfortable\u201d. Noticing your surroundings is one option. You can choose or finish.",
+        "fragments": {
+          "reason_code": "present-cue",
+          "opening_id": "reflect",
+          "reference_ids": [
+            "thought",
+            "grounding"
+          ],
+          "closing_id": "choice"
+        },
+        "references": [
+          "thought",
+          "grounding"
+        ],
+        "stale": false,
+        "diagnostic": {
+          "finish_reason": "tool_calls",
+          "http_status": 200,
+          "completion_tokens": 31,
+          "reasoning_tokens": 0
+        }
+      },
+      "ledger_after": 10
+    }
+  ],
+  "limits": "Two independent requests repeat one substantive context; grounding is one contrasting observation. These are ready-state API sessions, not completed exercises or human trials.",
+  "after": {
+    "mode": "openrouter",
+    "model_id": "nvidia/nemotron-3.5-lightning:free",
+    "live_configured": true,
+    "test_controls": false,
+    "question_version": "peyce-original-1.0",
+    "policy_version": "peyce-routing-1.0",
+    "live_attempts": 10,
+    "live_max_attempts": 10
+  },
+  "repeat_validated_equal": true,
+  "sqlite_explanations": [
+    {
+      "request_id": "0939164a-a4ff-4210-8dca-62f091c72636",
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.2",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "body-cue",
+      "outcome": "validated",
+      "validation": "validated",
+      "fragments_json": "{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"body-cue\",\"reference_ids\":[\"body\",\"breathing\"]}",
+      "references_json": "[\"body\",\"breathing\"]",
+      "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+      "stale": 0,
+      "created_at": "2026-11-02T23:38:15.974+00:00",
+      "updated_at": "2026-11-02T23:38:16.533+00:00",
+      "response_json": "{\"diagnostic\":{\"completion_tokens\":31,\"finish_reason\":\"tool_calls\",\"http_status\":200,\"reasoning_tokens\":0},\"fragments\":{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"body-cue\",\"reference_ids\":[\"body\",\"breathing\"]},\"mode\":\"openrouter\",\"model_id\":\"nvidia/nemotron-3.5-lightning:free\",\"references\":[\"body\",\"breathing\"],\"request_id\":\"0939164a-a4ff-4210-8dca-62f091c72636\",\"revision\":1,\"session_id\":\"07c291d9-8bc0-4714-aac4-7a86ef5a9d20\",\"stale\":false,\"status\":\"validated\",\"text\":\"You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.\"}"
+    },
+    {
+      "request_id": "186da111-3c39-4bb6-9168-0e560481b29d",
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.2",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "present-cue",
+      "outcome": "validated",
+      "validation": "validated",
+      "fragments_json": "{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"present-cue\",\"reference_ids\":[\"thought\",\"grounding\"]}",
+      "references_json": "[\"thought\",\"grounding\"]",
+      "text": "You selected repeating thought: \u201cIt keeps pulling me in\u201d; grounding: \u201cComfortable\u201d. Noticing your surroundings is one option. You can choose or finish.",
+      "stale": 0,
+      "created_at": "2026-11-02T23:38:16.547+00:00",
+      "updated_at": "2026-11-02T23:38:17.127+00:00",
+      "response_json": "{\"diagnostic\":{\"completion_tokens\":31,\"finish_reason\":\"tool_calls\",\"http_status\":200,\"reasoning_tokens\":0},\"fragments\":{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"present-cue\",\"reference_ids\":[\"thought\",\"grounding\"]},\"mode\":\"openrouter\",\"model_id\":\"nvidia/nemotron-3.5-lightning:free\",\"references\":[\"thought\",\"grounding\"],\"request_id\":\"186da111-3c39-4bb6-9168-0e560481b29d\",\"revision\":1,\"session_id\":\"d25dff52-cf01-4b5e-ae53-d57742542fc0\",\"stale\":false,\"status\":\"validated\",\"text\":\"You selected repeating thought: \u201cIt keeps pulling me in\u201d; grounding: \u201cComfortable\u201d. Noticing your surroundings is one option. You can choose or finish.\"}"
+    },
+    {
+      "request_id": "8d6a33a3-0180-442c-9c64-010bad3169f9",
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "prompt_version": "peyce-acknowledgment-1.2",
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "reason_code": "body-cue",
+      "outcome": "validated",
+      "validation": "validated",
+      "fragments_json": "{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"body-cue\",\"reference_ids\":[\"body\",\"breathing\"]}",
+      "references_json": "[\"body\",\"breathing\"]",
+      "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+      "stale": 0,
+      "created_at": "2026-11-02T23:38:15.076+00:00",
+      "updated_at": "2026-11-02T23:38:15.959+00:00",
+      "response_json": "{\"diagnostic\":{\"completion_tokens\":31,\"finish_reason\":\"tool_calls\",\"http_status\":200,\"reasoning_tokens\":0},\"fragments\":{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"body-cue\",\"reference_ids\":[\"body\",\"breathing\"]},\"mode\":\"openrouter\",\"model_id\":\"nvidia/nemotron-3.5-lightning:free\",\"references\":[\"body\",\"breathing\"],\"request_id\":\"8d6a33a3-0180-442c-9c64-010bad3169f9\",\"revision\":1,\"session_id\":\"07c291d9-8bc0-4714-aac4-7a86ef5a9d20\",\"stale\":false,\"status\":\"validated\",\"text\":\"You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.\"}"
+    }
+  ],
+  "sqlite_turns": [
+    {
+      "id": 761,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 0,
+      "role": "assistant",
+      "question_id": "body",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How easy is it to let your shoulders and jaw soften right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 762,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 1,
+      "role": "user",
+      "question_id": "body",
+      "answer_id": 2,
+      "skipped": 0,
+      "text": "Hard right now",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 763,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 2,
+      "role": "assistant",
+      "question_id": "thought",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How easy is it to set a repeating thought aside for a moment?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 764,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 3,
+      "role": "user",
+      "question_id": "thought",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Easy",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 765,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 4,
+      "role": "assistant",
+      "question_id": "present",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How connected do you feel to what's around you?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 766,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 5,
+      "role": "user",
+      "question_id": "present",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Present",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 767,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 6,
+      "role": "assistant",
+      "question_id": "breathing",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How does following a gentle breathing rhythm sound right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 768,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 7,
+      "role": "user",
+      "question_id": "breathing",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Comfortable",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 769,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 8,
+      "role": "assistant",
+      "question_id": "grounding",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How does noticing a few things around you sound right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 770,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 9,
+      "role": "user",
+      "question_id": "grounding",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Comfortable",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:15.072+00:00"
+    },
+    {
+      "id": 771,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 99,
+      "role": "assistant",
+      "question_id": null,
+      "answer_id": null,
+      "skipped": 0,
+      "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+      "question_version": "peyce-original-1.0",
+      "source": "validated-openrouter-acknowledgment",
+      "created_at": "2026-11-02T23:38:15.959+00:00"
+    },
+    {
+      "id": 772,
+      "session_id": "07c291d9-8bc0-4714-aac4-7a86ef5a9d20",
+      "revision": 1,
+      "sequence": 99,
+      "role": "assistant",
+      "question_id": null,
+      "answer_id": null,
+      "skipped": 0,
+      "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+      "question_version": "peyce-original-1.0",
+      "source": "validated-openrouter-acknowledgment",
+      "created_at": "2026-11-02T23:38:16.533+00:00"
+    },
+    {
+      "id": 773,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 0,
+      "role": "assistant",
+      "question_id": "body",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How easy is it to let your shoulders and jaw soften right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 774,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 1,
+      "role": "user",
+      "question_id": "body",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Easy",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 775,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 2,
+      "role": "assistant",
+      "question_id": "thought",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How easy is it to set a repeating thought aside for a moment?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 776,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 3,
+      "role": "user",
+      "question_id": "thought",
+      "answer_id": 2,
+      "skipped": 0,
+      "text": "It keeps pulling me in",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 777,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 4,
+      "role": "assistant",
+      "question_id": "present",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How connected do you feel to what's around you?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 778,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 5,
+      "role": "user",
+      "question_id": "present",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Present",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 779,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 6,
+      "role": "assistant",
+      "question_id": "breathing",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How does following a gentle breathing rhythm sound right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 780,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 7,
+      "role": "user",
+      "question_id": "breathing",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Comfortable",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 781,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 8,
+      "role": "assistant",
+      "question_id": "grounding",
+      "answer_id": null,
+      "skipped": 0,
+      "text": "How does noticing a few things around you sound right now?",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 782,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 9,
+      "role": "user",
+      "question_id": "grounding",
+      "answer_id": 0,
+      "skipped": 0,
+      "text": "Comfortable",
+      "question_version": "peyce-original-1.0",
+      "source": "structured-turn",
+      "created_at": "2026-11-02T23:38:16.544+00:00"
+    },
+    {
+      "id": 783,
+      "session_id": "d25dff52-cf01-4b5e-ae53-d57742542fc0",
+      "revision": 1,
+      "sequence": 99,
+      "role": "assistant",
+      "question_id": null,
+      "answer_id": null,
+      "skipped": 0,
+      "text": "You selected repeating thought: \u201cIt keeps pulling me in\u201d; grounding: \u201cComfortable\u201d. Noticing your surroundings is one option. You can choose or finish.",
+      "question_version": "peyce-original-1.0",
+      "source": "validated-openrouter-acknowledgment",
+      "created_at": "2026-11-02T23:38:17.127+00:00"
+    }
+  ],
+  "foreign_key_errors": [],
+  "postprocessing_repair": "All three generation calls succeeded. Initial readback query used nonexistent turns.request_id; corrected read-only to schema turns.session_id. No request repeated."
+}
