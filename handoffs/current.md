@@ -21,6 +21,8 @@ PYTHON_DOTENV_DISABLED=1 PEYCE_MODEL_MODE=mock PEYCE_DB_PATH=backend/.runtime/pe
 npm --prefix frontend run dev
 ```
 
-Open http://127.0.0.1:5181/. See README for pinned fresh setup/tests. Owned verification processes will be stopped and final state recorded after clean-checkout checks. Never clear/copy/publish real ignored runtimeDB, keys or unrelated private material.
+Open http://127.0.0.1:5181/. See README for pinned fresh setup/tests. Owned clean-checkout processes were stopped and its managed worktree archived after evidence export. A new recording-ready mock application remains running from the main project: FastAPI PID1713 on127.0.0.1:8012 and Vite PID1740 on127.0.0.1:5181. Test controls are off; actual status reports mock, live_configured=false and10/10. These are localhost-only services. Never clear/copy/publish real ignored runtimeDB, keys or unrelated private material.
 
 One final upload: `submissions/3.3/report.md`, once packaged. Assignment-specific due date November2,2026 11:59p.m. America/New_York is from the user's transcription; no Canvas visit/submission or grade is claimed. Required student personal source/report review remains human work. Stop after Part3.3; no support-service deployment.
+
+Publication: source/evidence main68519acd03a1e7110351d3994213854e49314a79 passed88backend/60frontend/build, matched remote after push, and all23unique reportURLs returned anonymous HTTP200 before later report packaging. All20pinnedblobpaths exist. The later containing commit packages report/link verification only; application directories are unchanged from runnable source2f00ffb. Both required videos remainincomplete.

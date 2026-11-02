@@ -1,0 +1,147 @@
+{
+  "source": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+  "evidence": "68519acd03a1e7110351d3994213854e49314a79",
+  "initial_harness_failure": "Python urllib local certificate trust could not find issuer; no remote HTTP verdict. Used system curl with ordinary certificate validation; did not disable TLS verification.",
+  "results": [
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/backend/app/explanations.py",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/backend/app/repository.py",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/backend/tests/fixtures/evaluation-3.3.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/prompts/03-peyce-3.3-master-prompt.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/AI-USE.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/README.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence-log.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/clean-checkout.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/clear-sql.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/deterministic-initial-failure.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/final-deterministic-run-1.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/final-deterministic-run-2.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/gui-observations.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/live-variation.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/provider-preflight.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/evidence/3.3/recordings.json",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/part-3.3-demo-script.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/part-3.3-design-review.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/part-3.3-evaluation.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/68519acd03a1e7110351d3994213854e49314a79/docs/part-3.3-verification.md",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/tree/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/tree/68519acd03a1e7110351d3994213854e49314a79",
+      "http": 200,
+      "exit_code": 0,
+      "anonymous": true
+    }
+  ],
+  "checked": 23,
+  "passed": 23
+}

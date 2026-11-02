@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-02",
+  "runnable_source": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+  "evidence_snapshot": "68519acd03a1e7110351d3994213854e49314a79",
+  "main_verified_before_report_packaging": {
+    "commit": "68519acd03a1e7110351d3994213854e49314a79",
+    "backend_tests": 88,
+    "frontend_tests": 60,
+    "build": "passed",
+    "application_tree_identical_to_source": true,
+    "remote_matched_after_source_push": true
+  },
+  "preservation": {
+    "part33-archived-baseline.json": {
+      "files": 118,
+      "changed": 0
+    },
+    "previous-3.2-baseline.json": {
+      "files": 190,
+      "changed": 0
+    }
+  },
+  "publication_scan": {
+    "files": 245,
+    "configured_key_and_credential_pattern_matches": 0,
+    "ignored_env_and_db_not_tracked": true
+  },
+  "local_recording_ready": {
+    "url": "http://127.0.0.1:5181/",
+    "backend_pid": 1713,
+    "frontend_pid": 1740,
+    "mode": "mock",
+    "test_controls": false,
+    "durable_actual_attempts": 10
+  },
+  "recordings": "incomplete; no playback or anonymous video access claim",
+  "clean_test_services_stopped": true,
+  "clean_worktree_archived_after_evidence_export": true,
+  "human_review_and_canvas_upload": "not performed"
+}
