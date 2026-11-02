@@ -1,0 +1,551 @@
+{
+  "source": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+  "checkout": "/Users/jakebutler/.codex/worktrees/peyce-33-clean/mental health vF",
+  "environment_keys": [
+    "PATH",
+    "TMPDIR",
+    "LANG",
+    "PYTHON_DOTENV_DISABLED",
+    "PEYCE_MODEL_MODE"
+  ],
+  "mock_only": true,
+  "dotenv_disabled": true,
+  "copied_ignored_dependencies_config_database": false,
+  "commands": [
+    [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    [
+      "python3",
+      "--version"
+    ],
+    [
+      "node",
+      "--version"
+    ],
+    [
+      "npm",
+      "--version"
+    ],
+    [
+      "python3",
+      "-m",
+      "venv",
+      "backend/.venv"
+    ],
+    [
+      "backend/.venv/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "-r",
+      "backend/requirements.txt"
+    ],
+    [
+      "npm",
+      "--prefix",
+      "frontend",
+      "ci"
+    ],
+    [
+      "backend/.venv/bin/python",
+      "-m",
+      "pytest",
+      "backend/tests",
+      "-q"
+    ],
+    [
+      "npm",
+      "--prefix",
+      "frontend",
+      "test"
+    ],
+    [
+      "npm",
+      "--prefix",
+      "frontend",
+      "run",
+      "build"
+    ]
+  ],
+  "results": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.007792375050485134,
+      "output": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53\n"
+    },
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0090909170685336,
+      "output": "Python 3.14.7\n"
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.013054125010967255,
+      "output": "v24.12.0\n"
+    },
+    {
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.08793500007595867,
+      "output": "11.6.2\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "venv",
+        "backend/.venv"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.233526416006498,
+      "output": ""
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "backend/requirements.txt"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.839657083968632,
+      "output": "Collecting annotated-doc==0.0.5 (from -r backend/requirements.txt (line 1))\n  Using cached annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)\nCollecting annotated-types==0.8.0 (from -r backend/requirements.txt (line 2))\n  Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)\nCollecting anyio==4.15.1 (from -r backend/requirements.txt (line 3))\n  Using cached anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)\nCollecting certifi==2026.10.19 (from -r backend/requirements.txt (line 4))\n  Using cached certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)\nCollecting click==8.5.0 (from -r backend/requirements.txt (line 5))\n  Using cached click-8.5.0-py3-none-any.whl.metadata (2.6 kB)\nCollecting fastapi==0.156.1 (from -r backend/requirements.txt (line 6))\n  Using cached fastapi-0.156.1-py3-none-any.whl.metadata (26 kB)\nCollecting h11==0.16.0 (from -r backend/requirements.txt (line 7))\n  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)\nCollecting httpcore==1.0.9 (from -r backend/requirements.txt (line 8))\n  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)\nCollecting httpx==0.28.1 (from -r backend/requirements.txt (line 9))\n  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)\nCollecting idna==3.20 (from -r backend/requirements.txt (line 10))\n  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)\nCollecting iniconfig==2.3.1 (from -r backend/requirements.txt (line 11))\n  Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)\nCollecting opentelemetry-api==1.45.1 (from -r backend/requirements.txt (line 12))\n  Using cached opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)\nCollecting packaging==26.3 (from -r backend/requirements.txt (line 13))\n  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)\nCollecting pluggy==1.7.0 (from -r backend/requirements.txt (line 14))\n  Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)\nCollecting pydantic==2.14.1 (from -r backend/requirements.txt (line 15))\n  Using cached pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)\nCollecting pydantic_core==2.50.1 (from -r backend/requirements.txt (line 16))\n  Using cached pydantic_core-2.50.1-cp314-cp314-macosx_11_0_arm64.whl.metadata (6.5 kB)\nCollecting Pygments==2.21.0 (from -r backend/requirements.txt (line 17))\n  Using cached pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)\nCollecting pytest==9.1.1 (from -r backend/requirements.txt (line 18))\n  Using cached pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)\nCollecting python-dotenv==1.2.4 (from -r backend/requirements.txt (line 19))\n  Using cached python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)\nCollecting starlette==1.9.0 (from -r backend/requirements.txt (line 20))\n  Using cached starlette-1.9.0-py3-none-any.whl.metadata (6.6 kB)\nCollecting typing-inspection==0.4.4 (from -r backend/requirements.txt (line 21))\n  Using cached typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)\nCollecting typing_extensions==4.16.0 (from -r backend/requirements.txt (line 22))\n  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)\nCollecting uvicorn==0.54.0 (from -r backend/requirements.txt (line 23))\n  Using cached uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)\nUsing cached annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)\nUsing cached annotated_types-0.8.0-py3-none-any.whl (13 kB)\nUsing cached anyio-4.15.1-py3-none-any.whl (132 kB)\nUsing cached certifi-2026.10.19-py3-none-any.whl (136 kB)\nUsing cached click-8.5.0-py3-none-any.whl (125 kB)\nUsing cached fastapi-0.156.1-py3-none-any.whl (146 kB)\nUsing cached h11-0.16.0-py3-none-any.whl (37 kB)\nUsing cached httpcore-1.0.9-py3-none-any.whl (78 kB)\nUsing cached httpx-0.28.1-py3-none-any.whl (73 kB)\nUsing cached idna-3.20-py3-none-any.whl (69 kB)\nUsing cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)\nUsing cached opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)\nUsing cached packaging-26.3-py3-none-any.whl (129 kB)\nUsing cached pluggy-1.7.0-py3-none-any.whl (27 kB)\nUsing cached pydantic-2.14.1-py3-none-any.whl (488 kB)\nUsing cached pydantic_core-2.50.1-cp314-cp314-macosx_11_0_arm64.whl (2.0 MB)\nUsing cached pygments-2.21.0-py3-none-any.whl (1.3 MB)\nUsing cached pytest-9.1.1-py3-none-any.whl (386 kB)\nUsing cached python_dotenv-1.2.4-py3-none-any.whl (23 kB)\nUsing cached starlette-1.9.0-py3-none-any.whl (80 kB)\nUsing cached typing_inspection-0.4.4-py3-none-any.whl (14 kB)\nUsing cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)\nUsing cached uvicorn-0.54.0-py3-none-any.whl (87 kB)\nInstalling collected packages: typing_extensions, python-dotenv, Pygments, pluggy, packaging, iniconfig, idna, h11, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pytest, pydantic_core, opentelemetry-api, httpcore, anyio, starlette, pydantic, httpx, fastapi\n\nSuccessfully installed Pygments-2.21.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.10.19 click-8.5.0 fastapi-0.156.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 iniconfig-2.3.1 opentelemetry-api-1.45.1 packaging-26.3 pluggy-1.7.0 pydantic-2.14.1 pydantic_core-2.50.1 pytest-9.1.1 python-dotenv-1.2.4 starlette-1.9.0 typing-inspection-0.4.4 typing_extensions-4.16.0 uvicorn-0.54.0\n\n[notice] A new release of pip is available: 26.2.1 -> 26.3\n[notice] To update, run: /Users/jakebutler/.codex/worktrees/peyce-33-clean/mental health vF/backend/.venv/bin/python -m pip install --upgrade pip\n"
+    },
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "ci"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4185306669678539,
+      "output": "\nadded 36 packages, and audited 37 packages in 364ms\n\n9 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "command": [
+        "backend/.venv/bin/python",
+        "-m",
+        "pytest",
+        "backend/tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.0355205410160124,
+      "output": "........................................................................ [ 81%]\n................                                                         [100%]\n=============================== warnings summary ===============================\nbackend/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  /Users/jakebutler/.codex/worktrees/peyce-33-clean/mental health vF/backend/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n88 passed, 1 warning in 2.76s\n"
+    },
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "test"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.9035101659828797,
+      "output": "\n> peyce-design-prototype@0.1.0 test\n> node --test tests/*.test.js\n\n\u2714 six cycles each contain exactly four seconds of inhale and six seconds of exhale (0.629667ms)\n\u2714 inflation is low/mid/full at meaningful pacing landmarks (0.090375ms)\n\u2714 visual inflation stays continuous across inhale/exhale and cycle boundaries (0.609875ms)\n\u2714 clamped phase values remain within the sixty-second experiment (1.611084ms)\n\u2714 one monotonic input clock drives phase, elapsed time, and completion despite irregular frames (0.169292ms)\n\u2714 pause freezes the phase and resume continues from that exact point (0.077083ms)\n\u2714 background-pause contract excludes hidden time and does not flash missed cycles on return (0.068792ms)\n\u2714 completion cannot resume beyond six cycles, and a new start resets only deliberately (0.1035ms)\n\u2714 routing: body-tension path (1.085375ms)\n\u2714 routing: present-focus path (0.058375ms)\n\u2714 routing: preference overrides body cue (0.041375ms)\n\u2714 routing: preference overrides present cue (0.044208ms)\n\u2714 routing: both activities declined (0.038292ms)\n\u2714 routing: all skipped (0.032ms)\n\u2714 routing: all comfortable cue answers (0.036042ms)\n\u2714 routing: nonzero tie (0.034375ms)\n\u2714 routing: missing body cue (0.344084ms)\n\u2714 routing: missing thought cue (0.100042ms)\n\u2714 routing: missing present cue (0.151458ms)\n\u2714 routing: only breathing comfortable, grounding unsure (0.170292ms)\n\u2714 routing: only grounding comfortable, breathing unsure (0.048625ms)\n\u2714 routing: grounding unknown, expressed breathing comfort (0.035708ms)\n\u2714 routing: breathing unknown, expressed grounding comfort (0.020917ms)\n\u2714 routing: breathing declined, grounding unknown (0.933708ms)\n\u2714 routing: grounding declined, breathing unknown (0.169375ms)\n\u2714 routing: breathing declined, grounding unsure (0.033ms)\n\u2714 routing: grounding declined, breathing unsure (0.020583ms)\n\u2714 routing: both activities unsure (0.019208ms)\n\u2714 routing: cue answers cannot supply missing willingness (0.10325ms)\n\u2714 a deliberate current exercise choice overrides any offered suggestion or refusal (0.148917ms)\n\u2714 unrecognized direct choice cannot bypass the approved choices (0.055167ms)\n\u2714 explanations cite the selected content and activity comfort (0.049125ms)\n\u2714 recomputing after a Back edit produces a fresh result without altering the earlier result (0.080791ms)\n\u2714 all 4^5 answer tuples satisfy refusal, unknown-answer, and no-score safety invariants (2.859167ms)\n\u2714 the original five questions and ordered question-specific labels are exact and versioned (0.077834ms)\n\u2714 grounding preserves the five private noticing steps and does not require eating or drinking (0.048291ms)\n\u2714 a delayed saved-session response cannot undo a deliberate Home action (3.934667ms)\n\u2714 an older saved-session response cannot replace the latest requested session (0.2995ms)\n\u2714 a stale detail failure cannot replace the successful current detail with an error (0.18525ms)\n\u2714 a history response started before clearing cannot resurrect deleted rows (0.465042ms)\n\u2714 a delayed history read cannot overwrite a newer successful refresh (0.165209ms)\n\u2714 saved timing boundaries exactly match lifecycle even when clock sampling is delayed (3.734916ms)\n\u2714 [S08] explicit colour survives return and a fresh controller without storing session data (4.327417ms)\n\u2714 [S08 B3] saved sessions record the current explicit colour without changing the preference payload (1.757292ms)\n\u2714 [S08] invalid or unavailable browser storage falls back safely and never blocks unsaved practice (0.411625ms)\n\u2714 [S08 B2 B3] repeating a finished record creates a fresh unknown-answer session and waits for Start (0.777708ms)\n\u2714 [S08 B2] repeating does not silently opt into saving or resume an unfinished record (0.467833ms)\n\u2714 [S16 B3] cancel preserves history and colour; only confirmed clearing deletes and resets them (0.249208ms)\n\u2714 [S16 B3] a failed deletion retains the explicit preference and a newer choice outranks pending clearing (0.324875ms)\n\u2714 [S16 B3] clearing does not claim the browser preference was removed when storage rejects removal (0.194584ms)\n\u2714 [B1 S04 S09 S10 S11] local support stays reachable across entry, both skills, stopping and history outage (1.042083ms)\n\u2714 [B1 S12] optional wording loading and provider failure never gate local support or direct choice (0.874083ms)\n\u2714 [B2 S07 S10 S11 S13] late wording cannot change an active choice, resume Stop or manufacture completion (0.73425ms)\n\u2714 [S05 S18 B2] Back cancels a pending first-answer transition and permits an immediate intentional correction (402.422583ms)\n\u2714 [S05 S18 B2] pending Back preserves answers and a corrected answer advances once instead of replaying both callbacks (1303.983042ms)\n\u2714 [S14 B3] successful save retry removes the stale saving-unavailable label without requesting wording (0.95325ms)\n\u2714 whole sequence includes reading, pacing and deliberate Finish (0.581208ms)\n\u2714 overlapping user/support intervals are subtracted once; background has no exclusion (0.100709ms)\n\u2714 an open pause is clipped at Finish and pre-instruction time is separate (0.057ms)\n\u2714 save queue captures values, preserves order and recovers after a failed write (1.140958ms)\n\u2139 tests 60\n\u2139 suites 0\n\u2139 pass 60\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1803.190292\n"
+    },
+    {
+      "command": [
+        "npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.909012290998362,
+      "output": "\n> peyce-design-prototype@0.1.0 build\n> vite build\n\nvite v8.3.4 building client environment for production...\ntransforming...\n\u2713 22 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.52 kB \u2502 gzip:  0.35 kB\ndist/assets/index-CVxOk7rz.css   26.97 kB \u2502 gzip:  6.14 kB\ndist/assets/index-O19chQAo.js   112.19 kB \u2502 gzip: 40.66 kB\n\n\u2713 built in 234ms\n"
+    }
+  ],
+  "startup": {
+    "backend_command": "env -i PATH=\"$PATH\" PYTHON_DOTENV_DISABLED=1 PEYCE_MODEL_MODE=mock PEYCE_DB_PATH=backend/.runtime/peyce.sqlite3 backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8012",
+    "frontend_command": "env -i PATH=\"$PATH\" npm --prefix frontend run dev",
+    "backend_pid": 91698,
+    "health": {
+      "mode": "mock",
+      "model_id": "peyce-mock-1.0",
+      "live_configured": false,
+      "test_controls": false,
+      "question_version": "peyce-original-1.0",
+      "policy_version": "peyce-routing-1.0",
+      "live_attempts": 0,
+      "live_max_attempts": 10
+    }
+  },
+  "assets": [
+    {
+      "route": "/assets/bow.png",
+      "http": 200,
+      "bytes": 828279,
+      "matches_tracked_file": true
+    },
+    {
+      "route": "/assets/balloon.png",
+      "http": 200,
+      "bytes": 545265,
+      "matches_tracked_file": true
+    },
+    {
+      "route": "/assets/fonts/playfairdisplay/Playfair-Display-italic-variable.ttf",
+      "http": 200,
+      "bytes": 278688,
+      "matches_tracked_file": true
+    },
+    {
+      "route": "/assets/fonts/playfairdisplay/Playfair-Display-variable.ttf",
+      "http": 200,
+      "bytes": 300724,
+      "matches_tracked_file": true
+    },
+    {
+      "route": "/assets/fonts/dmsans/DM-Sans-variable.ttf",
+      "http": 200,
+      "bytes": 240164,
+      "matches_tracked_file": true
+    }
+  ],
+  "actual_sql": {
+    "sessions": [
+      {
+        "id": "273cc488-1f80-430b-982b-c246a016b3f8",
+        "created_at": "2026-11-02T23:42:33.736+00:00",
+        "updated_at": "2026-11-02T23:43:59.428+00:00",
+        "ended_at": "2026-11-02T23:43:59.428+00:00",
+        "revision": 11,
+        "status": "finished",
+        "exercise": "breathing",
+        "color": "pink",
+        "color_explicit": 0,
+        "schema_version": 1,
+        "question_version": "peyce-original-1.0",
+        "policy_version": "peyce-routing-1.0",
+        "content_version": "peyce-skills-1.0",
+        "context": "fictional-local-coursework",
+        "snapshot_json": "{\"answered\":[true,true,true,true,true],\"answers\":[2,0,0,0,0],\"color\":\"pink\",\"color_explicit\":false,\"direct_choice\":null,\"events\":[{\"active_ms\":0.0,\"at_ms\":6461.100000023842,\"cause\":\"user\",\"id\":\"983d3ea6-f7be-4508-b47e-0fcad2dad392\",\"kind\":\"instruction_visible\"},{\"active_ms\":0.20000004768371582,\"at_ms\":13307.100000023842,\"cause\":\"user\",\"id\":\"bd201e3d-0d55-49a9-9dc3-ecd3608373f9\",\"kind\":\"start\"},{\"active_ms\":60000.0,\"at_ms\":73313.79999995232,\"cause\":\"clock\",\"id\":\"9d1de621-6457-4f68-8e47-229a5ddeaeed\",\"kind\":\"complete\"},{\"active_ms\":60000.0,\"at_ms\":85771.89999997616,\"cause\":\"user\",\"id\":\"c654b576-0222-4198-b0a3-bea6f61e151a\",\"kind\":\"finish\"}],\"exercise\":\"breathing\",\"operation_id\":\"a7e3bef8-bcdc-49ae-a714-3dbdc294423b\",\"revision\":11,\"status\":\"finished\",\"timing\":{\"counted_ms\":79310.79999995232,\"entry_ms\":6461.100000023842,\"excluded_intervals\":[],\"excluded_ms\":0.0,\"finish_ms\":85771.89999997616,\"instruction_ms\":6461.100000023842,\"raw_ms\":79310.79999995232}}",
+        "result_json": "{\"code\":\"body-cue\",\"exercise\":\"breathing\",\"reason\":\"You said softening your shoulders and jaw is \u201chard right now\u201d, and breathing sounds comfortable. A gentle rhythm is one option.\"}"
+      },
+      {
+        "id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "created_at": "2026-11-02T23:44:09.045+00:00",
+        "updated_at": "2026-11-02T23:45:29.319+00:00",
+        "ended_at": "2026-11-02T23:45:29.319+00:00",
+        "revision": 15,
+        "status": "finished",
+        "exercise": "grounding",
+        "color": "pink",
+        "color_explicit": 0,
+        "schema_version": 1,
+        "question_version": "peyce-original-1.0",
+        "policy_version": "peyce-routing-1.0",
+        "content_version": "peyce-skills-1.0",
+        "context": "fictional-local-coursework",
+        "snapshot_json": "{\"answered\":[true,true,true,true,true],\"answers\":[0,2,0,0,0],\"color\":\"pink\",\"color_explicit\":false,\"direct_choice\":null,\"events\":[{\"active_ms\":0.0,\"at_ms\":6241.699999928474,\"cause\":\"user\",\"id\":\"adf33e44-65a4-4c20-8181-bddc440d3e8e\",\"kind\":\"instruction_visible\"},{\"active_ms\":0.10000002384185791,\"at_ms\":13113.699999928474,\"cause\":\"user\",\"id\":\"3cd8cb67-1538-4c92-9aad-5524db05c423\",\"kind\":\"start\"},{\"active_ms\":20381.200000047684,\"at_ms\":33494.799999952316,\"cause\":\"user\",\"id\":\"0792f0ce-eb54-4680-91dd-7b2b45483ac4\",\"kind\":\"sense_next\"},{\"active_ms\":36803.40000009537,\"at_ms\":49917.10000002384,\"cause\":\"user\",\"id\":\"14879d4a-c5bb-4dc6-a8b0-48738decccee\",\"kind\":\"sense_next\"},{\"active_ms\":53951.200000047684,\"at_ms\":67064.79999995232,\"cause\":\"user\",\"id\":\"68932b32-1a4c-49ad-9a34-dd153418b272\",\"kind\":\"sense_next\"},{\"active_ms\":62339.200000047684,\"at_ms\":75452.89999997616,\"cause\":\"user\",\"id\":\"01029da3-77f6-4531-8e6d-8586b03ca4bf\",\"kind\":\"sense_next\"},{\"active_ms\":66722.0,\"at_ms\":79835.60000002384,\"cause\":\"user\",\"id\":\"24c338ae-1b3b-414b-9680-d91f485861c6\",\"kind\":\"sense_next\"},{\"active_ms\":66722.10000002384,\"at_ms\":79835.79999995232,\"cause\":\"user\",\"id\":\"5144fc88-74ad-4727-9b02-87db2044e663\",\"kind\":\"complete\"},{\"active_ms\":66722.10000002384,\"at_ms\":80284.69999992847,\"cause\":\"user\",\"id\":\"afcbd935-a8d8-49e8-ab77-fd2df0da4002\",\"kind\":\"finish\"}],\"exercise\":\"grounding\",\"operation_id\":\"cd9e2fff-0eba-459d-a18f-90d38d32dedc\",\"revision\":15,\"status\":\"finished\",\"timing\":{\"counted_ms\":74043.0,\"entry_ms\":6241.699999928474,\"excluded_intervals\":[],\"excluded_ms\":0.0,\"finish_ms\":80284.69999992847,\"instruction_ms\":6241.699999928474,\"raw_ms\":74043.0}}",
+        "result_json": "{\"code\":\"present-cue\",\"exercise\":\"grounding\",\"reason\":\"You described a repeating thought as \u201cit keeps pulling me in\u201d, and noticing your surroundings sounds comfortable.\"}"
+      }
+    ],
+    "explanations": [
+      {
+        "request_id": "f8d8908d-b54e-40a9-aed2-94c07a98a2d4",
+        "session_id": "273cc488-1f80-430b-982b-c246a016b3f8",
+        "revision": 8,
+        "mode": "mock",
+        "model_id": "peyce-mock-1.0",
+        "prompt_version": "peyce-acknowledgment-1.2",
+        "question_version": "peyce-original-1.0",
+        "policy_version": "peyce-routing-1.0",
+        "reason_code": "body-cue",
+        "outcome": "validated",
+        "validation": "validated",
+        "fragments_json": "{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"body-cue\",\"reference_ids\":[\"body\",\"breathing\"]}",
+        "references_json": "[\"body\",\"breathing\"]",
+        "text": "You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.",
+        "stale": 0,
+        "created_at": "2026-11-02T23:42:40.133+00:00",
+        "updated_at": "2026-11-02T23:42:40.136+00:00",
+        "response_json": "{\"fragments\":{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"body-cue\",\"reference_ids\":[\"body\",\"breathing\"]},\"mode\":\"mock\",\"model_id\":\"peyce-mock-1.0\",\"references\":[\"body\",\"breathing\"],\"request_id\":\"f8d8908d-b54e-40a9-aed2-94c07a98a2d4\",\"revision\":8,\"session_id\":\"273cc488-1f80-430b-982b-c246a016b3f8\",\"stale\":false,\"status\":\"validated\",\"text\":\"You selected shoulders/jaw: \u201cHard right now\u201d; breathing: \u201cComfortable\u201d. A gentle breathing rhythm is one option. You can choose or finish.\"}"
+      },
+      {
+        "request_id": "018a7b1f-984e-493f-bc76-83a3bc6e6515",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 8,
+        "mode": "mock",
+        "model_id": "peyce-mock-1.0",
+        "prompt_version": "peyce-acknowledgment-1.2",
+        "question_version": "peyce-original-1.0",
+        "policy_version": "peyce-routing-1.0",
+        "reason_code": "present-cue",
+        "outcome": "validated",
+        "validation": "validated",
+        "fragments_json": "{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"present-cue\",\"reference_ids\":[\"thought\",\"grounding\"]}",
+        "references_json": "[\"thought\",\"grounding\"]",
+        "text": "You selected repeating thought: \u201cIt keeps pulling me in\u201d; grounding: \u201cComfortable\u201d. Noticing your surroundings is one option. You can choose or finish.",
+        "stale": 0,
+        "created_at": "2026-11-02T23:44:15.284+00:00",
+        "updated_at": "2026-11-02T23:44:15.286+00:00",
+        "response_json": "{\"fragments\":{\"closing_id\":\"choice\",\"opening_id\":\"reflect\",\"reason_code\":\"present-cue\",\"reference_ids\":[\"thought\",\"grounding\"]},\"mode\":\"mock\",\"model_id\":\"peyce-mock-1.0\",\"references\":[\"thought\",\"grounding\"],\"request_id\":\"018a7b1f-984e-493f-bc76-83a3bc6e6515\",\"revision\":8,\"session_id\":\"2e4a2c76-d1c8-4792-a728-b7946e6b0002\",\"stale\":false,\"status\":\"validated\",\"text\":\"You selected repeating thought: \u201cIt keeps pulling me in\u201d; grounding: \u201cComfortable\u201d. Noticing your surroundings is one option. You can choose or finish.\"}"
+      }
+    ],
+    "lifecycle": [
+      {
+        "event_id": "983d3ea6-f7be-4508-b47e-0fcad2dad392",
+        "session_id": "273cc488-1f80-430b-982b-c246a016b3f8",
+        "revision": 8,
+        "kind": "instruction_visible",
+        "at_ms": 6461.100000023842,
+        "active_ms": 0.0,
+        "cause": "user",
+        "created_at": "2026-11-02T23:42:40.121+00:00"
+      },
+      {
+        "event_id": "bd201e3d-0d55-49a9-9dc3-ecd3608373f9",
+        "session_id": "273cc488-1f80-430b-982b-c246a016b3f8",
+        "revision": 9,
+        "kind": "start",
+        "at_ms": 13307.100000023842,
+        "active_ms": 0.20000004768371582,
+        "cause": "user",
+        "created_at": "2026-11-02T23:42:46.959+00:00"
+      },
+      {
+        "event_id": "9d1de621-6457-4f68-8e47-229a5ddeaeed",
+        "session_id": "273cc488-1f80-430b-982b-c246a016b3f8",
+        "revision": 10,
+        "kind": "complete",
+        "at_ms": 73313.79999995232,
+        "active_ms": 60000.0,
+        "cause": "clock",
+        "created_at": "2026-11-02T23:43:46.980+00:00"
+      },
+      {
+        "event_id": "c654b576-0222-4198-b0a3-bea6f61e151a",
+        "session_id": "273cc488-1f80-430b-982b-c246a016b3f8",
+        "revision": 11,
+        "kind": "finish",
+        "at_ms": 85771.89999997616,
+        "active_ms": 60000.0,
+        "cause": "user",
+        "created_at": "2026-11-02T23:43:59.428+00:00"
+      },
+      {
+        "event_id": "adf33e44-65a4-4c20-8181-bddc440d3e8e",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 8,
+        "kind": "instruction_visible",
+        "at_ms": 6241.699999928474,
+        "active_ms": 0.0,
+        "cause": "user",
+        "created_at": "2026-11-02T23:44:15.276+00:00"
+      },
+      {
+        "event_id": "3cd8cb67-1538-4c92-9aad-5524db05c423",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 9,
+        "kind": "start",
+        "at_ms": 13113.699999928474,
+        "active_ms": 0.10000002384185791,
+        "cause": "user",
+        "created_at": "2026-11-02T23:44:22.170+00:00"
+      },
+      {
+        "event_id": "0792f0ce-eb54-4680-91dd-7b2b45483ac4",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 10,
+        "kind": "sense_next",
+        "at_ms": 33494.799999952316,
+        "active_ms": 20381.200000047684,
+        "cause": "user",
+        "created_at": "2026-11-02T23:44:42.542+00:00"
+      },
+      {
+        "event_id": "14879d4a-c5bb-4dc6-a8b0-48738decccee",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 11,
+        "kind": "sense_next",
+        "at_ms": 49917.10000002384,
+        "active_ms": 36803.40000009537,
+        "cause": "user",
+        "created_at": "2026-11-02T23:44:58.958+00:00"
+      },
+      {
+        "event_id": "68932b32-1a4c-49ad-9a34-dd153418b272",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 12,
+        "kind": "sense_next",
+        "at_ms": 67064.79999995232,
+        "active_ms": 53951.200000047684,
+        "cause": "user",
+        "created_at": "2026-11-02T23:45:16.096+00:00"
+      },
+      {
+        "event_id": "01029da3-77f6-4531-8e6d-8586b03ca4bf",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 13,
+        "kind": "sense_next",
+        "at_ms": 75452.89999997616,
+        "active_ms": 62339.200000047684,
+        "cause": "user",
+        "created_at": "2026-11-02T23:45:24.486+00:00"
+      },
+      {
+        "event_id": "24c338ae-1b3b-414b-9680-d91f485861c6",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 14,
+        "kind": "sense_next",
+        "at_ms": 79835.60000002384,
+        "active_ms": 66722.0,
+        "cause": "user",
+        "created_at": "2026-11-02T23:45:28.870+00:00"
+      },
+      {
+        "event_id": "5144fc88-74ad-4727-9b02-87db2044e663",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 14,
+        "kind": "complete",
+        "at_ms": 79835.79999995232,
+        "active_ms": 66722.10000002384,
+        "cause": "user",
+        "created_at": "2026-11-02T23:45:28.870+00:00"
+      },
+      {
+        "event_id": "afcbd935-a8d8-49e8-ab77-fd2df0da4002",
+        "session_id": "2e4a2c76-d1c8-4792-a728-b7946e6b0002",
+        "revision": 15,
+        "kind": "finish",
+        "at_ms": 80284.69999992847,
+        "active_ms": 66722.10000002384,
+        "cause": "user",
+        "created_at": "2026-11-02T23:45:29.319+00:00"
+      }
+    ],
+    "foreign_key_errors": [],
+    "attempts": 0
+  },
+  "tracked_tree_status": "",
+  "full_guided_flows_passed": true,
+  "gui_evidence": "clean-gui.json",
+  "no_secrets_or_prior_data_copied": true,
+  "final_repeat_runs": [
+    {
+      "file": "docs/evidence/3.3/final-deterministic-run-1.json",
+      "summary": {
+        "predeclared_scenarios": 18,
+        "api_scenarios_passed": 16,
+        "scenarios_requiring_controller_gui": [
+          "S09",
+          "S18"
+        ],
+        "api_cross_case_assertions_passed": 2,
+        "api_failures": 0,
+        "real_network_calls": 0,
+        "actual_gui_claim": false,
+        "real_wall_clock_duration_claim": false,
+        "real_runtime_accessed": false
+      },
+      "repeat_signature": "40c3018a01404a5b91d56ef90bada849b4a45258244faf8de941413c8b39c9f3",
+      "context": {
+        "run_label": "clean-final-1",
+        "python": "3.14.7",
+        "git_head": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+        "app_matches_git_head": true,
+        "app_file_sha256": {
+          "backend/app/__init__.py": "75560330dd27e1bda84e5008a79085130c9ba26a0dfb28fcf264011fb0cb6ccb",
+          "backend/app/config.py": "aef9f41f2afb4962680b57b5864a989f6eed218c7834916ddade59568eb3f02f",
+          "backend/app/domain.py": "ad6ee02ee2042cd9a0cb3a1923e22b77fb1db62800e9a78af1e4e1322ac79815",
+          "backend/app/explanations.py": "9a6742a37b1bea6e8d8030931adea79cfbf03e5fa3c73595c7bcbd077b2bba25",
+          "backend/app/main.py": "33398036ff88c31441b557e7eb7d365992626667ef9abadc3ff8b38d65f9fb07",
+          "backend/app/repository.py": "a7f966ce052eae2fd456048637ffbd01dd8b9d2bf6b51cafd794eaba2138c5cd",
+          "backend/app/schemas.py": "fa3e09b672c4312bf57bf455f18555946f819528519696c1dfb3f8f8b321dc9e"
+        },
+        "question_version": "peyce-original-1.0",
+        "policy_version": "peyce-routing-1.0",
+        "prompt_version": "peyce-acknowledgment-1.2",
+        "content_version": "peyce-skills-1.0",
+        "fixture_sha256": "61369a2d1997b31c81f8d4bceafe502be658691b558b9c1482e21919d19e0823",
+        "fixture_path": "backend/tests/fixtures/evaluation-3.3.json",
+        "controlled_database": "New TemporaryDirectory for every API scenario; destroyed on exit",
+        "environment": "dotenv loading disabled; mock mode; real async transport prohibited"
+      }
+    },
+    {
+      "file": "docs/evidence/3.3/final-deterministic-run-2.json",
+      "summary": {
+        "predeclared_scenarios": 18,
+        "api_scenarios_passed": 16,
+        "scenarios_requiring_controller_gui": [
+          "S09",
+          "S18"
+        ],
+        "api_cross_case_assertions_passed": 2,
+        "api_failures": 0,
+        "real_network_calls": 0,
+        "actual_gui_claim": false,
+        "real_wall_clock_duration_claim": false,
+        "real_runtime_accessed": false
+      },
+      "repeat_signature": "40c3018a01404a5b91d56ef90bada849b4a45258244faf8de941413c8b39c9f3",
+      "context": {
+        "run_label": "clean-final-2",
+        "python": "3.14.7",
+        "git_head": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+        "app_matches_git_head": true,
+        "app_file_sha256": {
+          "backend/app/__init__.py": "75560330dd27e1bda84e5008a79085130c9ba26a0dfb28fcf264011fb0cb6ccb",
+          "backend/app/config.py": "aef9f41f2afb4962680b57b5864a989f6eed218c7834916ddade59568eb3f02f",
+          "backend/app/domain.py": "ad6ee02ee2042cd9a0cb3a1923e22b77fb1db62800e9a78af1e4e1322ac79815",
+          "backend/app/explanations.py": "9a6742a37b1bea6e8d8030931adea79cfbf03e5fa3c73595c7bcbd077b2bba25",
+          "backend/app/main.py": "33398036ff88c31441b557e7eb7d365992626667ef9abadc3ff8b38d65f9fb07",
+          "backend/app/repository.py": "a7f966ce052eae2fd456048637ffbd01dd8b9d2bf6b51cafd794eaba2138c5cd",
+          "backend/app/schemas.py": "fa3e09b672c4312bf57bf455f18555946f819528519696c1dfb3f8f8b321dc9e"
+        },
+        "question_version": "peyce-original-1.0",
+        "policy_version": "peyce-routing-1.0",
+        "prompt_version": "peyce-acknowledgment-1.2",
+        "content_version": "peyce-skills-1.0",
+        "fixture_sha256": "61369a2d1997b31c81f8d4bceafe502be658691b558b9c1482e21919d19e0823",
+        "fixture_path": "backend/tests/fixtures/evaluation-3.3.json",
+        "controlled_database": "New TemporaryDirectory for every API scenario; destroyed on exit",
+        "environment": "dotenv loading disabled; mock mode; real async transport prohibited"
+      }
+    }
+  ],
+  "additional_runner_command_repair": {
+    "initial": "absolute output outside checkout caused print-path relative_to ValueError after result write",
+    "correction": "Use --output .verification/final-run-{1,2}.json within checkout, then copy safe output as evidence",
+    "retest_exit_codes": [
+      0,
+      0
+    ],
+    "no_source_change": true,
+    "readonly_fixture_dbs_only": true
+  },
+  "services_stopped": {
+    "owned_pids": [
+      91698,
+      91816
+    ],
+    "ports_8012_5181_confirmed_closed": true
+  },
+  "final_runtime_ledger": 10
+}

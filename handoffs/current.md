@@ -10,8 +10,7 @@ Real OpenRouter repeat completed November2 using exact `nvidia/nemotron-3.5-ligh
 
 **The required finished-app and process videos are missing.** Available browser controls expose screenshots only; QuickTime capture did not provide a controllable toolbar and capture-app selection timed out. Reported early. `docs/part-3.3-demo-script.md` is an exact recording/code guide, not a video. `docs/evidence/3.3/recordings.json` marks incomplete. Human local scoped capture, web-playable publication/playback/access verification and final link insertion remain necessary for that requirement.
 
-The candidate source must be committed and checked in a fresh sanitized mock checkout before final report packaging. The exact executed clean-checkout result will be added to `docs/evidence/3.3/clean-checkout.json`; do not infer it from this handoff. Source/evidence/report hashes will be identified separately by the later report; no self-referential future SHA is inserted here.
-
+Runnable source **`2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53`** passed a fresh sanitized mock checkout, pinned setup,88/60tests/build,5HTTP/hash-checked assets and two actual finished saved flows with FK0. Final source timings:breathing79.3108s/entry6.4611s;grounding74.0430s/entry6.2417s;zeroexclusions. Two final deterministic runs agree and identify the exact committed application. See `docs/evidence/3.3/clean-checkout.json`. Source/evidence/report hashes are identified separately by the later report; no self-referential future SHA is inserted here.
 Run only on localhost in mock:
 
 ```sh

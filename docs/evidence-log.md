@@ -94,3 +94,7 @@ The human explicitly invoked the new prompt, permitting this milestone in the ex
 | Completion must be reproducible without hidden local state. | Freeze candidate and install pinned dependencies in fresh sanitized mock checkout; full flow/SQL/test/build/asset checks. | Exact candidate and actual results are recorded separately in Part3.3 verification/evidence after execution; not inferred from working-tree passes. |
 
 [Evaluation](part-3.3-evaluation.md), [verification](part-3.3-verification.md), [design decisions](part-3.3-design-review.md), [recording-ready guide](part-3.3-demo-script.md), [evidence](evidence/3.3/). Current routine tests:88backend,60frontend, production build. Earlier submissions/evidence remain immutable. No student personal review, peer participation, clinical readiness, guaranteed grade, support-service deployment or Canvas upload is claimed.
+
+### Frozen-source checkout result
+
+Candidate2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53 passed fresh sanitizedmock setup with no copiedignoredstate:88backend/60frontend/build, fiveassetsHTTP200/hashmatches, twofullsavedskills/FK0. Frozen-source breathing79.3108s (entry6.4611), grounding74.0430s (entry6.2417), zeroexclusions. Bothfinaldeterministicruns match and identify app_matches_git_head=true. An outside-checkout output printpath caused a runner postprocessing ValueError; corrected to insideignoredpath and reran twice, no appchange. Owned checkoutservices stopped; current application/evidence/report publication checks are later records. Required videos remainmissing.

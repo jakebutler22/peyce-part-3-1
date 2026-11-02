@@ -1,0 +1,51 @@
+{
+  "record_type": "agent observation summary of executed regression checks",
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "application_source_commit": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+  "scope": "Actual Vue controller through SSR with controlled request transport; these checks are not browser, SQLite, live-model or natural-user evidence.",
+  "output_policy": "The values below summarize output actually observed by the frontend agent. Raw terminal transcripts were not saved as files; no reconstructed stderr is presented.",
+  "working_directory": "frontend",
+  "corrections": [
+    {
+      "id": "pending-back",
+      "cases": ["S05", "S18", "B2"],
+      "trigger": "Root browser observation: check-in Back was disabled during the 360 ms selection interval, and the controller returned immediately while selecting.",
+      "before_command": "node --test --test-name-pattern='Back cancels|pending Back' tests/personalization.test.js",
+      "before_exit_code": 1,
+      "before_result": {"tests": 2, "passed": 0, "failed": 2},
+      "before_assertions": [
+        {"test": "[S05 S18 B2] Back cancels a pending first-answer transition and permits an immediate intentional correction", "expected": "screen = intro after Back", "observed": "screen = checkin"},
+        {"test": "[S05 S18 B2] pending Back preserves answers and a corrected answer advances once instead of replaying both callbacks", "expected": "questionIndex = 0 after Back from pending question 2", "observed": "questionIndex = 1"}
+      ],
+      "change": "Kept Back enabled; cancelled the pending selection timeout and pendingAdvance, cleared selecting, reset the cancelled choice lock, invalidated the offered result, and preserved answers while navigating backward. A new deliberate answer restores normal duplicate-activation protection.",
+      "changed_files": ["frontend/src/App.vue", "frontend/src/usePrototype.js", "frontend/tests/personalization.test.js"],
+      "after_command": "npm run verify && git diff --check",
+      "after_exit_code": 0,
+      "after_result": {"frontend_tests": 59, "passed": 59, "failed": 0, "production_build": "passed", "diff_check": "passed"},
+      "after_observations": ["Back reached the intended previous screen and retained recorded answers.", "Waiting past the old callback did not advance the screen.", "Immediate correction was accepted; a rapid duplicate answer was ignored.", "The corrected answer advanced once, with no old callback replay."]
+    },
+    {
+      "id": "retry-stale-label",
+      "cases": ["S14", "B3"],
+      "trigger": "Root browser observation: after database fault recovery and Retry, the footer correctly said Saved on this computer while the ready explanation label still said saving unavailable.",
+      "before_command": "node --test --test-name-pattern='successful save retry' tests/personalization.test.js",
+      "before_exit_code": 1,
+      "before_result": {"tests": 1, "passed": 0, "failed": 1},
+      "before_assertion": {"test": "[S14 B3] successful save retry removes the stale saving-unavailable label without requesting wording", "expected": "Local rule · optional wording not requested", "observed": "Local rule · saving unavailable"},
+      "change": "Successful retry updates only that exact stale label when the acknowledged snapshot is still the current ready revision. It does not request new provider wording or overwrite another explanation state.",
+      "changed_files": ["frontend/src/usePrototype.js", "frontend/tests/personalization.test.js"],
+      "after_command": "npm run verify && git diff --check",
+      "after_exit_code": 0,
+      "after_result": {"frontend_tests": 60, "passed": 60, "failed": 0, "production_build": "passed", "diff_check": "passed"},
+      "after_observations": ["Save state became saved and the stale label changed to Local rule · optional wording not requested.", "The screen remained ready.", "The controlled transport received zero explanation requests."]
+    }
+  ],
+  "separate_browser_evidence": "docs/evidence/3.3/gui-observations.json",
+  "sha256_of_final_source_files": {
+    "frontend/src/usePrototype.js": "b276c1d1818530a6324946ac3db2a8d3fa060e222e75c2a1730776765790897c",
+    "frontend/src/App.vue": "ec04e79a777176967b6538f0f3b60531148b3e8e86223842db24fb0732954ba9",
+    "frontend/tests/personalization.test.js": "db9cfec7964d3717976f27f902c1ca897386e3c0bb5205f9b8361a338306dd65"
+  },
+  "packaging_action": "This JSON records previously executed checks. No application edits, test reruns, dependency changes or live requests were performed to create it."
+}
