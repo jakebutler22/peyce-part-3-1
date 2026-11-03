@@ -1,0 +1,353 @@
+{
+  "report_path": "submissions/3.3/report.md",
+  "report_sha256": "4fc81da6ec11374ef66235f3d6b5aa58cccb0c76728fa367dada3398956a12d2",
+  "runnable_source": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+  "media_commit": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+  "documentation_commit": "0fe75bc960a171d834a44f5266541408661aed96",
+  "immutable_blob_paths": [
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "AI-USE.md",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "README.md",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence-log.md",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/clean-checkout.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/clear-sql.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/deterministic-initial-failure.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/final-deterministic-run-1.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/final-deterministic-run-2.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/gui-observations.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/live-variation.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/provider-preflight.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/recordings.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/video/playback-verification.json",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/evidence/3.3/video/player.html",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/part-3.3-demo-script.md",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/part-3.3-design-review.md",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/part-3.3-evaluation.md",
+      "exists": true
+    },
+    {
+      "ref": "0fe75bc960a171d834a44f5266541408661aed96",
+      "path": "docs/part-3.3-verification.md",
+      "exists": true
+    },
+    {
+      "ref": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+      "path": "backend/app/explanations.py",
+      "exists": true
+    },
+    {
+      "ref": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+      "path": "backend/app/repository.py",
+      "exists": true
+    },
+    {
+      "ref": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+      "path": "backend/tests/fixtures/evaluation-3.3.json",
+      "exists": true
+    },
+    {
+      "ref": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+      "path": "prompts/03-peyce-3.3-master-prompt.md",
+      "exists": true
+    },
+    {
+      "ref": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+      "path": "docs/evidence/3.3/video/app-capture-audit.json",
+      "exists": true
+    },
+    {
+      "ref": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+      "path": "docs/evidence/3.3/video/process-capture-audit.json",
+      "exists": true
+    },
+    {
+      "ref": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+      "path": "docs/evidence/3.3/video/peyce-app-demo.mp4",
+      "exists": true
+    },
+    {
+      "ref": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+      "path": "docs/evidence/3.3/video/peyce-process-screencast.mp4",
+      "exists": true
+    }
+  ],
+  "anonymous_url_checks": [
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/AI-USE.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/README.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence-log.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/clean-checkout.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/clear-sql.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/deterministic-initial-failure.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/final-deterministic-run-1.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/final-deterministic-run-2.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/gui-observations.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/live-variation.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/provider-preflight.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/recordings.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/video/playback-verification.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/evidence/3.3/video/player.html",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/part-3.3-demo-script.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/part-3.3-design-review.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/part-3.3-evaluation.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/0fe75bc960a171d834a44f5266541408661aed96/docs/part-3.3-verification.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/backend/app/explanations.py",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/backend/app/repository.py",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/backend/tests/fixtures/evaluation-3.3.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53/prompts/03-peyce-3.3-master-prompt.md",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/app-capture-audit.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/blob/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/process-capture-audit.json",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/tree/0fe75bc960a171d834a44f5266541408661aed96",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/tree/2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://github.com/jakebutler22/peyce-part-3-1/tree/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-app-demo.mp4",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-process-screencast.mp4",
+      "status": 200,
+      "curl_exit": 0,
+      "anonymous": true,
+      "normal_tls_verification": true
+    }
+  ],
+  "application_tree_matches_source": true,
+  "report_has_no_missing_video_claim": true
+}
