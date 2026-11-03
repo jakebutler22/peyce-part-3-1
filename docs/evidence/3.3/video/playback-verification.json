@@ -1,0 +1,220 @@
+{
+  "checked_at_utc": "2026-11-03T00:33:18.761694+00:00",
+  "media_commit": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+  "scope": "Actual browser playback/seek of immutable public GitHub MP4 sources; player HTML served over loopback. Anonymous byte access checked separately. Not a hosted HTML player.",
+  "public_http": {
+    "checked_at_utc": "2026-11-03T00:31:59.900792+00:00",
+    "immutable_commit": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+    "scope": "Anonymous immutable raw MP4 GETs only. This verifies public file access, exact bytes and media headers; browser playback is separate root evidence. No hosted player is claimed.",
+    "requests": [
+      {
+        "file": "peyce-app-demo.mp4",
+        "url": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-app-demo.mp4",
+        "http_status": 200,
+        "curl_exit_code": 0,
+        "content_type": "application/octet-stream",
+        "accept_ranges": "bytes",
+        "content_length_header": "2766332",
+        "downloaded_bytes": 2766332,
+        "downloaded_sha256": "918b6db39aab73b712645be06d8573ef42ff3e7b9b4d907fbf0f724dcd9a6baf",
+        "local_sha256": "918b6db39aab73b712645be06d8573ef42ff3e7b9b4d907fbf0f724dcd9a6baf",
+        "byte_match": true,
+        "anonymous": true,
+        "normal_tls_verification": true,
+        "credentials_or_cookies_sent": false
+      },
+      {
+        "file": "peyce-process-screencast.mp4",
+        "url": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-process-screencast.mp4",
+        "http_status": 200,
+        "curl_exit_code": 0,
+        "content_type": "application/octet-stream",
+        "accept_ranges": "bytes",
+        "content_length_header": "1763782",
+        "downloaded_bytes": 1763782,
+        "downloaded_sha256": "c8b6f5e26a9650d33f1e1d8c94f099dc379d6b1b29fed5ad085962ed9455e7c4",
+        "local_sha256": "c8b6f5e26a9650d33f1e1d8c94f099dc379d6b1b29fed5ad085962ed9455e7c4",
+        "byte_match": true,
+        "anonymous": true,
+        "normal_tls_verification": true,
+        "credentials_or_cookies_sent": false
+      }
+    ]
+  },
+  "browser": {
+    "surface": "Codex in-app browser",
+    "html_url": "http://127.0.0.1:5184/player.html",
+    "media_credentials": "crossorigin=anonymous; no provider/backend request",
+    "app_seek_button_target_s": 29.6235,
+    "app_observation": {
+      "date": "2026-11-03T00:31:48.269Z",
+      "initial": [
+        {
+          "currentTime": 30.070781,
+          "duration": 207.466667,
+          "error": null,
+          "id": "app",
+          "paused": false,
+          "readyState": 4,
+          "src": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-app-demo.mp4",
+          "videoHeight": 896,
+          "videoWidth": 1280
+        },
+        {
+          "currentTime": 0,
+          "duration": 111.466667,
+          "error": null,
+          "id": "process",
+          "paused": true,
+          "readyState": 4,
+          "src": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-process-screencast.mp4",
+          "videoHeight": 816,
+          "videoWidth": 1280
+        }
+      ],
+      "later": {
+        "currentTime": 42.04179,
+        "duration": 207.466667,
+        "error": null,
+        "paused": false,
+        "readyState": 4,
+        "src": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-app-demo.mp4",
+        "videoHeight": 896,
+        "videoWidth": 1280
+      }
+    },
+    "process_observation": {
+      "date": "2026-11-03T00:32:42.745Z",
+      "playback": {
+        "currentTime": 54.376759,
+        "duration": 111.466667,
+        "error": null,
+        "paused": false,
+        "readyState": 4,
+        "src": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-process-screencast.mp4",
+        "videoHeight": 816,
+        "videoWidth": 1280
+      }
+    },
+    "observed_errors": [],
+    "after_restarted_seek_play": {
+      "date": "2026-11-03T00:33:48.403Z",
+      "after_restarted_seek_play": {
+        "currentTime": 94.531932,
+        "duration": 207.466667,
+        "error": null,
+        "paused": false,
+        "readyState": 4,
+        "src": "https://raw.githubusercontent.com/jakebutler22/peyce-part-3-1/b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824/docs/evidence/3.3/video/peyce-app-demo.mp4"
+      }
+    },
+    "observed_public_app_progress_crossed_entire_required_breathing_interval": true
+  },
+  "media": {
+    "app_duration_s": 207.466667,
+    "process_duration_s": 111.466667,
+    "full_decode_without_errors": true,
+    "fast_start_moov_before_mdat": true,
+    "contact_sheets_visually_reviewed": 4,
+    "caption_margin_pixels": 96,
+    "audio": false
+  },
+  "local_range_server_checks": [
+    {
+      "path": "/",
+      "method": "GET",
+      "range": null,
+      "status": 200,
+      "length": "3484",
+      "content_range": null,
+      "accept_ranges": "bytes",
+      "body_bytes": 3484,
+      "pass": true
+    },
+    {
+      "path": "/peyce-app-demo.mp4",
+      "method": "HEAD",
+      "range": null,
+      "status": 200,
+      "length": "2766332",
+      "content_range": null,
+      "accept_ranges": "bytes",
+      "body_bytes": 0,
+      "pass": true
+    },
+    {
+      "path": "/peyce-app-demo.mp4",
+      "method": "GET",
+      "range": "bytes=0-99",
+      "status": 206,
+      "length": "100",
+      "content_range": "bytes 0-99/2766332",
+      "accept_ranges": "bytes",
+      "body_bytes": 100,
+      "pass": true
+    },
+    {
+      "path": "/peyce-app-demo.mp4",
+      "method": "GET",
+      "range": "bytes=100-199",
+      "status": 206,
+      "length": "100",
+      "content_range": "bytes 100-199/2766332",
+      "accept_ranges": "bytes",
+      "body_bytes": 100,
+      "pass": true
+    },
+    {
+      "path": "/peyce-process-screencast.mp4",
+      "method": "HEAD",
+      "range": "bytes=0-99",
+      "status": 206,
+      "length": "100",
+      "content_range": "bytes 0-99/1763782",
+      "accept_ranges": "bytes",
+      "body_bytes": 0,
+      "pass": true
+    },
+    {
+      "path": "/peyce-process-screencast.mp4",
+      "method": "GET",
+      "range": "bytes=-100",
+      "status": 206,
+      "length": "100",
+      "content_range": "bytes 1763682-1763781/1763782",
+      "accept_ranges": "bytes",
+      "body_bytes": 100,
+      "pass": true
+    },
+    {
+      "path": "/peyce-app-demo.mp4",
+      "method": "GET",
+      "range": "bytes=999999999999-",
+      "status": 416,
+      "pass": true
+    },
+    {
+      "path": "/../report.md",
+      "method": "GET",
+      "range": null,
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "/%2e%2e/%2e%2e/AGENTS.md",
+      "method": "GET",
+      "range": null,
+      "status": 404,
+      "pass": true
+    }
+  ],
+  "limitations": {
+    "github_blob_inline_preview": "Unavailable: GitHub displays file download/View raw, not an inline player.",
+    "raw_content_type": "application/octet-stream; download/open links are labeled honestly. Explicit type=video/mp4 in the player successfully streams both public sources.",
+    "html_player": "Downloadable evidence player only; no public hosted HTML player or GitHub Pages deployment. Verified served over loopback with public media, not opened via file protocol.",
+    "native_file_opening": "Verification browser blocks file: protocol; not bypassed and not claimed tested.",
+    "optional_cdn_attempt": "Browser blocked requested rawcdn.githack.com media navigation; no warning/policy bypass or alternate CDN attempted.",
+    "initial_local_seeking": "Initial SimpleHTTP server did not seek; scoped loopback range server corrected this, and actual public-source app seeking was verified.",
+    "study": "Agent-operated fictional recording; no student voice/personal review or clinical/peer study."
+  }
+}

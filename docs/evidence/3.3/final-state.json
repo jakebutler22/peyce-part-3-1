@@ -33,7 +33,14 @@
     "test_controls": false,
     "durable_actual_attempts": 10
   },
-  "recordings": "incomplete; no playback or anonymous video access claim",
+  "recordings": {
+    "status": "delivered",
+    "media_commit": "b4d51020e85d0f2fd63f0b7c87d2a63a0dc9a824",
+    "index": "docs/evidence/3.3/recordings.json",
+    "playback_access_evidence": "docs/evidence/3.3/video/playback-verification.json",
+    "application_code_unchanged": true,
+    "new_live_attempts": 0
+  },
   "clean_test_services_stopped": true,
   "clean_worktree_archived_after_evidence_export": true,
   "human_review_and_canvas_upload": "not performed"
