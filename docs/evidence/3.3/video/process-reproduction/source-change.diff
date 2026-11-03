@@ -1,0 +1,73 @@
+diff --git a/backend/app/explanations.py b/backend/app/explanations.py
+index df4b661..cf8304d 100644
+--- a/backend/app/explanations.py
++++ b/backend/app/explanations.py
+@@ -35,6 +35,17 @@ class InvalidProviderResponse(ValueError):
+         super().__init__("Provider response failed application validation")
+ 
+ 
++class LiveLimitReached(PermissionError):
++    """A reserved-at-dispatch ceiling switches this result to an honest mock."""
++
++
++def mock_fragments(snapshot, result):
++    # Same approved grammar, with source explicitly labeled mock. No dispatch.
++    eligible = allowed_references(snapshot, result)
++    answered_total = sum(a for a in snapshot["answers"] if a is not None)
++    return {"reason_code": result["code"], "opening_id": "reflect" if answered_total % 2 == 0 else "notice", "reference_ids": eligible[:2], "closing_id": "choice" if answered_total % 2 == 0 else "change"}, "peyce-mock-1.0", {}
++
++
+ def response_diagnostic(value, status):
+     metadata = {"http_status": status}
+     if isinstance(value, dict):
+@@ -89,8 +100,7 @@ class ModelService:
+         if self.settings.model_mode == "mock":
+             # Deliberate deterministic variation tests construction; it is
+             # labeled mock throughout, never evidence of a live contribution.
+-            answered_total = sum(a for a in snapshot["answers"] if a is not None)
+-            return {"reason_code": result["code"], "opening_id": "reflect" if answered_total % 2 == 0 else "notice", "reference_ids": eligible[:2], "closing_id": "choice" if answered_total % 2 == 0 else "change"}, "peyce-mock-1.0", {}
++            return mock_fragments(snapshot, result)
+         if self.settings.model_mode != "openrouter" or not self.settings.live_configured:
+             raise PermissionError("live-configuration-unavailable")
+         turns = []
+@@ -111,12 +121,12 @@ class ModelService:
+         tools = [{"type": "function", "function": {"name": ACKNOWLEDGMENT_TOOL,
+                   "description": "Acknowledge the approved rule using only permitted phrase IDs and current answer references. This selects data; no external action is executed.",
+                   "parameters": schema}}]
+-        messages = [{"role": "system", "content": "Peyce (pronounced peace) is a fictional coursework interface. Call acknowledge_current_rule exactly ONCE, with no Markdown fences, commentary, thinking, extra keys or prose. Choose only JSON phrase IDs and eligible current-turn references to acknowledge the actual selections. Do not choose an exercise, assess risk, diagnose, score, add prose or instructions. The approved rule result is fixed. Reflect acknowledges a selection directly; notice gently acknowledges it. Choice offers choosing or finishing; change reminds that the person may change their mind. Reference the most relevant eligible answer(s), never a skip. Use the supplied function parameter schema. Valid argument shape example (choose IDs/references appropriate to the actual turns): " + json.dumps(example, separators=(",", ":")) + ". Current approved context: " + json.dumps(context, ensure_ascii=False)}, *turns]
++        messages = [{"role": "system", "content": "Peyce (pronounced pace, /peɪs/) is a fictional coursework interface. Call acknowledge_current_rule exactly ONCE, with no Markdown fences, commentary, thinking, extra keys or prose. Choose only JSON phrase IDs and eligible current-turn references to acknowledge the actual selections. Do not choose an exercise, assess risk, diagnose, score, add prose or instructions. The approved rule result is fixed. Reflect acknowledges a selection directly; notice gently acknowledges it. Choice offers choosing or finishing; change reminds that the person may change their mind. Reference the most relevant eligible answer(s), never a skip. Use the supplied function parameter schema. Valid argument shape example (choose IDs/references appropriate to the actual turns): " + json.dumps(example, separators=(",", ":")) + ". Current approved context: " + json.dumps(context, ensure_ascii=False)}, *turns]
+         if len(json.dumps({"messages": messages, "tools": tools}, ensure_ascii=False).encode()) > 5000:
+             raise InvalidProviderResponse("input-size")
+         # Reserve before any outbound attempt, including a rejected request.
+         if not self.repository.reserve_live_attempt(self.settings):
+-            raise PermissionError("live-attempt-or-budget-cap")
++            raise LiveLimitReached("live-attempt-or-budget-cap")
+         body = {"model": self.settings.model_id, "messages": messages, "stream": False,
+                 "max_tokens": 1000, "temperature": 0.2,
+                 # The verified free model supports optional reasoning. Keep
+@@ -190,6 +200,12 @@ class ModelService:
+             outcome = "validated"
+         except (asyncio.TimeoutError, httpx.TimeoutException):
+             outcome = "fallback-timeout"
++        except LiveLimitReached:
++            fragments, actual_model, _ = mock_fragments(snapshot, result)
++            response.update(status="validated", mode="mock", model_id=actual_model,
++                            text=render_fragments(fragments, snapshot, result),
++                            fragments=fragments, references=fragments["reference_ids"])
++            outcome = "validated-mock-live-limit"
+         except PermissionError:
+             outcome = "fallback-unavailable"
+         except InvalidProviderResponse as error:
+diff --git a/backend/app/repository.py b/backend/app/repository.py
+index e6a1b32..7c29086 100644
+--- a/backend/app/repository.py
++++ b/backend/app/repository.py
+@@ -248,7 +248,7 @@ class Repository:
+             if stale:
+                 response["status"] = "obsolete"
+             if current:
+-                db.execute("UPDATE explanations SET outcome=?,validation=?,model_id=?,fragments_json=?,references_json=?,text=?,stale=?,updated_at=?,response_json=? WHERE request_id=?", (response["status"], outcome, response["model_id"], encoded(response["fragments"]) if response["fragments"] else None, encoded(response["references"]), response["text"], int(stale), stamp(), encoded(response), str(request.request_id)))
++                db.execute("UPDATE explanations SET outcome=?,validation=?,mode=?,model_id=?,fragments_json=?,references_json=?,text=?,stale=?,updated_at=?,response_json=? WHERE request_id=?", (response["status"], outcome, response["mode"], response["model_id"], encoded(response["fragments"]) if response["fragments"] else None, encoded(response["references"]), response["text"], int(stale), stamp(), encoded(response), str(request.request_id)))
+                 if response["status"] == "validated":
+                     db.execute("INSERT INTO turns(session_id,revision,sequence,role,text,question_version,source,created_at) VALUES(?,?,99,'assistant',?,?,?,?)", (session_id, request.revision, response["text"], QUESTION_VERSION, "validated-" + response["mode"] + "-acknowledgment", stamp()))
+             return response

@@ -1,0 +1,27 @@
+{
+  "purpose": "Safe source of the development evidence viewer used during actual process recording; controls execute isolated archived API/SQLite reproduction, not invented results.",
+  "python": "3.14.7",
+  "viewer_bind": "127.0.0.1:5182",
+  "source_before": "2cc923846654e1492cea4f82494c4f4874674532",
+  "source_retest": "2f00ffb0c72826a0a2b8a8fa000eb04971e2ff53",
+  "limitations": [
+    "Controlled historical replay; not a new historical recording or new defect discovery.",
+    "API/SQLite evidence only; viewer is not the finished app.",
+    "Mock fixture at counter10; no real provider or credential."
+  ],
+  "files": {
+    "server.py": "8e09cbd1bad8e36fa042d9e7b287fa42c4ac06dac72cfa3dcd5a280e37ae3172",
+    "run_case.py": "36fe78068277f30b4e05737002e73abf879f8538eda3bfdb633d054a5f98c3ce",
+    "index.html": "92bb6a826821fb0ae76f1b43c0d8f00e50279455bb5c60faa15dbf59c797f422"
+  },
+  "execute_from": "The server was executed from ignored .verification/process-recording-viewer; curated copies above document exact code. To rerun from this archived evidence directory, copy server.py, run_case.py and index.html to .verification/process-recording-viewer in a checkout with pinned backend dependencies installed.",
+  "verification": "During the actual process recording, the browser controls reran the historical and submitted source against independent disposable databases. BEFORE reproduced the known provenance defect; RETEST passed all eight assertions. Both runs recorded zero network attempts, left their simulated ceiling at ten after clearing, and never accessed the real runtime database.",
+  "recorded_executions": {
+    "before_utc": "2026-11-03T00:22:41.711079+00:00",
+    "retest_utc": "2026-11-03T00:24:30.346468+00:00",
+    "before_result": "FAIL (expected for historical BEFORE)",
+    "retest_result": "PASS",
+    "actual_video": "../peyce-process-screencast.mp4",
+    "recording_scope": "Actual browser interaction with development evidence viewer, controlled archive reproduction, real code excerpts, API/SQL results, and on-screen code explanation; captions added by the recording process. This is not footage of the original historical development session."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "label": "BEFORE",
+  "source_commit": "2cc923846654e1492cea4f82494c4f4874674532",
+  "scope": "controlled S17 archive reproduction; disposable SQLite; fictional input; no live provider",
+  "input": {
+    "answers": [
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "status": "ready",
+    "fixture_attempts": 10
+  },
+  "predeclared_expected": {
+    "mode": "mock",
+    "status": "validated",
+    "persisted_source": "validated-mock-acknowledgment",
+    "attempts": 10,
+    "network_dispatches": 0
+  },
+  "http_status": 200,
+  "response": {
+    "mode": "openrouter",
+    "status": "fallback",
+    "model_id": "nvidia/nemotron-3.5-lightning:free",
+    "text": "You said softening your shoulders and jaw is \u201chard right now\u201d, and breathing sounds comfortable. A gentle rhythm is one option.",
+    "fragments": null,
+    "stale": false
+  },
+  "sql": {
+    "live_budget": {
+      "attempts": 10,
+      "reserved_usd": 0.0
+    },
+    "explanation": {
+      "mode": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "outcome": "fallback",
+      "validation": "fallback-unavailable"
+    },
+    "assistant_turns": [],
+    "explanation_rows": 1,
+    "attempts_after_clear": 10
+  },
+  "checks": {
+    "http_200": true,
+    "mode_is_mock": false,
+    "status_is_validated": false,
+    "persisted_mode_is_mock": false,
+    "persisted_mock_source": false,
+    "zero_network_dispatch": true,
+    "replay_same_receipt": true,
+    "ledger_still_ten_after_clear": true
+  },
+  "result": "FAIL (expected for historical BEFORE)",
+  "network_attempts": 0,
+  "real_runtime_accessed": false,
+  "dotenv_disabled": true,
+  "credential": "fictional placeholder only",
+  "executed_at_utc": "2026-11-03T00:22:41.711079+00:00",
+  "runner_command": "backend/.venv/bin/python .verification/process-recording-viewer/run_case.py <extracted pinned backend> <new temporary fixture DB> <commit> BEFORE"
+}
